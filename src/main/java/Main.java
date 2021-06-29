@@ -1,5 +1,6 @@
 import models.SurvivorLevel;
 import models.ZombieLevel;
+import models.loot.Food;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -44,7 +45,7 @@ public class Main {
 
             System.out.println("A Shambler has appeared!");
 
-            while(zombieHealth > 0) {
+            while (zombieHealth > 0) {
                 System.out.println("Your HP: " + health);
                 System.out.println("Shambler's HP: " + zombieHealth);
                 System.out.println("What would you like to do?");
@@ -54,7 +55,7 @@ public class Main {
 
                 String input = in.nextLine();
 
-                if(input.equals("1")) {
+                if (input.equals("1")) {
                     int damageDealt = rand.nextInt(attackDamage);
                     int damageTaken = rand.nextInt(zombieAttackDamage);
 
@@ -68,35 +69,42 @@ public class Main {
                     }
                     System.out.println("You strike the Shambler for " + damageDealt + " damage.");
 
-                }
-                else if (input.equals("2")) {
+                } else if (input.equals("2")) {
                     if (numFood > 0) {
-                        health += healthPotionHealAmount;
-                        if (health > 100) {
-                            health = 100;
+                        health += Food.BAKEDBEANS.getRestore();
+                        if (health > SurvivorLevel.OUTCASTONE.getHP()) {
+                            health = SurvivorLevel.OUTCASTONE.getHP();
                         }
-                        numHealthPotions--;
-                        healthPotionsUsed++;
-                        System.out.println("You health has been restored by " + healthPotionHealAmount + ".");
+                        numFood--;
+                        healthRestoresUsed++;
+                        System.out.println("You health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
+                    } else if (numSnack > 0) {
+                        health += Food.DRIEDFRUIT.getRestore();
+                        if (health > SurvivorLevel.OUTCASTONE.getHP()) {
+                            health = SurvivorLevel.OUTCASTONE.getHP();
+                        }
+                        numSnack--;
+                        healthRestoresUsed++;
+                        System.out.println("You health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
+                    } else if (numDrink > 0) {
+                        health += Food.IRNBRU.getRestore();
+                        if (health > SurvivorLevel.OUTCASTONE.getHP()) {
+                            health = SurvivorLevel.OUTCASTONE.getHP();
+                        }
+                        numDrink--;
+                        healthRestoresUsed++;
+                        System.out.println("You health has been restored by " + Food.IRNBRU.getRestore() + ".");
+                    } else {
+                        System.out.println("You have nothing left to eat!");
                     }
-                    else if (numSnack > 0) {
-
-                    }
-                    else if (numSnack > 0) {
-
-                    }
-                    else {
-                        System.out.println("You have no health potions left!");
-                    }
-                }
-                else if (input.equals("3")) {
-                    System.out.println("You run away from the " + enemy + "!");
-                    enemyFledCount++;
+                } else if (input.equals("3")) {
+                    System.out.println("You run away from the Shambler!");
+                    zombieFledCount++;
                     continue GAME;
-                }
-                else {
+                } else {
                     System.out.println("Invalid command.");
                 }
+            }
         }
         System.out.println("You defeated " + zombiesDefeated + " Zombies, fled from " + zombieFledCount + " and used " + healthRestoresUsed + " HP restores.");
         System.out.println("Thanks for playing!");
