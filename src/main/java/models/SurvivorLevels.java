@@ -1,4 +1,4 @@
 package models;
 
-public class SurvivorLevels {
+public enum SurvivorLevels {
 }
