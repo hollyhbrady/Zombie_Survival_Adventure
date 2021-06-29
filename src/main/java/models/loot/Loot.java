@@ -1,23 +1,33 @@
 package models.loot;
 
-public class Loot {
+public abstract class Loot {
 
-    private Weapon weapon;
+    private Gun gun;
+    private Melee melee;
     private Food food;
     private int ammo;
 
-    public Loot(Weapon weapon, Food food, int ammo) {
-        this.weapon = weapon;
+    public Loot(Gun gun, Melee melee, Food food, int ammo) {
+        this.gun = gun;
+        this.melee = melee;
         this.food = food;
         this.ammo = ammo;
     }
 
-    public Weapon getWeapon() {
-        return weapon;
+    public Gun getGun() {
+        return gun;
     }
 
-    public void setWeapon(Weapon weapon) {
-        this.weapon = weapon;
+    public void setGun(Gun gun) {
+        this.gun = gun;
+    }
+
+    public Melee getMelee() {
+        return melee;
+    }
+
+    public void setMelee(Melee melee) {
+        this.melee = melee;
     }
 
     public Food getFood() {
