@@ -6,10 +6,10 @@ public enum ZombieLevel {
     TWO(45, 80, 25, 15),
     THREE(60, 90, 30, 20);
 
-    private int HP;
-    private int accuracy;
-    private int maxStrength;
-    private int speed;
+    private final int HP;
+    private final int accuracy;
+    private final int maxStrength;
+    private final int speed;
 
     ZombieLevel(int HP, int accuracy, int maxStrength, int speed) {
         this.HP = HP;
