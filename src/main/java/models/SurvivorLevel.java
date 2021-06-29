@@ -1,6 +1,6 @@
 package models;
 
-public enum SurvivorLevels {
+public enum SurvivorLevel {
 
     // BEST GUN ACCURACY
     SOLDIERONE(50, 0.8, 0.7,20, 10),
@@ -21,7 +21,7 @@ public enum SurvivorLevels {
     private int maxStrength;
     private int speed;
 
-    SurvivorLevels(int HP, double gunAccuracy, double meleeAccuracy, int maxStrength, int speed) {
+    SurvivorLevel(int HP, double gunAccuracy, double meleeAccuracy, int maxStrength, int speed) {
         this.HP = HP;
         this.gunAccuracy = gunAccuracy;
         this.meleeAccuracy = meleeAccuracy;

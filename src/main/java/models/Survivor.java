@@ -10,9 +10,9 @@ public class Survivor {
     private Long id;
     private String name;
     private List<Loot> inventory;
-    private SurvivorLevels sLevel;
+    private SurvivorLevel sLevel;
 
-    public Survivor(String name, List<Loot> inventory, SurvivorLevels sLevel) {
+    public Survivor(String name, List<Loot> inventory, SurvivorLevel sLevel) {
         this.name = name;
         this.inventory = new ArrayList<>();
         this.sLevel = sLevel;
@@ -45,11 +45,11 @@ public class Survivor {
         this.inventory = inventory;
     }
 
-    public SurvivorLevels getsLevel() {
+    public SurvivorLevel getsLevel() {
         return sLevel;
     }
 
-    public void setsLevel(SurvivorLevels sLevel) {
+    public void setsLevel(SurvivorLevel sLevel) {
         this.sLevel = sLevel;
     }
 }
