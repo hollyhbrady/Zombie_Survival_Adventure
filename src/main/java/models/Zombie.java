@@ -3,10 +3,12 @@ package models;
 public class Zombie {
 
     private Long id;
-    private ZombieLevels zLevel;
+    private String name;
+    private ZombieLevel zLevel;
 
-    public Zombie(ZombieLevels zLevel) {
+    public Zombie(ZombieLevel zLevel, String name) {
         this.zLevel = zLevel;
+        this.name = name;
     }
 
     public Zombie() {
@@ -20,11 +22,19 @@ public class Zombie {
         this.id = id;
     }
 
-    public ZombieLevels getZLevel() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ZombieLevel getZLevel() {
         return zLevel;
     }
 
-    public void setZLevel(ZombieLevels zLevel) {
+    public void setZLevel(ZombieLevel zLevel) {
         this.zLevel = zLevel;
     }
 }

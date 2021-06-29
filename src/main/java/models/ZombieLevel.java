@@ -1,17 +1,17 @@
 package models;
 
-public enum ZombieLevels {
+public enum ZombieLevel {
 
-    ONE(50, 0.7, 20, 10),
-    TWO(75, 0.8, 25, 15),
-    THREE(100, 0.9, 30, 20);
+    ONE(50, 70, 20, 10),
+    TWO(75, 80, 25, 15),
+    THREE(100, 90, 30, 20);
 
     private int HP;
-    private double accuracy;
+    private int accuracy;
     private int maxStrength;
     private int speed;
 
-    ZombieLevels(int HP, double accuracy, int maxStrength, int speed) {
+    ZombieLevel(int HP, int accuracy, int maxStrength, int speed) {
         this.HP = HP;
         this.accuracy = accuracy;
         this.maxStrength = maxStrength;
@@ -22,7 +22,7 @@ public enum ZombieLevels {
         return HP;
     }
 
-    public double getAccuracy() {
+    public int getAccuracy() {
         return accuracy;
     }
 
