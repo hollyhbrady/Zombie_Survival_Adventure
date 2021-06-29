@@ -20,11 +20,11 @@ public class Zombie {
         this.id = id;
     }
 
-    public ZombieLevels getzLevel() {
+    public ZombieLevels getZLevel() {
         return zLevel;
     }
 
-    public void setzLevel(ZombieLevels zLevel) {
+    public void setZLevel(ZombieLevels zLevel) {
         this.zLevel = zLevel;
     }
 }
