@@ -2,9 +2,9 @@ package models;
 
 public enum ZombieLevel {
 
-    ONE(30, 70, 20, 10),
-    TWO(45, 80, 25, 15),
-    THREE(60, 90, 30, 20);
+    ONE(30, 80, 20, 15),
+    TWO(45, 90, 25, 20),
+    THREE(60, 95, 30, 25);
 
     private final int HP;
     private final int accuracy;
