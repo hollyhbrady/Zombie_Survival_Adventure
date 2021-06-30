@@ -37,6 +37,10 @@ public class Main {
         boolean running = true;
 
         System.out.println("Welcome to the survival zone!");
+        System.out.println("You now have " + survivor.getFoodInventory().size() + " food items to restore health.");
+        System.out.println("You have " + survivor.getMeleeInventory().size() + " close quarter weapons.");
+        System.out.println("You have " + survivor.getGunInventory().size() + " guns and " + survivor.getAmmoInventory().size() + " bullets.");
+        System.out.println("Proceed wisely");
 
         GAME:
         while(running) {
