@@ -3,17 +3,17 @@ package models;
 public enum SurvivorLevel {
 
     // BEST GUN ACCURACY
-    SOLDIERONE(50, 80, 0.7,20, 10),
-    SOLDIERTWO(75, 90, 0.8,25, 15),
-    SOLDIERTHREE(100, 95, 0.9,30, 20),
+    SOLDIERONE(50, 80, 70,20, 10),
+    SOLDIERTWO(75, 90, 80,25, 15),
+    SOLDIERTHREE(100, 95, 90,30, 20),
     // FASTEST
-    WANDERERONE(50, 70, 0.7, 20, 15),
-    WANDERERTWO(75, 80, 0.8,25, 25),
-    WANDERERTHREE(100, 90, 0.9,30, 30),
+    WANDERERONE(50, 70, 70, 20, 15),
+    WANDERERTWO(75, 80, 80,25, 25),
+    WANDERERTHREE(100, 90, 90,30, 30),
     // BEST MELEE ACCURACY
-    OUTCASTONE(50, 70, 0.8,20, 10),
-    OUTCASTTWO(75, 80, 0.9,25, 15),
-    OUTCASTTHREE(100, 90, 0.95,30, 20);
+    OUTCASTONE(50, 70, 80,20, 10),
+    OUTCASTTWO(75, 80, 90,25, 15),
+    OUTCASTTHREE(100, 90, 95,30, 20);
 
     private int HP;
     private double gunAccuracy;
