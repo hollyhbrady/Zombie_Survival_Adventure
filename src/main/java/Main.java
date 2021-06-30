@@ -26,6 +26,8 @@ public class Main {
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
         survivor.addFoodToInventory(Food.IRNBRU);
 
+        survivor.addMeleeToInventory(Melee.AXE);
+
         int foodDropChance = 40;
 
         int zombiesDefeated = 0;
@@ -77,14 +79,15 @@ public class Main {
                         break;
                     }
                     System.out.println("How are you going to fight?");
-                    System.out.println("1. Shoot");
-                    System.out.println("2. Smash");
+                    System.out.println("1. Use my gun");
+                    System.out.println("2. Close quarters weapon");
+                    System.out.println("3. My fists");
 
                     String attackInput = in.nextLine();
 
                     if (attackInput.equals("1")) {
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory().size() > 0) {
-                            int damageDealt = ((rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage()) / 2);
+                            int damageDealt = (rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage());
                             if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
                                 zombieHealth -= damageDealt;
                                 System.out.println("You shoot the " + zombie.getName() + " and do " + damageDealt + " damage.");
@@ -98,12 +101,24 @@ public class Main {
                             System.out.println("You don't have a gun!");
                         }
                     } else if (attackInput.equals("2")) {
-                        int damageDealt = ((rand.nextInt(attackDamage) + Melee.AXE.getDamage()) / 2);
+                        if (survivor.getMeleeInventory().size() > 0) {
+                            int damageDealt = (rand.nextInt(attackDamage) + Melee.AXE.getDamage());
+                            if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
+                                zombieHealth -= damageDealt;
+                                System.out.println("You strike the " + zombie.getName() + " for " + damageDealt + " damage.");
+                            } else {
+                                System.out.println("You take a swing and miss!");
+                            }
+                        } else {
+                            System.out.println("You don't have a close quarters weapon!");
+                        }
+                    } else if (attackInput.equals("3")) {
+                        int damageDealt = rand.nextInt(attackDamage);
                         if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
                             zombieHealth -= damageDealt;
-                            System.out.println("You strike the " + zombie.getName() + " for " + damageDealt + " damage.");
+                            System.out.println("You grapple with the " + zombie.getName() + " and cause " + damageDealt + " damage.");
                         } else {
-                            System.out.println("You take a swing and miss!");
+                            System.out.println("You trip and and miss, the " + zombie.getName() + " is on top of you!");
                         }
                     } else {
                         System.out.println("Invalid command.");

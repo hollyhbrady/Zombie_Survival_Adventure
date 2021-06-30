@@ -89,4 +89,8 @@ public class Survivor {
     public void addFoodToInventory(Food food) {
         this.foodInventory.add(food);
     }
+
+    public void addMeleeToInventory(Melee melee) {
+        this.meleeInventory.add(melee);
+    }
 }
