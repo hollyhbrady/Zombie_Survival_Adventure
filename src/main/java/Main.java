@@ -2,6 +2,8 @@ import models.Survivor;
 import models.SurvivorLevel;
 import models.ZombieLevel;
 import models.loot.Food;
+import models.loot.Gun;
+import models.loot.Melee;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -63,7 +65,6 @@ public class Main {
                 String input = in.nextLine();
 
                 if (input.equals("1")) {
-                    int damageDealt = rand.nextInt(attackDamage);
                     if (rand.nextInt(100) < zombieAccuracy) {
                         int damageTaken = rand.nextInt(zombieAttackDamage);
                         health -= damageTaken;
@@ -78,22 +79,27 @@ public class Main {
                     String attackInput = in.nextLine();
 
                     if (attackInput.equals("1")) {
-                        if (survivor.getGunInventory().size() > 0);
+                        if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory().size() > 0) {
+                            int damageDealt = (rand.nextInt(attackDamage) * Gun.HANDGUN.getDamage()) / 2;
+                            zombieHealth -= damageDealt;
+                            System.out.println("You shoot the Shambler and do " + damageDealt + " damage.");
+                            System.out.println("You have " + survivor.getAmmoInventory().size() + " bullets left");
+                        } else if (survivor.getGunInventory().size() > 0) {
+                            System.out.println("You don't have any bullets!");
+                        } else {
+                            System.out.println("You don't have a gun!");
+                        }
                     } else if (attackInput.equals("2")) {
-
+                        int damageDealt = (rand.nextInt(attackDamage) * Melee.AXE.getDamage()) / 2;
+                        zombieHealth -= damageDealt;
+                        System.out.println("You strike the Shambler for " + damageDealt + " damage.");
                     } else {
                         System.out.println("Invalid command.");
                     }
-
-
-                    zombieHealth -= damageDealt;
-
                     if (health < 1) {
                         System.out.println("You have taken too much damage to go on.");
                         break;
                     }
-                    System.out.println("You strike the Shambler for " + damageDealt + " damage.");
-
                 } else if (input.equals("2")) {
                     if (survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
                         health += Food.BAKEDBEANS.getRestore();
@@ -102,7 +108,7 @@ public class Main {
                         }
                         survivor.getFoodInventory().remove(Food.BAKEDBEANS);
                         healthRestoresUsed++;
-                        System.out.println("You health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
+                        System.out.println("Your health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
                     } else if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
                         health += Food.DRIEDFRUIT.getRestore();
                         if (health > SurvivorLevel.OUTCASTONE.getHP()) {
@@ -110,7 +116,7 @@ public class Main {
                         }
                         survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
                         healthRestoresUsed++;
-                        System.out.println("You health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
+                        System.out.println("Your health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
                     } else if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
                         health += Food.IRNBRU.getRestore();
                         if (health > SurvivorLevel.OUTCASTONE.getHP()) {
@@ -118,7 +124,7 @@ public class Main {
                         }
                         survivor.getFoodInventory().remove(Food.IRNBRU);
                         healthRestoresUsed++;
-                        System.out.println("You health has been restored by " + Food.IRNBRU.getRestore() + ".");
+                        System.out.println("Your health has been restored by " + Food.IRNBRU.getRestore() + ".");
                     } else {
                         System.out.println("You have nothing left to eat!");
                     }
@@ -156,7 +162,7 @@ public class Main {
                 if (survivor.getFoodInventory().size() > 4){
                     System.out.println("'Great more apricots, I'm sure I can pick of the uh... undead bits.'");
                 } else {
-                    System.out.println("'Just what I need to get me through the day.'");
+                    System.out.println("'I better make these last, I don't want a repeat of last time I ate the whole bag all at once.'");
                 }
                 System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
             } else if (rand.nextInt(100) < foodDropChance) {
