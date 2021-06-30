@@ -23,8 +23,6 @@ public class Main {
         survivor.addFoodToInventory(Food.IRNBRU);
 
         int foodDropChance = 40;
-        int snackDropChance = 30;
-        int drinkDropChance = 20;
 
         int zombiesDefeated = 0;
         int healthRestoresUsed = 0;
@@ -146,16 +144,29 @@ public class Main {
             if (rand.nextInt(100) < foodDropChance) {
                 survivor.addFoodToInventory(Food.BAKEDBEANS);
                 System.out.println("It dropped a can of baked beans!");
+                if (survivor.getFoodInventory().size() > 4){
+                    System.out.println("'Some variety would be nice, but you can't be fussy at times like these.'");
+                } else {
+                    System.out.println("'Protein! This should help me get through til tomorrow at least....'");
+                }
                 System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
-            }
-            if (rand.nextInt(100) < snackDropChance) {
+            } else if (rand.nextInt(100) < foodDropChance) {
                 survivor.addFoodToInventory(Food.DRIEDFRUIT);
                 System.out.println("It dropped a pack of dried fruit!");
+                if (survivor.getFoodInventory().size() > 4){
+                    System.out.println("'Great more apricots, I'm sure I can pick of the uh... undead bits.'");
+                } else {
+                    System.out.println("'Just what I need to get me through the day.'");
+                }
                 System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
-            }
-            if (rand.nextInt(100) < drinkDropChance) {
+            } else if (rand.nextInt(100) < foodDropChance) {
                 survivor.addFoodToInventory(Food.IRNBRU);
-                System.out.println("It dropped a can of Irn-Bru! If only they had nutritional value...");
+                System.out.println("It dropped a can of ... Irn-Bru. Again!?");
+                if (survivor.getFoodInventory().size() > 4){
+                    System.out.println("'I'll take what I can get! What I wouldn't give for a coke though...'");
+                } else {
+                    System.out.println("'Oh well, beggars can't be choosers.'");
+                }
                 System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
             }
             System.out.println("------------------------------");
