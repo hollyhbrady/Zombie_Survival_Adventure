@@ -2,6 +2,7 @@ import models.Survivor;
 import models.SurvivorLevel;
 import models.ZombieLevel;
 import models.loot.Food;
+import models.loot.Loot;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -18,6 +19,9 @@ public class Main {
         int health = survivor.survivorLevel.getHP();
         int attackDamage = survivor.survivorLevel.getMaxStrength();
 
+        survivor.addFoodToInventory(Food.BAKEDBEANS);
+        survivor.addFoodToInventory(Food.DRIEDFRUIT);
+        survivor.addFoodToInventory(Food.IRNBRU);
         int numFood = 1;
         int numDrink = 1;
         int numSnack = 1;
@@ -78,8 +82,9 @@ public class Main {
                     System.out.println("2. Smash");
 
                     String attackInput = in.nextLine();
+
                     if (attackInput.equals("1")) {
-                        if ();
+                        if (survivor.getGunInventory().size() > 0);
                     } else if (attackInput.equals("2")) {
 
                     } else {

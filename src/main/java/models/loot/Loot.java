@@ -4,7 +4,7 @@ public abstract class Loot {
 
     private Gun gun;
     private Melee melee;
-    private Food food;
+    public Food food;
     private int ammo;
 
     public Loot(Gun gun, Melee melee, Food food, int ammo) {

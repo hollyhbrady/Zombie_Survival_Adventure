@@ -6,7 +6,7 @@ public enum Food {
     DRIEDFRUIT(10),
     IRNBRU(5);
 
-    private int restore;
+    private final int restore;
 
     Food(int restore) {
         this.restore = restore;
