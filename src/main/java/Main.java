@@ -72,6 +72,7 @@ public class Main {
                 String input = in.nextLine();
 
                 if (input.equals("1")) {
+//                    GameLogic.zombieAttack(zombie, survivor);
                     if (rand.nextInt(100) < zombie.getZLevel().getAccuracy()) {
                         int damageTaken = rand.nextInt(zombie.getZLevel().getMaxStrength());
                         health -= damageTaken;
