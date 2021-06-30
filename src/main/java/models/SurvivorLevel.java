@@ -18,14 +18,14 @@ public enum SurvivorLevel {
     private int HP;
     private double gunAccuracy;
     private double meleeAccuracy;
-    private int maxStrength;
+    private int strength;
     private int speed;
 
-    SurvivorLevel(int HP, double gunAccuracy, double meleeAccuracy, int maxStrength, int speed) {
+    SurvivorLevel(int HP, double gunAccuracy, double meleeAccuracy, int strength, int speed) {
         this.HP = HP;
         this.gunAccuracy = gunAccuracy;
         this.meleeAccuracy = meleeAccuracy;
-        this.maxStrength = maxStrength;
+        this.strength = strength;
         this.speed = speed;
     }
 
@@ -42,7 +42,7 @@ public enum SurvivorLevel {
     }
 
     public int getMaxStrength() {
-        return maxStrength;
+        return strength;
     }
 
     public int getSpeed() {

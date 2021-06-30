@@ -1,3 +1,4 @@
+import models.Survivor;
 import models.SurvivorLevel;
 import models.ZombieLevel;
 import models.loot.Food;
@@ -12,8 +13,10 @@ public class Main {
         Scanner in = new Scanner(System.in);
         Random rand = new Random();
 
-        int health = SurvivorLevel.OUTCASTONE.getHP();
-        int attackDamage = SurvivorLevel.OUTCASTONE.getMaxStrength();
+        Survivor survivor = new Survivor("Holly", SurvivorLevel.OUTCASTONE);
+        
+        int health = survivor.survivorLevel.getHP();
+        int attackDamage = survivor.survivorLevel.getMaxStrength();
 
         int numFood = 1;
         int numDrink = 1;
@@ -68,12 +71,25 @@ public class Main {
                         health -= damageTaken;
                         System.out.println("You receive " + damageTaken + " damage from the Shambler.");
                     } else {
-                        System.out.println("The Shambler missed! That is one seriously decomposing dude.");
+                        System.out.println("The Shambler missed you! That is one seriously decomposing dude.");
+                    }
+                    System.out.println("How are you going to fight?");
+                    System.out.println("1. Shoot");
+                    System.out.println("2. Smash");
+
+                    String attackInput = in.nextLine();
+                    if (attackInput.equals("1")) {
+                        if ();
+                    } else if (attackInput.equals("2")) {
+
+                    } else {
+                        System.out.println("Invalid command.");
                     }
 
+
+
+
                     zombieHealth -= damageDealt;
-
-
 
                     if (health < 1) {
                         System.out.println("You have taken too much damage to go on.");
