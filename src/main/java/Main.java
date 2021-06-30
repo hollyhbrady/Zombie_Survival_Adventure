@@ -39,9 +39,15 @@ public class Main {
 //            Enum zombie = ZombieLevel.ONE;
 //            int zombieHealth = ZombieLevel.ONE.getHP();
             int zombieHealth = rand.nextInt(ZombieLevel.ONE.getHP());
+            if (zombieHealth < 1) {
+                zombieHealth = 1;
+            }
             int zombieSpeed = rand.nextInt(ZombieLevel.ONE.getSpeed());
-            int zombieAccuracy = rand.nextInt(ZombieLevel.ONE.getAccuracy());
-            int zombieAttackDamage = rand.nextInt(ZombieLevel.ONE.getStrength());
+            if (zombieSpeed < 1) {
+                zombieSpeed = 1;
+            }
+            int zombieAccuracy = ZombieLevel.ONE.getAccuracy();
+            int zombieAttackDamage = ZombieLevel.ONE.getStrength();
 
             System.out.println("A Shambler has appeared!");
 
@@ -57,12 +63,18 @@ public class Main {
 
                 if (input.equals("1")) {
                     int damageDealt = rand.nextInt(attackDamage);
-                    int damageTaken = rand.nextInt(zombieAttackDamage);
+                    if (rand.nextInt(100) < zombieAccuracy) {
+                        int damageTaken = rand.nextInt(zombieAttackDamage);
+                        health -= damageTaken;
+                        System.out.println("You receive " + damageTaken + " damage from the Shambler.");
+                    } else {
+                        System.out.println("The Shambler missed! That is one seriously decomposing dude.");
+                    }
 
                     zombieHealth -= damageDealt;
-                    health -= damageTaken;
 
-                    System.out.println("You receive " + damageTaken + " damage from the Shambler.");
+
+
                     if (health < 1) {
                         System.out.println("You have taken too much damage to go on.");
                         break;
@@ -98,9 +110,13 @@ public class Main {
                         System.out.println("You have nothing left to eat!");
                     }
                 } else if (input.equals("3")) {
-                    System.out.println("You run away from the Shambler!");
-                    zombieFledCount++;
-                    continue GAME;
+                    if (zombieSpeed < SurvivorLevel.OUTCASTONE.getSpeed()) {
+                        System.out.println("You run away from the Shambler!");
+                        zombieFledCount++;
+                        continue GAME;
+                    } else {
+                        System.out.println("Cannot escape! Are you going to be zombie dinner!?");
+                    }
                 } else {
                     System.out.println("Invalid command.");
                 }
@@ -115,12 +131,12 @@ public class Main {
             if (rand.nextInt(100) < foodDropChance) {
                 numFood++;
                 System.out.println("It dropped a can of baked beans!");
-                System.out.println("You now have " + numFood + " cans of beans!.");
+                System.out.println("You now have " + numFood + " cans of beans!");
             }
             if (rand.nextInt(100) < snackDropChance) {
                 numSnack++;
                 System.out.println("It dropped a pack of dried fruit!");
-                System.out.println("You now have " + numSnack + " packs!.");
+                System.out.println("You now have " + numSnack + " packs!");
             }
             if (rand.nextInt(100) < drinkDropChance) {
                 numDrink++;
