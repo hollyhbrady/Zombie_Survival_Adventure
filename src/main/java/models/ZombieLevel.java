@@ -26,7 +26,7 @@ public enum ZombieLevel {
         return accuracy;
     }
 
-    public int getStrength() {
+    public int getMaxStrength() {
         return maxStrength;
     }
 

@@ -6,9 +6,9 @@ public class Zombie {
     private String name;
     private ZombieLevel zLevel;
 
-    public Zombie(ZombieLevel zLevel, String name) {
-        this.zLevel = zLevel;
+    public Zombie( String name, ZombieLevel zLevel) {
         this.name = name;
+        this.zLevel = zLevel;
     }
 
     public Zombie() {

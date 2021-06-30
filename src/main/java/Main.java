@@ -1,5 +1,6 @@
 import models.Survivor;
 import models.SurvivorLevel;
+import models.Zombie;
 import models.ZombieLevel;
 import models.loot.Food;
 import models.loot.Gun;
@@ -16,6 +17,7 @@ public class Main {
         Random rand = new Random();
 
         Survivor survivor = new Survivor("Holly", SurvivorLevel.OUTCASTONE);
+        Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
         
         int health = survivor.survivorLevel.getHP();
         int attackDamage = survivor.survivorLevel.getMaxStrength();
@@ -41,22 +43,20 @@ public class Main {
             // LEVEL 1 ZOMBIES
 //            Enum zombie = ZombieLevel.ONE;
 //            int zombieHealth = ZombieLevel.ONE.getHP();
-            int zombieHealth = rand.nextInt(ZombieLevel.ONE.getHP());
+            int zombieHealth = rand.nextInt(zombie.getZLevel().getHP());
             if (zombieHealth < 1) {
                 zombieHealth = 1;
             }
-            int zombieSpeed = rand.nextInt(ZombieLevel.ONE.getSpeed());
+            int zombieSpeed = rand.nextInt(zombie.getZLevel().getSpeed());
             if (zombieSpeed < 1) {
                 zombieSpeed = 1;
             }
-            int zombieAccuracy = ZombieLevel.ONE.getAccuracy();
-            int zombieAttackDamage = ZombieLevel.ONE.getStrength();
 
-            System.out.println("A Shambler has appeared!");
+            System.out.println("A " + zombie.getName() + " has appeared!");
 
             while (zombieHealth > 0) {
                 System.out.println("Your HP: " + health);
-                System.out.println("Shambler's HP: " + zombieHealth);
+                System.out.println(zombie.getName() + "'s HP: " + zombieHealth);
                 System.out.println("What would you like to do?");
                 System.out.println("1. Attack");
                 System.out.println("2. Restore energy");
@@ -65,12 +65,12 @@ public class Main {
                 String input = in.nextLine();
 
                 if (input.equals("1")) {
-                    if (rand.nextInt(100) < zombieAccuracy) {
-                        int damageTaken = rand.nextInt(zombieAttackDamage);
+                    if (rand.nextInt(100) < zombie.getZLevel().getAccuracy()) {
+                        int damageTaken = rand.nextInt(zombie.getZLevel().getMaxStrength());
                         health -= damageTaken;
-                        System.out.println("You receive " + damageTaken + " damage from the Shambler.");
+                        System.out.println("You receive " + damageTaken + " damage from the " + zombie.getName());
                     } else {
-                        System.out.println("The Shambler missed you! That is one seriously decomposing dude.");
+                        System.out.println("The " + zombie.getName() + " missed you! That is one seriously decomposing dude.");
                     }
                     if (health < 1) {
                         System.out.println("You limp back to your hut, will you be next to join the ranks of the infected?");
@@ -84,24 +84,24 @@ public class Main {
 
                     if (attackInput.equals("1")) {
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory().size() > 0) {
-                            int damageDealt = ((rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage())/2);
+                            int damageDealt = ((rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage()) / 2);
                             if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
                                 zombieHealth -= damageDealt;
-                                System.out.println("You shoot the Shambler and do " + damageDealt + " damage.");
+                                System.out.println("You shoot the " + zombie.getName() + " and do " + damageDealt + " damage.");
                                 System.out.println("You have " + survivor.getAmmoInventory().size() + " bullets left");
                             }  else {
                                 System.out.println("Your shot missed!");
                             }
                         } else if (survivor.getGunInventory().size() > 0) {
-                            System.out.println("You don't have any bullets!");
+                            System.out.println("You don't have any bullets left!");
                         } else {
                             System.out.println("You don't have a gun!");
                         }
                     } else if (attackInput.equals("2")) {
-                        int damageDealt = ((rand.nextInt(attackDamage) + Melee.AXE.getDamage())/2);
+                        int damageDealt = ((rand.nextInt(attackDamage) + Melee.AXE.getDamage()) / 2);
                         if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
                             zombieHealth -= damageDealt;
-                            System.out.println("You strike the Shambler for " + damageDealt + " damage.");
+                            System.out.println("You strike the " + zombie.getName() + " for " + damageDealt + " damage.");
                         } else {
                             System.out.println("You take a swing and miss!");
                         }
@@ -142,7 +142,7 @@ public class Main {
                     }
                 } else if (input.equals("3")) {
                     if (zombieSpeed < SurvivorLevel.OUTCASTONE.getSpeed()) {
-                        System.out.println("You run away from the Shambler!");
+                        System.out.println("You run away from the " + zombie.getName() + "!");
                         zombieFledCount++;
                         continue GAME;
                     } else {
@@ -153,7 +153,7 @@ public class Main {
                 }
             }
             System.out.println("------------------------------");
-            System.out.println("The Shambler was defeated!");
+            System.out.println("The " + zombie.getName() + " was defeated!");
             zombiesDefeated++;
             if (rand.nextInt(100) < foodDropChance) {
                 survivor.addFoodToInventory(Food.BAKEDBEANS);
