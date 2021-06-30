@@ -81,9 +81,13 @@ public class Main {
                     if (attackInput.equals("1")) {
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory().size() > 0) {
                             int damageDealt = (rand.nextInt(attackDamage) * Gun.HANDGUN.getDamage()) / 2;
-                            zombieHealth -= damageDealt;
-                            System.out.println("You shoot the Shambler and do " + damageDealt + " damage.");
-                            System.out.println("You have " + survivor.getAmmoInventory().size() + " bullets left");
+                            if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
+                                zombieHealth -= damageDealt;
+                                System.out.println("You shoot the Shambler and do " + damageDealt + " damage.");
+                                System.out.println("You have " + survivor.getAmmoInventory().size() + " bullets left");
+                            }  else {
+                                System.out.println("Your shot missed!");
+                            }
                         } else if (survivor.getGunInventory().size() > 0) {
                             System.out.println("You don't have any bullets!");
                         } else {
@@ -91,8 +95,12 @@ public class Main {
                         }
                     } else if (attackInput.equals("2")) {
                         int damageDealt = (rand.nextInt(attackDamage) * Melee.AXE.getDamage()) / 2;
-                        zombieHealth -= damageDealt;
-                        System.out.println("You strike the Shambler for " + damageDealt + " damage.");
+                        if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
+                            zombieHealth -= damageDealt;
+                            System.out.println("You strike the Shambler for " + damageDealt + " damage.");
+                        } else {
+                            System.out.println();
+                        }
                     } else {
                         System.out.println("Invalid command.");
                     }
