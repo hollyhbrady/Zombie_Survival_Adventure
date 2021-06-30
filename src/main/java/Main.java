@@ -72,6 +72,10 @@ public class Main {
                     } else {
                         System.out.println("The Shambler missed you! That is one seriously decomposing dude.");
                     }
+                    if (health < 1) {
+                        System.out.println("You limp back to your hut, will you be next to join the ranks of the infected?");
+                        break;
+                    }
                     System.out.println("How are you going to fight?");
                     System.out.println("1. Shoot");
                     System.out.println("2. Smash");
@@ -80,7 +84,7 @@ public class Main {
 
                     if (attackInput.equals("1")) {
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory().size() > 0) {
-                            int damageDealt = (rand.nextInt(attackDamage) * Gun.HANDGUN.getDamage()) / 2;
+                            int damageDealt = ((rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage())/2);
                             if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
                                 zombieHealth -= damageDealt;
                                 System.out.println("You shoot the Shambler and do " + damageDealt + " damage.");
@@ -94,12 +98,12 @@ public class Main {
                             System.out.println("You don't have a gun!");
                         }
                     } else if (attackInput.equals("2")) {
-                        int damageDealt = (rand.nextInt(attackDamage) * Melee.AXE.getDamage()) / 2;
+                        int damageDealt = ((rand.nextInt(attackDamage) + Melee.AXE.getDamage())/2);
                         if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
                             zombieHealth -= damageDealt;
                             System.out.println("You strike the Shambler for " + damageDealt + " damage.");
                         } else {
-                            System.out.println();
+                            System.out.println("You take a swing and miss!");
                         }
                     } else {
                         System.out.println("Invalid command.");
@@ -147,10 +151,6 @@ public class Main {
                 } else {
                     System.out.println("Invalid command.");
                 }
-            }
-            if (health < 1) {
-                System.out.println("You limp back to your hut, will you be next to join the ranks of the infected?");
-                break;
             }
             System.out.println("------------------------------");
             System.out.println("The Shambler was defeated!");
