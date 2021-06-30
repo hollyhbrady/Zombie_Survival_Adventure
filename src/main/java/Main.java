@@ -16,7 +16,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         Random rand = new Random();
 
-        Survivor survivor = new Survivor("Holly", SurvivorLevel.OUTCASTONE);
+        Survivor survivor = new Survivor("Holly", SurvivorLevel.OUTCASTONE, 0);
         Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
         
         int health = survivor.survivorLevel.getHP();
@@ -25,8 +25,9 @@ public class Main {
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
         survivor.addFoodToInventory(Food.IRNBRU);
-
         survivor.addMeleeToInventory(Melee.AXE);
+        survivor.addGunToInventory(Gun.HANDGUN);
+        survivor.setAmmoInventory(5);
 
         int foodDropChance = 40;
 
@@ -39,7 +40,7 @@ public class Main {
         System.out.println("Welcome to the survival zone!");
         System.out.println("You now have " + survivor.getFoodInventory().size() + " food items to restore health.");
         System.out.println("You have " + survivor.getMeleeInventory().size() + " close quarter weapons.");
-        System.out.println("You have " + survivor.getGunInventory().size() + " guns and " + survivor.getAmmoInventory().size() + " bullets.");
+        System.out.println("You have " + survivor.getGunInventory().size() + " guns and " + survivor.getAmmoInventory() + " bullets.");
         System.out.println("Proceed wisely");
 
         GAME:
@@ -90,12 +91,12 @@ public class Main {
                     String attackInput = in.nextLine();
 
                     if (attackInput.equals("1")) {
-                        if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory().size() > 0) {
+                        if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
                             int damageDealt = (rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage());
                             if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
                                 zombieHealth -= damageDealt;
                                 System.out.println("You shoot the " + zombie.getName() + " and do " + damageDealt + " damage.");
-                                System.out.println("You have " + survivor.getAmmoInventory().size() + " bullets left");
+                                System.out.println("You have " + survivor.getAmmoInventory() + " bullets left");
                             }  else {
                                 System.out.println("Your shot missed!");
                             }

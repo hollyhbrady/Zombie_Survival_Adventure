@@ -2,7 +2,6 @@ package models;
 
 import models.loot.Food;
 import models.loot.Gun;
-import models.loot.Loot;
 import models.loot.Melee;
 
 import java.util.ArrayList;
@@ -12,16 +11,16 @@ public class Survivor {
 
     private Long id;
     private String name;
-    private List<Loot> ammoInventory;
+    private int ammoInventory;
     private List<Food> foodInventory;
     private List<Gun> gunInventory;
     private List<Melee> meleeInventory;
     public SurvivorLevel survivorLevel;
 
-    public Survivor(String name, SurvivorLevel survivorLevel) {
+    public Survivor(String name, SurvivorLevel survivorLevel, int ammoInventory) {
         this.name = name;
         this.survivorLevel = survivorLevel;
-        this.ammoInventory = new ArrayList<>();
+        this.ammoInventory = ammoInventory;
         this.foodInventory = new ArrayList<>();
         this.gunInventory = new ArrayList<>();
         this.meleeInventory = new ArrayList<>();
@@ -54,11 +53,11 @@ public class Survivor {
         this.survivorLevel = survivorLevel;
     }
 
-    public List<Loot> getAmmoInventory() {
+    public int getAmmoInventory() {
         return ammoInventory;
     }
 
-    public void setAmmoInventory(List<Loot> ammoInventory) {
+    public void setAmmoInventory(int ammoInventory) {
         this.ammoInventory = ammoInventory;
     }
 
@@ -92,5 +91,8 @@ public class Survivor {
 
     public void addMeleeToInventory(Melee melee) {
         this.meleeInventory.add(melee);
+    }
+
+    public void addGunToInventory(Gun handgun) {
     }
 }
