@@ -2,7 +2,6 @@ import models.Survivor;
 import models.SurvivorLevel;
 import models.ZombieLevel;
 import models.loot.Food;
-import models.loot.Loot;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -22,9 +21,6 @@ public class Main {
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
         survivor.addFoodToInventory(Food.IRNBRU);
-        int numFood = 1;
-        int numDrink = 1;
-        int numSnack = 1;
 
         int foodDropChance = 40;
         int snackDropChance = 30;
@@ -92,8 +88,6 @@ public class Main {
                     }
 
 
-
-
                     zombieHealth -= damageDealt;
 
                     if (health < 1) {
@@ -103,28 +97,28 @@ public class Main {
                     System.out.println("You strike the Shambler for " + damageDealt + " damage.");
 
                 } else if (input.equals("2")) {
-                    if (numFood > 0) {
+                    if (survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
                         health += Food.BAKEDBEANS.getRestore();
                         if (health > SurvivorLevel.OUTCASTONE.getHP()) {
                             health = SurvivorLevel.OUTCASTONE.getHP();
                         }
-                        numFood--;
+                        survivor.getFoodInventory().remove(Food.BAKEDBEANS);
                         healthRestoresUsed++;
                         System.out.println("You health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
-                    } else if (numSnack > 0) {
+                    } else if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
                         health += Food.DRIEDFRUIT.getRestore();
                         if (health > SurvivorLevel.OUTCASTONE.getHP()) {
                             health = SurvivorLevel.OUTCASTONE.getHP();
                         }
-                        numSnack--;
+                        survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
                         healthRestoresUsed++;
                         System.out.println("You health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
-                    } else if (numDrink > 0) {
+                    } else if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
                         health += Food.IRNBRU.getRestore();
                         if (health > SurvivorLevel.OUTCASTONE.getHP()) {
                             health = SurvivorLevel.OUTCASTONE.getHP();
                         }
-                        numDrink--;
+                        survivor.getFoodInventory().remove(Food.IRNBRU);
                         healthRestoresUsed++;
                         System.out.println("You health has been restored by " + Food.IRNBRU.getRestore() + ".");
                     } else {
@@ -150,19 +144,19 @@ public class Main {
             System.out.println("The Shambler was defeated!");
             zombiesDefeated++;
             if (rand.nextInt(100) < foodDropChance) {
-                numFood++;
+                survivor.addFoodToInventory(Food.BAKEDBEANS);
                 System.out.println("It dropped a can of baked beans!");
-                System.out.println("You now have " + numFood + " cans of beans!");
+                System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
             }
             if (rand.nextInt(100) < snackDropChance) {
-                numSnack++;
+                survivor.addFoodToInventory(Food.DRIEDFRUIT);
                 System.out.println("It dropped a pack of dried fruit!");
-                System.out.println("You now have " + numSnack + " packs!");
+                System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
             }
             if (rand.nextInt(100) < drinkDropChance) {
-                numDrink++;
-                System.out.println("It dropped a can of Irn-Bru!!");
-                System.out.println("You now have " + numDrink + " cans. If only they had nutritional value...");
+                survivor.addFoodToInventory(Food.IRNBRU);
+                System.out.println("It dropped a can of Irn-Bru! If only they had nutritional value...");
+                System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
             }
             System.out.println("------------------------------");
             System.out.println("What would you like to do?");
