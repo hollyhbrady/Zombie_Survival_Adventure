@@ -33,20 +33,31 @@ public class GameLogic {
         return health;
     }
 
-    public static int getSurvivorAttackDamage(Survivor survivor) {
-        int attackDamage = survivor.survivorLevel.getMaxStrength();
-        return attackDamage;
-    }
+//    public static int getSurvivorAttackDamage(Survivor survivor) {
+//        int attackDamage = survivor.survivorLevel.getMaxStrength();
+//        return attackDamage;
+//    }
+//
+//    public static int getZombieHealth(Zombie zombie) {
+//        Random rand = new Random();
+//        int zombieHealth = rand.nextInt(zombie.getZLevel().getHP());
+//        if (zombieHealth < 1) {
+//            zombieHealth = 1;
+//        }
+//        return zombieHealth;
+//    }
 
     public static int survivorAttackWithGun(Survivor survivor, Zombie zombie) {
         Random rand = new Random();
+//        getZombieHealth(zombie);
         int zombieHealth = rand.nextInt(zombie.getZLevel().getHP());
         if (zombieHealth < 1) {
             zombieHealth = 1;
         }
 
         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
-            GameLogic.getSurvivorAttackDamage(survivor);
+//            GameLogic.getSurvivorAttackDamage(survivor);
+            int attackDamage = survivor.survivorLevel.getMaxStrength();
             int damageDealt = (rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage());
             if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
                 zombieHealth -= damageDealt;
