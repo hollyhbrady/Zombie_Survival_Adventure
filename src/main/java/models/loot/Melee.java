@@ -2,8 +2,7 @@ package models.loot;
 
 public enum Melee {
 
-    AXE(8, 50),
-    BAT(5, 30);
+    KNIFE(5, 50);
 
     private int damage;
     private int uses;

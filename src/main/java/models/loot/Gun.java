@@ -2,8 +2,8 @@ package models.loot;
 
 public enum Gun {
 
-    HANDGUN(15, 30, 6),
-    RIFLE(20, 20, 2);
+    HANDGUN(11, 30, 6),
+    RIFLE(25, 20, 2);
 
     private int damage;
     private int uses;
