@@ -13,39 +13,23 @@ public class GameLogic {
 
     Random rand = new Random();
 
-    Survivor survivor = new Survivor("Holly", SurvivorLevel.OUTCASTONE, 0);
+    Survivor survivor = new Survivor("Holly", 0, SurvivorLevel.OUTCASTONE, 50);
     Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
 
-    int health = survivor.survivorLevel.getHP();
     int attackDamage = survivor.survivorLevel.getMaxStrength();
 
     boolean running = true;
 
     public static int zombieAttack(Zombie zombie, Survivor survivor){
         Random rand = new Random();
-        int health = survivor.survivorLevel.getHP();
         if (rand.nextInt(100) < zombie.getZLevel().getAccuracy()) {
             int damageTaken = rand.nextInt(zombie.getZLevel().getMaxStrength());
-            health -= damageTaken;
+            survivor.setSurvivorHealth(survivor.getSurvivorHealth() - damageTaken);
             System.out.println("You receive " + damageTaken + " damage from the " + zombie.getName());
         } else {
             System.out.println("The " + zombie.getName() + " missed you! That is one seriously decomposing dude.");
         }
-        return health;
-    }
-
-    public static int getSurvivorHealth(Survivor survivor) {
-        int survivorHealth = survivor.survivorLevel.getHP();
-        return survivorHealth;
-    }
-
-    public static void increaseSurvivorHealth(Survivor survivor, int adjust) {
-        int survivorHealth = getSurvivorHealth(survivor) + adjust;
-    }
-
-    public void decreaseSurvivorHealth(Survivor survivor, int adjust) {
-        int survivorHealth = getSurvivorHealth(survivor) - adjust;
-
+        return survivor.getSurvivorHealth();
     }
 
     public static int whileZombieIsAlive(Zombie zombie, Survivor survivor){
@@ -58,8 +42,6 @@ public class GameLogic {
             System.out.println("------------------------------");
 
             // LEVEL 1 ZOMBIES
-//            Enum zombie = ZombieLevel.ONE;
-//            int zombieHealth = ZombieLevel.ONE.getHP();
             int zombieHealth = rand.nextInt(zombie.getZLevel().getHP());
             if (zombieHealth < 1) {
                 zombieHealth = 1;
@@ -71,11 +53,8 @@ public class GameLogic {
 
             System.out.println("A " + zombie.getName() + " has appeared!");
 
-//            getSurvivorHealth(survivor);
-//            int survivorHealth = survivor.survivorLevel.getHP();
-
             while (zombieHealth > 0) {
-                System.out.println("Your HP: " + getSurvivorHealth(survivor));
+                System.out.println("Your HP: " + survivor.getSurvivorHealth());
                 System.out.println(zombie.getName() + "'s HP: " + zombieHealth);
                 System.out.println("What would you like to do?");
                 System.out.println("1. Attack");
@@ -86,7 +65,6 @@ public class GameLogic {
 
                 if (input.equals("1")) {
                     zombieAttack(zombie, survivor);
-//
                     System.out.println("How are you going to fight?");
                     System.out.println("1. Use my gun");
                     System.out.println("2. Close quarters weapon");
@@ -94,7 +72,6 @@ public class GameLogic {
 
                     int attackDamage = survivor.survivorLevel.getMaxStrength();
                     String attackInput = in.nextLine();
-
 
                     if (attackInput.equals("1")) {
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
@@ -134,34 +111,34 @@ public class GameLogic {
                     } else {
                         System.out.println("Invalid command.");
                     }
-                    if (getSurvivorHealth(survivor) < 1) {
+                    if (survivor.getSurvivorHealth() < 1) {
                         System.out.println("You have taken too much damage to go on.");
                         break;
                     }
                 } else if (input.equals("2")) {
                     if (survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
-                         health += Food.BAKEDBEANS.getRestore();
-                        if (health > SurvivorLevel.OUTCASTONE.getHP()) {
-                            health = SurvivorLevel.OUTCASTONE.getHP();
+                        survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.BAKEDBEANS.getRestore());
+                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCASTONE.getHP()) {
+                            survivor.setSurvivorHealthMax();
                         }
                         survivor.getFoodInventory().remove(Food.BAKEDBEANS);
-                        healthRestoresUsed++;
+//                        healthRestoresUsed++;
                         System.out.println("Your health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
                     } else if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
-                        health += Food.DRIEDFRUIT.getRestore();
-                        if (health > SurvivorLevel.OUTCASTONE.getHP()) {
-                            health = SurvivorLevel.OUTCASTONE.getHP();
+                        survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.DRIEDFRUIT.getRestore());
+                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCASTONE.getHP()) {
+                            survivor.setSurvivorHealthMax();
                         }
                         survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
-                        healthRestoresUsed++;
+//                        healthRestoresUsed++;
                         System.out.println("Your health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
                     } else if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
-                        health += Food.IRNBRU.getRestore();
-                        if (health > SurvivorLevel.OUTCASTONE.getHP()) {
-                            health = SurvivorLevel.OUTCASTONE.getHP();
+                        survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.IRNBRU.getRestore());
+                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCASTONE.getHP()) {
+                            survivor.setSurvivorHealthMax();
                         }
                         survivor.getFoodInventory().remove(Food.IRNBRU);
-                        healthRestoresUsed++;
+//                        healthRestoresUsed++;
                         System.out.println("Your health has been restored by " + Food.IRNBRU.getRestore() + ".");
                     } else {
                         System.out.println("You have nothing left to eat!");
@@ -169,7 +146,7 @@ public class GameLogic {
                 } else if (input.equals("3")) {
                     if (zombieSpeed < SurvivorLevel.OUTCASTONE.getSpeed()) {
                         System.out.println("You run away from the " + zombie.getName() + "!");
-                        zombieFledCount++;
+//                        zombieFledCount++;
                         continue GAME;
                     } else {
                         System.out.println("Cannot escape! Are you going to be zombie dinner!?");
@@ -179,7 +156,7 @@ public class GameLogic {
                 }
             }
         }
-        return health;
+        return survivor.getSurvivorHealth();
 
     }
 
