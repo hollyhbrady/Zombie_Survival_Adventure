@@ -26,6 +26,10 @@ public class GameLogic {
         } else {
             System.out.println("The " + zombie.getName() + " missed you! That is one seriously decomposing dude.");
         }
+        System.out.println("How are you going to fight?");
+        System.out.println("1. Use my gun");
+        System.out.println("2. Close quarters weapon");
+        System.out.println("3. My fists");
         return health;
     }
 
