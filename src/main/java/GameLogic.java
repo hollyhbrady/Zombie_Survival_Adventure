@@ -22,6 +22,7 @@ public class GameLogic {
 
     public static int zombieAttack(Zombie zombie, Survivor survivor){
         Random rand = new Random();
+
         if (rand.nextInt(100) < zombie.getZLevel().getAccuracy()) {
             int damageTaken = rand.nextInt(zombie.getZLevel().getMaxStrength());
             survivor.setSurvivorHealth(survivor.getSurvivorHealth() - damageTaken);
@@ -112,6 +113,8 @@ public class GameLogic {
             if (zombieSpeed < 1) {
                 zombieSpeed = 1;
             }
+            int attackDamage = survivor.survivorLevel.getMaxStrength();
+
             if (survivor.getSurvivorHealth() < 1) {
                 System.out.println("You have taken too much damage to go on.");
                 break;
@@ -137,8 +140,6 @@ public class GameLogic {
                         break;
                     }
 
-
-                    int attackDamage = survivor.survivorLevel.getMaxStrength();
                     String attackInput = in.nextLine();
 
                     if (attackInput.equals("1")) {
