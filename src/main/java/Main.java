@@ -13,16 +13,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
-        Random rand = new Random();
-
         Survivor survivor = new Survivor("Holly", 0, SurvivorLevel.OUTCASTONE, 50);
         Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
 
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
         survivor.addFoodToInventory(Food.IRNBRU);
-        survivor.addMeleeToInventory(Melee.AXE);
+        survivor.addMeleeToInventory(Melee.KNIFE);
         survivor.addGunToInventory(Gun.HANDGUN);
         survivor.setAmmoInventory(5);
 
@@ -33,9 +30,9 @@ public class Main {
 
         System.out.println("Welcome to the survival zone!");
         System.out.println("You now have " + survivor.getFoodInventory().size() + " food items to restore health.");
-        System.out.println("You have " + survivor.getMeleeInventory().size() + " close quarter weapon(s).");
-        System.out.println("You have " + survivor.getGunInventory().size() + " gun(s) and " + survivor.getAmmoInventory() + " bullets.");
-        System.out.println("Proceed wisely");
+        System.out.println("You have " + survivor.getMeleeInventory().size() + " knife.");
+        System.out.println("You have " + survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
+        System.out.println("Proceed wisely.");
 
 
         GameLogic.fightZombie(zombie, survivor);
