@@ -96,4 +96,6 @@ public class Survivor {
     public void addGunToInventory(Gun gun) {
         this.gunInventory.add(gun);
     }
+
+
 }

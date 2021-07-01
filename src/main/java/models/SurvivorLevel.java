@@ -15,14 +15,14 @@ public enum SurvivorLevel {
     OUTCASTTWO(75, 80, 90,25, 15),
     OUTCASTTHREE(100, 90, 95,30, 20);
 
-    private int HP;
+    private int maxHP;
     private double gunAccuracy;
     private double meleeAccuracy;
     private int strength;
     private int speed;
 
-    SurvivorLevel(int HP, double gunAccuracy, double meleeAccuracy, int strength, int speed) {
-        this.HP = HP;
+    SurvivorLevel(int maxHP, double gunAccuracy, double meleeAccuracy, int strength, int speed) {
+        this.maxHP = maxHP;
         this.gunAccuracy = gunAccuracy;
         this.meleeAccuracy = meleeAccuracy;
         this.strength = strength;
@@ -30,7 +30,7 @@ public enum SurvivorLevel {
     }
 
     public int getHP() {
-        return HP;
+        return maxHP;
     }
 
     public double getGunAccuracy() {
