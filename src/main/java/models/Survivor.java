@@ -16,14 +16,16 @@ public class Survivor {
     private List<Gun> gunInventory;
     private List<Melee> meleeInventory;
     public SurvivorLevel survivorLevel;
+    public int survivorHealth;
 
-    public Survivor(String name, SurvivorLevel survivorLevel, int ammoInventory) {
+    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth) {
         this.name = name;
         this.survivorLevel = survivorLevel;
         this.ammoInventory = ammoInventory;
         this.foodInventory = new ArrayList<>();
         this.gunInventory = new ArrayList<>();
         this.meleeInventory = new ArrayList<>();
+        this.survivorHealth = 50;
     }
 
     public Survivor() {
@@ -85,6 +87,18 @@ public class Survivor {
         this.meleeInventory = meleeInventory;
     }
 
+    public int getSurvivorHealth() {
+        return survivorHealth;
+    }
+
+    public void setSurvivorHealth(int survivorHealth) {
+        this.survivorHealth = survivorHealth;
+    }
+
+    public void setSurvivorHealthMax() {
+        this.survivorHealth = survivorLevel.getHP();
+    }
+
     public void addFoodToInventory(Food food) {
         this.foodInventory.add(food);
     }
@@ -96,6 +110,5 @@ public class Survivor {
     public void addGunToInventory(Gun gun) {
         this.gunInventory.add(gun);
     }
-
 
 }
