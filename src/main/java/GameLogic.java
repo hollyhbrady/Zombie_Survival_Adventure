@@ -37,43 +37,6 @@ public class GameLogic {
         return survivor.getSurvivorHealth();
     }
 
-    public static void foodDrop(Zombie zombie, Survivor survivor) {
-        Random rand = new Random();
-        int foodDropChance = 40;
-
-        System.out.println("------------------------------");
-        System.out.println("The " + zombie.getName() + " was defeated!");
-//        zombiesDefeated++;
-        if (rand.nextInt(100) < foodDropChance) {
-            survivor.addFoodToInventory(Food.BAKEDBEANS);
-            System.out.println("It dropped a can of baked beans!");
-            if (survivor.getFoodInventory().size() > 4){
-                System.out.println("'Some variety would be nice, but you can't be fussy at times like these.'");
-            } else {
-                System.out.println("'Protein! This should help me get through til tomorrow at least....'");
-            }
-            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
-        } else if (rand.nextInt(100) < foodDropChance) {
-            survivor.addFoodToInventory(Food.DRIEDFRUIT);
-            System.out.println("It dropped a pack of dried fruit!");
-            if (survivor.getFoodInventory().size() > 4){
-                System.out.println("'Great more apricots, I'm sure I can pick of the uh... undead bits.'");
-            } else {
-                System.out.println("'I better make these last, I don't want a repeat of last time I ate the whole bag all at once.'");
-            }
-            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
-        } else if (rand.nextInt(100) < foodDropChance) {
-            survivor.addFoodToInventory(Food.IRNBRU);
-            System.out.println("It dropped a can of ... Irn-Bru. Again!?");
-            if (survivor.getFoodInventory().size() > 4){
-                System.out.println("'I'll take what I can get! What I wouldn't give for a coke though...'");
-            } else {
-                System.out.println("'Oh well, beggars can't be choosers.'");
-            }
-            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
-        }
-    }
-
     public static void afterZombieFight() {
         System.out.println("------------------------------");
         System.out.println("What would you like to do?");
@@ -222,9 +185,38 @@ public class GameLogic {
                 }
             }
         }
-//        if (zombieHealth < 0) {
-//            foodDrop(zombie, survivor);
-//        }
+        System.out.println("------------------------------");
+        System.out.println("The " + zombie.getName() + " was defeated!");
+//        zombiesDefeated++;
+        int foodDropChance = 40;
+        if (rand.nextInt(100) < foodDropChance) {
+            survivor.addFoodToInventory(Food.BAKEDBEANS);
+            System.out.println("It dropped a can of baked beans!");
+            if (survivor.getFoodInventory().size() > 4){
+                System.out.println("'Some variety would be nice, but you can't be fussy at times like these.'");
+            } else {
+                System.out.println("'Protein! This should help me get through til tomorrow at least....'");
+            }
+            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+        } else if (rand.nextInt(100) < foodDropChance) {
+            survivor.addFoodToInventory(Food.DRIEDFRUIT);
+            System.out.println("It dropped a pack of dried fruit!");
+            if (survivor.getFoodInventory().size() > 4){
+                System.out.println("'Great more apricots, I'm sure I can pick of the uh... undead bits.'");
+            } else {
+                System.out.println("'I better make these last, I don't want a repeat of last time I ate the whole bag all at once.'");
+            }
+            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+        } else if (rand.nextInt(100) < foodDropChance) {
+            survivor.addFoodToInventory(Food.IRNBRU);
+            System.out.println("It dropped a can of ... Irn-Bru. Again!?");
+            if (survivor.getFoodInventory().size() > 4){
+                System.out.println("'I'll take what I can get! What I wouldn't give for a coke though...'");
+            } else {
+                System.out.println("'Oh well, beggars can't be choosers.'");
+            }
+            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+        }
         afterZombieFight();
         return survivor.getSurvivorHealth();
     }
