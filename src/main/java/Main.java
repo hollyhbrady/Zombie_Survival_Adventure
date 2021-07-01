@@ -40,7 +40,7 @@ public class Main {
         System.out.println("Welcome to the survival zone!");
         System.out.println("You now have " + survivor.getFoodInventory().size() + " food items to restore health.");
         System.out.println("You have " + survivor.getMeleeInventory().size() + " close quarter weapons.");
-        System.out.println("You have " + survivor.getGunInventory().size() + " guns and " + survivor.getAmmoInventory() + " bullets.");
+        System.out.println("You have " + survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
         System.out.println("Proceed wisely");
 
         GAME:
@@ -65,7 +65,7 @@ public class Main {
                 System.out.println("Your HP: " + health);
                 System.out.println(zombie.getName() + "'s HP: " + zombieHealth);
                 System.out.println("What would you like to do?");
-                System.out.println("1. Attack");
+                System.out.println("1. Fight");
                 System.out.println("2. Restore energy");
                 System.out.println("3. Run!");
 
