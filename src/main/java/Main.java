@@ -41,7 +41,7 @@ public class Main {
         System.out.println("You now have " + survivor.getFoodInventory().size() + " food items to restore health.");
         System.out.println("You have " + survivor.getMeleeInventory().size() + " close quarter weapons.");
         System.out.println("You have " + survivor.getGunInventory().size() + " guns and " + survivor.getAmmoInventory() + " bullets.");
-        System.out.println("Proceed wisely");
+        System.out.println("Proceed wisely.");
 
         GAME:
         while(running) {
@@ -72,18 +72,18 @@ public class Main {
                 String input = in.nextLine();
 
                 if (input.equals("1")) {
-//                    GameLogic.zombieAttack(zombie, survivor);
-                    if (rand.nextInt(100) < zombie.getZLevel().getAccuracy()) {
-                        int damageTaken = rand.nextInt(zombie.getZLevel().getMaxStrength());
-                        health -= damageTaken;
-                        System.out.println("You receive " + damageTaken + " damage from the " + zombie.getName());
-                    } else {
-                        System.out.println("The " + zombie.getName() + " missed you! That is one seriously decomposing dude.");
-                    }
-                    if (health < 1) {
-                        System.out.println("You limp back to your hut, will you be next to join the ranks of the infected?");
-                        break;
-                    }
+                    GameLogic.zombieAttack(zombie, survivor, health);
+//                    if (rand.nextInt(100) < zombie.getZLevel().getAccuracy()) {
+//                        int damageTaken = rand.nextInt(zombie.getZLevel().getMaxStrength());
+//                        health -= damageTaken;
+//                        System.out.println("You receive " + damageTaken + " damage from the " + zombie.getName());
+//                    } else {
+//                        System.out.println("The " + zombie.getName() + " missed you! That is one seriously decomposing dude.");
+//                    }
+//                    if (health < 1) {
+//                        System.out.println("You limp back to your hut, will you be next to join the ranks of the infected?");
+//                        break;
+//                    }
                     System.out.println("How are you going to fight?");
                     System.out.println("1. Use my gun");
                     System.out.println("2. Close quarters weapon");

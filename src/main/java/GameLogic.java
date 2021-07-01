@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class GameLogic {
 
-    Random rand = new Random();
+//    Random rand = new Random();
 
     Survivor survivor = new Survivor("Holly", SurvivorLevel.OUTCASTONE, 0);
     Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
@@ -16,9 +16,9 @@ public class GameLogic {
     int attackDamage = survivor.survivorLevel.getMaxStrength();
 
 
-    public static int zombieAttack(Zombie zombie, Survivor survivor){
+    public static int zombieAttack(Zombie zombie, Survivor survivor, int health){
         Random rand = new Random();
-        int health = survivor.survivorLevel.getHP();
+//        int health = survivor.survivorLevel.getHP();
         if (rand.nextInt(100) < zombie.getZLevel().getAccuracy()) {
             int damageTaken = rand.nextInt(zombie.getZLevel().getMaxStrength());
             health -= damageTaken;
@@ -28,6 +28,10 @@ public class GameLogic {
         }
         return health;
     }
+
+
+
+
 
 
 
