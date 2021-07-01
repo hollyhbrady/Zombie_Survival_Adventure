@@ -20,7 +20,7 @@ public class Main {
         Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
         
         int health = survivor.survivorLevel.getHP();
-        int attackDamage = survivor.survivorLevel.getMaxStrength();
+//        int attackDamage = survivor.survivorLevel.getMaxStrength();
 
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
@@ -75,6 +75,7 @@ public class Main {
                     String attackInput = in.nextLine();
 
                     if (attackInput.equals("1")) {
+                        GameLogic.getSurvivorAttackDamage(survivor);
                         GameLogic.survivorAttackWithGun(survivor, zombie);
 //                        if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
 //                            int damageDealt = (rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage());
