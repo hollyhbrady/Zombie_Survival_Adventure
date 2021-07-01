@@ -26,20 +26,19 @@ public class Main {
         survivor.addGunToInventory(Gun.HANDGUN);
         survivor.setAmmoInventory(5);
 
+        // USE HASHMAP TO RETURN FROM whileZombieIsAlive
         int zombiesDefeated = 0;
         int healthRestoresUsed = 0;
         int zombieFledCount = 0;
 
-        boolean running = true;
-
         System.out.println("Welcome to the survival zone!");
         System.out.println("You now have " + survivor.getFoodInventory().size() + " food items to restore health.");
-        System.out.println("You have " + survivor.getMeleeInventory().size() + " close quarter weapons.");
-        System.out.println("You have " + survivor.getGunInventory().size() + " guns and " + survivor.getAmmoInventory() + " bullets.");
+        System.out.println("You have " + survivor.getMeleeInventory().size() + " close quarter weapon(s).");
+        System.out.println("You have " + survivor.getGunInventory().size() + " gun(s) and " + survivor.getAmmoInventory() + " bullets.");
         System.out.println("Proceed wisely");
 
 
-        GameLogic.whileZombieIsAlive(zombie, survivor);
+        GameLogic.fightZombie(zombie, survivor);
 
 
 //        System.out.println("You defeated " + zombiesDefeated + " Zombies, fled from " + zombieFledCount + " and used " + healthRestoresUsed + " HP restores.");

@@ -29,6 +29,10 @@ public class GameLogic {
         } else {
             System.out.println("The " + zombie.getName() + " missed you! That is one seriously decomposing dude.");
         }
+        System.out.println("How are you going to fight?");
+        System.out.println("1. Use my gun");
+        System.out.println("2. Close quarters weapon");
+        System.out.println("3. My fists");
         return survivor.getSurvivorHealth();
     }
 
@@ -91,7 +95,7 @@ public class GameLogic {
         }
     }
 
-    public static int whileZombieIsAlive(Zombie zombie, Survivor survivor){
+    public static int fightZombie (Zombie zombie, Survivor survivor){
         boolean running = true;
         Random rand = new Random();
         Scanner in = new Scanner(System.in);
@@ -132,10 +136,7 @@ public class GameLogic {
                         System.out.println("You have taken too much damage to go on.");
                         break;
                     }
-                    System.out.println("How are you going to fight?");
-                    System.out.println("1. Use my gun");
-                    System.out.println("2. Close quarters weapon");
-                    System.out.println("3. My fists");
+
 
                     int attackDamage = survivor.survivorLevel.getMaxStrength();
                     String attackInput = in.nextLine();
