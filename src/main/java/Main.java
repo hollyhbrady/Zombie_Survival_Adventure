@@ -59,9 +59,9 @@ public class Main {
 
             System.out.println("A " + zombie.getName() + " has appeared!");
 
-            GameLogic.getZombieHealth(zombie);
+//            GameLogic.getZombieHealth(zombie);
 
-            GameLogic.whileZombieIsAlive(zombieHealth);
+            GameLogic.whileZombieIsAlive(survivor, zombie);
 //            while (zombieHealth > 0) {
 //                System.out.println("Your HP: " + health);
 //                System.out.println(zombie.getName() + "'s HP: " + zombieHealth);

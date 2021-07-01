@@ -94,7 +94,8 @@ public class GameLogic {
         }
     }
 
-    public static int whileZombieIsAlive(int zombieHealth) {
+    public static int whileZombieIsAlive(Survivor survivor, Zombie zombie) {
+        GameLogic.getZombieHealth(zombie);
         while (zombieHealth > 0) {
             System.out.println("Your HP: " + health);
             System.out.println(zombie.getName() + "'s HP: " + zombieHealth);
