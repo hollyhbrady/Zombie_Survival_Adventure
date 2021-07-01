@@ -1,7 +1,6 @@
 import models.Survivor;
 import models.SurvivorLevel;
 import models.Zombie;
-import models.ZombieLevel;
 import models.loot.Food;
 import models.loot.Gun;
 import models.loot.Melee;
@@ -19,16 +18,10 @@ public class GameLogic {
             survivor.setSurvivorHealth(survivor.getSurvivorHealth() - damageTaken);
             System.out.println("You receive " + damageTaken + " damage from the " + zombie.getName());
         } else {
-            System.out.println("The " + zombie.getName() + " missed you! That is one seriously decomposing dude.");
+            System.out.println("The " + zombie.getName() + " missed you!");
+            System.out.println("That is one seriously decomposed Z-head.");
         }
         return survivor.getSurvivorHealth();
-    }
-
-    public static void checkSurvivorHealth(Survivor survivor) {
-        if (survivor.getSurvivorHealth() < 1) {
-            System.out.println("You have taken too much damage to go on.");
-//            break;
-        }
     }
 
 //    public static void afterZombieFight() {
@@ -88,7 +81,7 @@ public class GameLogic {
                     System.out.println("How are you going to fight?");
                     System.out.println("1. Use my gun");
                     System.out.println("2. With my knife");
-                    System.out.println("3. My fists");
+                    System.out.println("3. I have no weapons left!");
 
 //                    if (survivor.getSurvivorHealth() < 1) {
 //                        System.out.println("You have taken too much damage to go on.");
@@ -99,16 +92,20 @@ public class GameLogic {
 
                     if (attackInput.equals("1")) {
                         zombieAttack(zombie, survivor);
-                        checkSurvivorHealth(survivor);
+                        if (survivor.getSurvivorHealth() < 1) {
+                            System.out.println("You have taken too much damage to go on.");
+                            break;
+                        }
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
+                            survivor.setAmmoInventory(survivor.getAmmoInventory() - 1);
                             int damageDealt = (rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage());
                             if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
                                 zombieHealth -= damageDealt;
                                 System.out.println("You shoot the " + zombie.getName() + " and do " + damageDealt + " damage.");
-                                System.out.println("You have " + survivor.getAmmoInventory() + " bullets left");
                             } else {
                                 System.out.println("Your shot missed!");
                             }
+                            System.out.println("You have " + survivor.getAmmoInventory() + " bullets left");
                         } else if (survivor.getGunInventory().size() > 0) {
                             System.out.println("You don't have any bullets left!");
                         } else {
@@ -116,7 +113,10 @@ public class GameLogic {
                         }
                     } else if (attackInput.equals("2")) {
                         zombieAttack(zombie, survivor);
-                        checkSurvivorHealth(survivor);
+                        if (survivor.getSurvivorHealth() < 1) {
+                            System.out.println("You have taken too much damage to go on.");
+                            break;
+                        }
                         if (survivor.getMeleeInventory().size() > 0) {
                             int damageDealt = (rand.nextInt(attackDamage) + Melee.KNIFE.getDamage());
                             if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
@@ -130,7 +130,10 @@ public class GameLogic {
                         }
                     } else if (attackInput.equals("3")) {
                         zombieAttack(zombie, survivor);
-                        checkSurvivorHealth(survivor);
+                        if (survivor.getSurvivorHealth() < 1) {
+                            System.out.println("You have taken too much damage to go on.");
+                            break;
+                        }
                         int damageDealt = rand.nextInt(attackDamage);
                         if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
                             zombieHealth -= damageDealt;
@@ -173,8 +176,8 @@ public class GameLogic {
                     if (zombieSpeed < SurvivorLevel.OUTCASTONE.getSpeed()) {
                         System.out.println("You run away from the " + zombie.getName() + "!");
 //                        zombieFledCount++;
-//                        continue GAME;
-                        break GAME;
+                        continue GAME;
+//                        break;
                     } else {
                         System.out.println("Cannot escape! Are you going to be zombie dinner!?");
                     }
@@ -182,44 +185,49 @@ public class GameLogic {
                     System.out.println("Invalid command.");
                 }
             }
-        }
-        System.out.println("------------------------------");
-        System.out.println("The " + zombie.getName() + " was defeated!");
+            System.out.println("------------------------------");
+            System.out.println("The " + zombie.getName() + " was defeated!");
 //        zombiesDefeated++;
-        int foodDropChance = 40;
-        if (rand.nextInt(100) < foodDropChance) {
-            survivor.addFoodToInventory(Food.BAKEDBEANS);
-            System.out.println("It dropped a can of baked beans!");
-            if (survivor.getFoodInventory().size() > 4){
-                System.out.println("'Some variety would be nice, but you can't be fussy at times like these.'");
-            } else {
-                System.out.println("'Protein! This should help me get through til tomorrow at least....'");
+            int foodDropChance = 40;
+            if (rand.nextInt(100) < foodDropChance) {
+                survivor.addFoodToInventory(Food.BAKEDBEANS);
+                System.out.println("It dropped a can of baked beans!");
+                if (survivor.getFoodInventory().size() > 4){
+                    System.out.println("'Some variety would be nice, but you can't be fussy at times like these.'");
+                } else {
+                    System.out.println("'Protein! This should help me get through til tomorrow at least....'");
+                }
+                System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+            } else if (rand.nextInt(100) < foodDropChance) {
+                survivor.addFoodToInventory(Food.DRIEDFRUIT);
+                System.out.println("It dropped a pack of dried fruit!");
+                if (survivor.getFoodInventory().size() > 4){
+                    System.out.println("'Great more apricots, I'm sure I can pick of the uh... undead bits.'");
+                } else {
+                    System.out.println("'I better make these last, I don't want a repeat of last time I ate the whole bag all at once.'");
+                }
+                System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+            } else if (rand.nextInt(100) < foodDropChance) {
+                survivor.addFoodToInventory(Food.IRNBRU);
+                System.out.println("It dropped a can of ... Irn-Bru. Again!?");
+                if (survivor.getFoodInventory().size() > 4){
+                    System.out.println("'I'll take what I can get! What I wouldn't give for a coke though...'");
+                } else {
+                    System.out.println("'Oh well, beggars can't be choosers.'");
+                }
+                System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
             }
-            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
-        } else if (rand.nextInt(100) < foodDropChance) {
-            survivor.addFoodToInventory(Food.DRIEDFRUIT);
-            System.out.println("It dropped a pack of dried fruit!");
-            if (survivor.getFoodInventory().size() > 4){
-                System.out.println("'Great more apricots, I'm sure I can pick of the uh... undead bits.'");
-            } else {
-                System.out.println("'I better make these last, I don't want a repeat of last time I ate the whole bag all at once.'");
-            }
-            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
-        } else if (rand.nextInt(100) < foodDropChance) {
-            survivor.addFoodToInventory(Food.IRNBRU);
-            System.out.println("It dropped a can of ... Irn-Bru. Again!?");
-            if (survivor.getFoodInventory().size() > 4){
-                System.out.println("'I'll take what I can get! What I wouldn't give for a coke though...'");
-            } else {
-                System.out.println("'Oh well, beggars can't be choosers.'");
-            }
-            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
         }
+        return survivor.getSurvivorHealth();
+    }
+
+    public static void continueOrGoToHut() {
         System.out.println("------------------------------");
         System.out.println("What would you like to do?");
         System.out.println("1. Continue on your path");
         System.out.println("2. Return to hut");
 
+        Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
         while(!input.equals("1") && !input.equals("2")) {
@@ -231,9 +239,7 @@ public class GameLogic {
         }
         else if (input.equals("2")) {
             System.out.println("You return to your hut for a rest.");
-//            break;
         }
-        return survivor.getSurvivorHealth();
     }
 
 }
