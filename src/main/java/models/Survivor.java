@@ -93,6 +93,7 @@ public class Survivor {
         this.meleeInventory.add(melee);
     }
 
-    public void addGunToInventory(Gun handgun) {
+    public void addGunToInventory(Gun gun) {
+        this.gunInventory.add(gun);
     }
 }
