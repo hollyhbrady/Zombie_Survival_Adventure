@@ -2,6 +2,7 @@ import models.Survivor;
 import models.SurvivorLevel;
 import models.Zombie;
 import models.ZombieLevel;
+import models.loot.Gun;
 
 import java.util.Random;
 
@@ -33,7 +34,28 @@ public class GameLogic {
         return health;
     }
 
-
+    public static int survivorAttackWithGun(Survivor survivor, Zombie zombie) {
+        Random rand = new Random();
+        int zombieHealth = rand.nextInt(zombie.getZLevel().getHP());
+        if (zombieHealth < 1) {
+            zombieHealth = 1;
+        }
+        if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
+            int damageDealt = (rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage());
+            if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
+                zombieHealth -= damageDealt;
+                System.out.println("You shoot the " + zombie.getName() + " and do " + damageDealt + " damage.");
+                System.out.println("You have " + survivor.getAmmoInventory() + " bullets left");
+            }  else {
+                System.out.println("Your shot missed!");
+            }
+        } else if (survivor.getGunInventory().size() > 0) {
+            System.out.println("You don't have any bullets left!");
+        } else {
+            System.out.println("You don't have a gun!");
+        }
+        return zombieHealth;
+    }
 
 
 

@@ -48,12 +48,10 @@ public class Main {
             System.out.println("------------------------------");
 
             // LEVEL 1 ZOMBIES
-//            Enum zombie = ZombieLevel.ONE;
-//            int zombieHealth = ZombieLevel.ONE.getHP();
-            int zombieHealth = rand.nextInt(zombie.getZLevel().getHP());
-            if (zombieHealth < 1) {
-                zombieHealth = 1;
-            }
+//            int zombieHealth = rand.nextInt(zombie.getZLevel().getHP());
+//            if (zombieHealth < 1) {
+//                zombieHealth = 1;
+//            }
             int zombieSpeed = rand.nextInt(zombie.getZLevel().getSpeed());
             if (zombieSpeed < 1) {
                 zombieSpeed = 1;
@@ -77,20 +75,21 @@ public class Main {
                     String attackInput = in.nextLine();
 
                     if (attackInput.equals("1")) {
-                        if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
-                            int damageDealt = (rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage());
-                            if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
-                                zombieHealth -= damageDealt;
-                                System.out.println("You shoot the " + zombie.getName() + " and do " + damageDealt + " damage.");
-                                System.out.println("You have " + survivor.getAmmoInventory() + " bullets left");
-                            }  else {
-                                System.out.println("Your shot missed!");
-                            }
-                        } else if (survivor.getGunInventory().size() > 0) {
-                            System.out.println("You don't have any bullets left!");
-                        } else {
-                            System.out.println("You don't have a gun!");
-                        }
+                        GameLogic.survivorAttackWithGun(survivor, zombie);
+//                        if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
+//                            int damageDealt = (rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage());
+//                            if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
+//                                zombieHealth -= damageDealt;
+//                                System.out.println("You shoot the " + zombie.getName() + " and do " + damageDealt + " damage.");
+//                                System.out.println("You have " + survivor.getAmmoInventory() + " bullets left");
+//                            }  else {
+//                                System.out.println("Your shot missed!");
+//                            }
+//                        } else if (survivor.getGunInventory().size() > 0) {
+//                            System.out.println("You don't have any bullets left!");
+//                        } else {
+//                            System.out.println("You don't have a gun!");
+//                        }
                     } else if (attackInput.equals("2")) {
                         if (survivor.getMeleeInventory().size() > 0) {
                             int damageDealt = (rand.nextInt(attackDamage) + Melee.AXE.getDamage());
