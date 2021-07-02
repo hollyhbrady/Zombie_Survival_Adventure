@@ -217,6 +217,7 @@ public class GameLogic {
                 }
                 System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
             }
+            break;
         }
         return survivor.getSurvivorHealth();
     }
