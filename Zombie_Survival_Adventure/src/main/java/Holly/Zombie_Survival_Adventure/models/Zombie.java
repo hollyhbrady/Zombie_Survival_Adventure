@@ -1,12 +1,22 @@
-package models;
+package Holly.Zombie_Survival_Adventure.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "zombies")
 public class Zombie {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private ZombieLevel zLevel;
 
-    public Zombie( String name, ZombieLevel zLevel) {
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "level")
+    private models.ZombieLevel zLevel;
+
+    public Zombie( String name, models.ZombieLevel zLevel) {
         this.name = name;
         this.zLevel = zLevel;
     }
@@ -30,11 +40,11 @@ public class Zombie {
         this.name = name;
     }
 
-    public ZombieLevel getZLevel() {
+    public models.ZombieLevel getZLevel() {
         return zLevel;
     }
 
-    public void setZLevel(ZombieLevel zLevel) {
+    public void setZLevel(models.ZombieLevel zLevel) {
         this.zLevel = zLevel;
     }
 }
