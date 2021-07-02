@@ -1,13 +1,12 @@
-import models.Survivor;
+package Game;
+
+import Holly.Zombie_Survival_Adventure.models.Survivor;
 import models.SurvivorLevel;
 import models.Zombie;
 import models.ZombieLevel;
 import models.loot.Food;
 import models.loot.Gun;
 import models.loot.Melee;
-
-import java.util.Random;
-import java.util.Scanner;
 
 public class Main {
 

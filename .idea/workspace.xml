@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b92fa741-445b-4a35-bda0-9c734719534c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zombie_Survival_Adventure_Part_1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Survivor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/Survivor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/SurvivorLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/SurvivorLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/ZombieLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/ZombieLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/loot/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/loot/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/loot/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/loot/Gun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/loot/Loot.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/loot/Loot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/loot/Melee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/loot/Melee.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/ZombieLevel.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectId" id="1ucqfHawqVXjS3t5RtdpzVsjFbu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game.Main" />
+      <module name="Zombie_Survival_Adventure_Part_1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b92fa741-445b-4a35-bda0-9c734719534c" name="Default Changelist" comment="" />
+      <created>1624975326733</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624975326733</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit - some file structure">
+      <created>1624977981836</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1624977981836</updated>
+    </task>
+    <task id="LOCAL-00002" summary="new class Loot">
+      <created>1624978475395</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624978475395</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Survivor and Zombie classes set-up">
+      <created>1624979199341</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1624979199341</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ZombieLevels Enum done">
+      <created>1624979864537</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624979864537</updated>
+    </task>
+    <task id="LOCAL-00005" summary="SurvivorLevels Enum done">
+      <created>1624981140622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624981140623</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Game logic started">
+      <created>1624982963695</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624982963695</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Runner, Walker and Shambler done">
+      <created>1624983826535</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624983826535</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Game logic progress">
+      <created>1624985462947</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624985462947</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Loot class done">
+      <created>1624985575855</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624985575855</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Gun enum done">
+      <created>1624986190582</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624986190582</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Melee enum done">
+      <created>1624986277276</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1624986277276</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Food enum done">
+      <created>1624986397850</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1624986397850</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Loot updated">
+      <created>1624986413003</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1624986413003</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Game update - can attack, eat or flee">
+      <created>1624986813795</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1624986813795</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Game update - can pick up food from zombie">
+      <created>1624987379045</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1624987379045</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Game update - can pick up food from zombie">
+      <created>1624987537529</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1624987537529</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Edit zombie levels for playability">
+      <created>1625050000356</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1625050000357</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Use Z vs S speed when fleeing, and use Zombie accuracy">
+      <created>1625050044743</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1625050044743</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Refactor to use Survivor object">
+      <created>1625052654693</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1625052654693</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Refactor to use Survivor to have multiple inventories">
+      <created>1625053882259</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1625053882259</updated>
+    </task>
+    <task id="LOCAL-00021" summary="use food inventory in main">
+      <created>1625057520876</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1625057520876</updated>
+    </task>
+    <task id="LOCAL-00022" summary="edit food drop chance and if loop">
+      <created>1625060252197</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1625060252197</updated>
+    </task>
+    <task id="LOCAL-00023" summary="refactored to use weapon choice">
+      <created>1625062648526</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1625062648526</updated>
+    </task>
+    <task id="LOCAL-00024" summary="refactored to use weapon accuracies">
+      <created>1625063179343</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1625063179343</updated>
+    </task>
+    <task id="LOCAL-00025" summary="updated survivorLevel to work with checking accuracy">
+      <created>1625063209439</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1625063209439</updated>
+    </task>
+    <task id="LOCAL-00026" summary="refactor for Melee damage">
+      <created>1625064551783</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1625064551783</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Update melee and survivor for playability">
+      <created>1625064573000</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1625064573000</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Refactor to use zombie.getName() etc">
+      <created>1625065643492</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1625065643492</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Add attacking with no weapon option">
+      <created>1625066379380</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1625066379380</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added message to declare inventory at start of the game">
+      <created>1625066813330</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1625066813330</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Setting ammo and gun inventory">
+      <created>1625069641584</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1625069641584</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Refactoring Game code - end point Wednesday">
+      <created>1625072013913</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1625072013913</updated>
+    </task>
+    <task id="LOCAL-00033" summary="AddGunToInventory">
+      <created>1625135571624</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1625135571624</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Single responsibility - edit zombieAttack">
+      <created>1625138028444</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1625138028444</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Single responsibility - edit survivorAttackWithGun">
+      <created>1625138479068</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1625138479068</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Single responsibility - whileZombieIsAlive">
+      <created>1625140493296</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1625140493296</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Single responsibility - increaseSurvivorHealth and decreaseSurvivorHealth">
+      <created>1625149329218</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1625149329218</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Single responsibility - setSurvivorHealthMax">
+      <created>1625151746784</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1625151746784</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Single responsibility - whileZombieIsAlive debugged">
+      <created>1625151930905</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1625151930905</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Game running, foodDrop needs adjustment">
+      <created>1625157862583</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1625157862583</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add sout to ZombieAttack">
+      <created>1625158656793</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1625158656793</updated>
+    </task>
+    <task id="LOCAL-00042" summary="commit before move to main branch">
+      <created>1625159390993</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1625159390993</updated>
+    </task>
+    <task id="LOCAL-00043" summary="remove foodDrop function">
+      <created>1625159837966</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1625159837966</updated>
+    </task>
+    <task id="LOCAL-00044" summary="update weapons">
+      <created>1625161888584</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1625161888584</updated>
+    </task>
+    <task id="LOCAL-00045" summary="refactoring gameLogic">
+      <created>1625161905949</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1625161905949</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Corrected fightZombie and separated continueOrGoToHut(">
+      <created>1625166181976</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1625166181976</updated>
+    </task>
+    <task id="LOCAL-00047" summary="break introduced in fight zombie">
+      <created>1625221427685</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1625221427685</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Spring">
+      <created>1625223573919</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1625223573919</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="refactored to use weapon accuracies" />
+    <MESSAGE value="updated survivorLevel to work with checking accuracy" />
+    <MESSAGE value="refactor for Melee damage" />
+    <MESSAGE value="Update melee and survivor for playability" />
+    <MESSAGE value="Refactor to use zombie.getName() etc" />
+    <MESSAGE value="Add attacking with no weapon option" />
+    <MESSAGE value="Added message to declare inventory at start of the game" />
+    <MESSAGE value="Setting ammo and gun inventory" />
+    <MESSAGE value="Refactoring Game code - end point Wednesday" />
+    <MESSAGE value="AddGunToInventory" />
+    <MESSAGE value="Single responsibility - edit zombieAttack" />
+    <MESSAGE value="Single responsibility - edit survivorAttackWithGun" />
+    <MESSAGE value="Single responsibility - whileZombieIsAlive" />
+    <MESSAGE value="Single responsibility - increaseSurvivorHealth and decreaseSurvivorHealth" />
+    <MESSAGE value="Single responsibility - setSurvivorHealthMax" />
+    <MESSAGE value="Single responsibility - whileZombieIsAlive debugged" />
+    <MESSAGE value="Game running, foodDrop needs adjustment" />
+    <MESSAGE value="add sout to ZombieAttack" />
+    <MESSAGE value="commit before move to main branch" />
+    <MESSAGE value="remove foodDrop function" />
+    <MESSAGE value="update weapons" />
+    <MESSAGE value="refactoring gameLogic" />
+    <MESSAGE value="Corrected fightZombie and separated continueOrGoToHut(" />
+    <MESSAGE value="break introduced in fight zombie" />
+    <MESSAGE value="Spring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spring" />
+  </component>
+</project>

@@ -1,4 +1,4 @@
-package models;
+package Holly.Zombie_Survival_Adventure.models;
 
 import models.loot.Food;
 import models.loot.Gun;
@@ -15,10 +15,10 @@ public class Survivor {
     private List<Food> foodInventory;
     private List<Gun> gunInventory;
     private List<Melee> meleeInventory;
-    public SurvivorLevel survivorLevel;
+    public models.SurvivorLevel survivorLevel;
     public int survivorHealth;
 
-    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth) {
+    public Survivor(String name, int ammoInventory, models.SurvivorLevel survivorLevel, int survivorHealth) {
         this.name = name;
         this.survivorLevel = survivorLevel;
         this.ammoInventory = ammoInventory;
@@ -47,11 +47,11 @@ public class Survivor {
         this.name = name;
     }
 
-    public SurvivorLevel getSurvivorLevel() {
+    public models.SurvivorLevel getSurvivorLevel() {
         return survivorLevel;
     }
 
-    public void setsLevel(SurvivorLevel survivorLevel) {
+    public void setsLevel(models.SurvivorLevel survivorLevel) {
         this.survivorLevel = survivorLevel;
     }
 

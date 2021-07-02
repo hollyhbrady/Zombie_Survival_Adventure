@@ -1,4 +1,6 @@
-import models.Survivor;
+package Game;
+
+import Holly.Zombie_Survival_Adventure.models.Survivor;
 import models.SurvivorLevel;
 import models.Zombie;
 import models.loot.Food;
