@@ -4,18 +4,37 @@ import models.loot.Food;
 import models.loot.Gun;
 import models.loot.Melee;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "survivors")
 public class Survivor {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "ammo")
     private int ammoInventory;
+
+    @Column(name = "food")
     private List<Food> foodInventory;
+
+    @Column(name = "guns")
     private List<Gun> gunInventory;
+
+    @Column(name = "knives")
     private List<Melee> meleeInventory;
+
+    @Column(name = "level")
     public models.SurvivorLevel survivorLevel;
+
+    @Column(name = "max health")
     public int survivorHealth;
 
     public Survivor(String name, int ammoInventory, models.SurvivorLevel survivorLevel, int survivorHealth) {
