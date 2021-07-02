@@ -23,13 +23,13 @@ public class Survivor {
     private int ammoInventory;
 
     @Column(name = "food")
-    private List<Food> foodInventory;
+    private ArrayList<Food> foodInventory;
 
     @Column(name = "guns")
-    private List<Gun> gunInventory;
+    private ArrayList<Gun> gunInventory;
 
     @Column(name = "knives")
-    private List<Melee> meleeInventory;
+    private ArrayList<Melee> meleeInventory;
 
     @Column(name = "level")
     public models.SurvivorLevel survivorLevel;
@@ -86,7 +86,7 @@ public class Survivor {
         return foodInventory;
     }
 
-    public void setFoodInventory(List<Food> foodInventory) {
+    public void setFoodInventory(ArrayList<Food> foodInventory) {
         this.foodInventory = foodInventory;
     }
 
@@ -94,7 +94,7 @@ public class Survivor {
         return gunInventory;
     }
 
-    public void setGunInventory(List<Gun> gunInventory) {
+    public void setGunInventory(ArrayList<Gun> gunInventory) {
         this.gunInventory = gunInventory;
     }
 
@@ -102,7 +102,7 @@ public class Survivor {
         return meleeInventory;
     }
 
-    public void setMeleeInventory(List<Melee> meleeInventory) {
+    public void setMeleeInventory(ArrayList<Melee> meleeInventory) {
         this.meleeInventory = meleeInventory;
     }
 
