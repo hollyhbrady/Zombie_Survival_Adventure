@@ -14,6 +14,7 @@ public class Zombie {
     private String name;
 
     @Column(name = "level")
+    @Enumerated(value = EnumType.STRING)
     private models.ZombieLevel zLevel;
 
     public Zombie( String name, models.ZombieLevel zLevel) {

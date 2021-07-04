@@ -24,8 +24,16 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCASTONE, 50);
+        Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCASTONE, 0);
         survivorRepository.save(holly);
+
+        holly.setSurvivorHealthMax();
+
+        holly.addFoodToInventory(models.loot.Food.BAKEDBEANS);
+        holly.addFoodToInventory(models.loot.Food.DRIEDFRUIT);
+        holly.addFoodToInventory(models.loot.Food.IRNBRU);
+        holly.addMeleeToInventory(models.loot.Melee.KNIFE);
+        holly.addGunToInventory(models.loot.Gun.HANDGUN);
 
         Zombie shambler = new Zombie("Shambler", models.ZombieLevel.ONE);
         zombieRepository.save(shambler);
