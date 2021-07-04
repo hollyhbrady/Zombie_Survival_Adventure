@@ -1,4 +1,4 @@
-package models;
+package Holly.Zombie_Survival_Adventure.models;
 
 public enum SurvivorLevel {
 
@@ -27,6 +27,10 @@ public enum SurvivorLevel {
         this.meleeAccuracy = meleeAccuracy;
         this.strength = strength;
         this.speed = speed;
+    }
+
+    public String getSurvivorLevel() {
+        return this.name();
     }
 
     public int getHP() {
