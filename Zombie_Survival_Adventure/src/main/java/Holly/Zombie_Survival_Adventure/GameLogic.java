@@ -1,7 +1,7 @@
 package Holly.Zombie_Survival_Adventure;
 
 import Holly.Zombie_Survival_Adventure.models.Survivor;
-import models.SurvivorLevel;
+import Holly.Zombie_Survival_Adventure.models.SurvivorLevel;
 import Holly.Zombie_Survival_Adventure.models.Zombie;
 import models.loot.Food;
 import models.loot.Gun;

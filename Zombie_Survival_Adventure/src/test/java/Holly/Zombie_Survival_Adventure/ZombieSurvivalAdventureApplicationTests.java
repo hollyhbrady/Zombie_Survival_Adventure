@@ -4,7 +4,7 @@ import Holly.Zombie_Survival_Adventure.models.Survivor;
 import Holly.Zombie_Survival_Adventure.models.Zombie;
 import Holly.Zombie_Survival_Adventure.repositories.SurvivorRepository;
 import Holly.Zombie_Survival_Adventure.repositories.ZombieRepository;
-import models.SurvivorLevel;
+import Holly.Zombie_Survival_Adventure.models.SurvivorLevel;
 import models.ZombieLevel;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

@@ -32,12 +32,12 @@ public class Survivor {
     private ArrayList<Melee> meleeInventory;
 
     @Column(name = "level")
-    public models.SurvivorLevel survivorLevel;
+    public SurvivorLevel survivorLevel;
 
     @Column(name = "survivor_health")
     public int survivorHealth;
 
-    public Survivor(String name, int ammoInventory, models.SurvivorLevel survivorLevel, int survivorHealth) {
+    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth) {
         this.name = name;
         this.survivorLevel = survivorLevel;
         this.ammoInventory = ammoInventory;
@@ -66,11 +66,11 @@ public class Survivor {
         this.name = name;
     }
 
-    public models.SurvivorLevel getSurvivorLevel() {
+    public SurvivorLevel getSurvivorLevel() {
         return survivorLevel;
     }
 
-    public void setsLevel(models.SurvivorLevel survivorLevel) {
+    public void setsLevel(SurvivorLevel survivorLevel) {
         this.survivorLevel = survivorLevel;
     }
 
