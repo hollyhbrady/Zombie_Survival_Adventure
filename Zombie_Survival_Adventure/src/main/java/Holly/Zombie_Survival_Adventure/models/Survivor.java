@@ -34,7 +34,7 @@ public class Survivor {
     @Column(name = "level")
     public models.SurvivorLevel survivorLevel;
 
-    @Column(name = "max health")
+    @Column(name = "survivor_health")
     public int survivorHealth;
 
     public Survivor(String name, int ammoInventory, models.SurvivorLevel survivorLevel, int survivorHealth) {
@@ -44,7 +44,7 @@ public class Survivor {
         this.foodInventory = new ArrayList<>();
         this.gunInventory = new ArrayList<>();
         this.meleeInventory = new ArrayList<>();
-        this.survivorHealth = 50;
+        this.survivorHealth = survivorHealth;
     }
 
     public Survivor() {
