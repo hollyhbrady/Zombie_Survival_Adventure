@@ -1,5 +1,10 @@
 import './App.css';
 
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Player from "./components/Player";
+import Game from "./components/Game";
+
 function App() {
   return (
     <div className="Game-start">
