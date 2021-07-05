@@ -15,7 +15,7 @@ public class SurvivorLevelController {
     @Autowired
     SurvivorLevelRepository survivorLevelRepository;
 
-    @GetMapping(value = "/survivorLevel")
+    @GetMapping(value = "/survivorLevels")
     public List<SurvivorLevel> getAllSurvivorLevels() {
         return survivorLevelRepository.findAll();
     }
