@@ -21,6 +21,10 @@ const NewPlayer = ({name, updateName, survivorLevel, updateSurvivorLevel}) => {
       updateSurvivorLevel("");
   };
 
+  const survivorLevelOptions = survivorLevel.map((survivorLevel, index) => {
+    return <option key={index} value={index}>{survivorLevel}</option>
+  })
+
   return (
     <form action="">
       <input 
@@ -30,43 +34,21 @@ const NewPlayer = ({name, updateName, survivorLevel, updateSurvivorLevel}) => {
       value={name}
       onChange={handleNameChange}
       />
+      <select name="survivorLevel" onChange={handleSurvivorLevelChange}>
+        <option disabled value="Select a player type"></option>
+        {survivorLevelOptions}
+      </select>
       <input 
       required
-      type="text"
+      type="select"
       value={survivorLevel}
       onChange={handleSurvivorLevelChange}
        />
        <input 
        type="submit"
-       value="Post"
+       value="Play"
         />
     </form>
-    // <Grid container spacing={2}>
-    //   <Grid item xs={12}>
-    //     <TextField
-    //       required
-    //       fullWidth
-    //       id="name"
-    //       value={name}
-    //       label="Name"
-    //       name="name"
-    //       autoComplete="name"
-    //       onChange={handleNameChange}
-    //     />
-    // </Grid>
-    //   <Grid item xs={12} sm={6}>
-    //     <TextField
-    //       autoComplete="survivorLevel"
-    //       name="survivorLevel"
-    //       variant="outlined"
-    //       required
-    //       fullWidth
-    //       value={survivorLevel}
-    //       id="survivorLevel"
-    //       label="survivorLevel"
-    //       onChange={handleSurvivorLevelChange}
-    //     />
-    
   );
 
 }
