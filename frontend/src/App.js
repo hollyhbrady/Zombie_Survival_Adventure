@@ -25,8 +25,13 @@ const App = () => {
   const requestAll = function() {
     const request = new Request();
     const zombies = request.get('http://localhost:8080/zombies')
-    // fetch(zombies)
-    .then((data) => {setZombies(data)})
+    const survivorLevels = request.get('http://localhost:8080/survivorLevels')
+    // .then((data) => {setZombies(data)})
+    Promise.all([zombiePromise, survivorLevelPromise])
+    .then((data) => {
+      setZombies(data[0]);
+      setSurvivorLevel(data[1])
+    })
   }
 
   useEffect(() => {
