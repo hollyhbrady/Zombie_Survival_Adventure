@@ -1,17 +1,34 @@
 import './App.css';
 
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Player from "./components/Player";
+import NewPlayer from "./components/NewPlayer";
 import Game from "./components/Game";
 
 const App = () => {
+
+  const [name, setName] = useState("");
+  const [survivorLevel, setSurvivorLevel] = useState("");
+
+  const updateName = (name) => {
+    setName(name)
+  } 
+
+  const updateSurvivorLevel = (survivorLevel) => {
+    setSurvivorLevel(survivorLevel)
+  }
+
   return (
     <div className="Game-start">
-      <Router>
-      <Route exact path="/" component={Player} />
-//      <Route exact path="/game" component={Game} />
-      </Router>
+      <h1>Zombie Survival Adventure</h1>
+      <NewPlayer> name={name} updateName={updateName} survivorLevel={survivorLevel} updateSurvivorLevel={updateSurvivorLevel}
+      </NewPlayer>
+      <Game> name={name} survivorLevel={survivorLevel}
+      </Game>
+      {/* <Router>
+      <Route exact path="/" component={NewPlayer} />
+      <Route exact path="/game" component={Game} />
+      </Router> */}
     </div>
   );
 }

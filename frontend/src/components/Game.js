@@ -1,9 +1,9 @@
-import './App.css';
+import '../App.css';
 
-function Game() {
+const Game = ({name, survivorLevel}) => {
   return (
-
-  );
+  null
+  )
 }
 
-export default App;
+export default Game;
