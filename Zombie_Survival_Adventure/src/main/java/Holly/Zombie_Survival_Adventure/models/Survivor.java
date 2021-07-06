@@ -153,4 +153,8 @@ public class Survivor {
         this.gunInventory.add(gun);
     }
 
+    public void addToAmmoInventory(int bullets) {
+        this.ammoInventory = getAmmoInventory() + bullets;
+    }
+
 }

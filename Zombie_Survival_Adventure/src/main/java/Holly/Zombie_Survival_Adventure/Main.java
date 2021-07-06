@@ -12,33 +12,46 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Survivor survivor = new Survivor("Holly", 0, SurvivorLevel.OUTCAST, 50, 0, 0);
-        Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
-
-        survivor.addFoodToInventory(Food.BAKEDBEANS);
-        survivor.addFoodToInventory(Food.DRIEDFRUIT);
-        survivor.addFoodToInventory(Food.IRNBRU);
-        survivor.addMeleeToInventory(Melee.KNIFE);
-        survivor.addGunToInventory(Gun.HANDGUN);
-        survivor.setAmmoInventory(5);
-
         // USE HASHMAP TO RETURN FROM whileZombieIsAlive
         int zombiesDefeated = 0;
         int healthRestoresUsed = 0;
         int zombieFledCount = 0;
 
-         //START OF GAME
+        Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0);
+        survivor.addFoodToInventory(Food.BAKEDBEANS);
+        survivor.addFoodToInventory(Food.DRIEDFRUIT);
+        survivor.addFoodToInventory(Food.IRNBRU);
+        survivor.addMeleeToInventory(Melee.KNIFE);
+        survivor.setAmmoInventory(8);
+
+        //CHOOSE CHARACTER
+
+//        GameLogic.chooseCharacter();
+//        System.out.println(survivor.getName());
+        // START OF GAME
+
+        GameLogic.gameStart(survivor);
+
         // LEVEL ONE
+        Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
+
         GameLogic.gameStart(survivor);
         GameLogic.fightZombie(zombie, survivor);
         GameLogic.continueOrGoToHut();
 
+
         // LEVEL TWO
+        zombie = new Zombie("Walker", ZombieLevel.TWO);
+
+        GameLogic.fightZombie(zombie, survivor);
 
         // LEVEL THREE
+        zombie = new Zombie("Runner", ZombieLevel.THREE);
+
+        GameLogic.fightZombie(zombie, survivor);
 
 
-        System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, fled from " + zombieFledCount + " and used " + healthRestoresUsed + " HP restores.");
+        System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, and used " + survivor.getHPRestoresUsed() + " HP restores.");
         System.out.println("Thanks for playing!");
     }
 }
