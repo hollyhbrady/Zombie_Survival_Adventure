@@ -312,6 +312,7 @@ public class GameLogic {
             System.out.println("------------------------------");
             System.out.println("The " + zombie.getName() + " was defeated!");
 //        zombiesDefeated++;
+            survivor.zombiesEncountered++;
             foodDrop(survivor);
             weaponDrop(survivor, zombie);
 
