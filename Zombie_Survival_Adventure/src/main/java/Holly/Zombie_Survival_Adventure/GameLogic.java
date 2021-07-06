@@ -207,11 +207,6 @@ public class GameLogic {
                     System.out.println("2. With my knife");
                     System.out.println("3. I have no weapons left!");
 
-//                    if (survivor.getSurvivorHealth() < 1) {
-//                        System.out.println("You have taken too much damage to go on.");
-//                        break;
-//                    }
-
                     String attackInput = in.nextLine();
 
                     if (attackInput.equals("1")) {
@@ -269,39 +264,65 @@ public class GameLogic {
                         System.out.println("Invalid command.");
                     }
                 } else if (input.equals("2")) {
-                    if (survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
-                        survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.BAKEDBEANS.getRestore());
-                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCAST.getHP()) {
-                            survivor.setSurvivorHealthMax();
+                    System.out.println("What are you going to have?");
+                    System.out.println("1. Baked Beans (20 HP value)");
+                    System.out.println("2. Dried fruit (10 HP value)");
+                    System.out.println("3. Can of Irn-Bru (5 HP value)");
+
+                    String foodInput = in.nextLine();
+
+                    if (foodInput.equals("1")) {
+                        if (survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
+                            survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.BAKEDBEANS.getRestore());
+                            if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCAST.getHP()) {
+                                survivor.setSurvivorHealthMax();
+                            }
+                            survivor.getFoodInventory().remove(Food.BAKEDBEANS);
+                            survivor.HPRestoresUsed++;
+                            System.out.println("Your health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
+                            if (!survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
+                                System.out.println("That was the last can!");
+                            }
+                        } else {
+                            System.out.println("... awkward. You don't have any.");
                         }
-                        survivor.getFoodInventory().remove(Food.BAKEDBEANS);
-                        survivor.HPRestoresUsed++;
-                        System.out.println("Your health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
-                    } else if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
-                        survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.DRIEDFRUIT.getRestore());
-                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCAST.getHP()) {
-                            survivor.setSurvivorHealthMax();
+                    } else if (foodInput.equals("2")) {
+                        if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
+                            survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.DRIEDFRUIT.getRestore());
+                            if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCAST.getHP()) {
+                                survivor.setSurvivorHealthMax();
+                            }
+                            survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
+                            survivor.HPRestoresUsed++;
+                            System.out.println("Your health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
+                            if (!survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
+                                System.out.println("That was the last packet!");
+                            }
+                        } else {
+                            System.out.println("... awkward. You don't have any.");
                         }
-                        survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
-                        survivor.HPRestoresUsed++;
-                        System.out.println("Your health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
-                    } else if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
-                        survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.IRNBRU.getRestore());
-                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCAST.getHP()) {
-                            survivor.setSurvivorHealthMax();
+                    } else if (foodInput.equals("3")) {
+                        if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
+                            survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.IRNBRU.getRestore());
+                            if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCAST.getHP()) {
+                                survivor.setSurvivorHealthMax();
+                            }
+                            survivor.getFoodInventory().remove(Food.IRNBRU);
+                            survivor.HPRestoresUsed++;
+                            System.out.println("Your health has been restored by " + Food.IRNBRU.getRestore() + ".");
+                            if (!survivor.getFoodInventory().contains(Food.IRNBRU)) {
+                                System.out.println("That was the last can!");
+                            }
+                        } else {
+                        System.out.println("... awkward. You don't have any.");
                         }
-                        survivor.getFoodInventory().remove(Food.IRNBRU);
-                        survivor.HPRestoresUsed++;
-                        System.out.println("Your health has been restored by " + Food.IRNBRU.getRestore() + ".");
                     } else {
-                        System.out.println("You have nothing left to eat!");
+                        System.out.println("Invalid command.");
                     }
                 } else if (input.equals("3")) {
                     if (zombieSpeed < SurvivorLevel.OUTCAST.getSpeed()) {
                         System.out.println("You run away from the " + zombie.getName() + "!");
-//                        zombieFledCount++;
                         continue GAME;
-//                        break;
                     } else {
                         System.out.println("Cannot escape! Are you going to be zombie dinner!?");
                     }
