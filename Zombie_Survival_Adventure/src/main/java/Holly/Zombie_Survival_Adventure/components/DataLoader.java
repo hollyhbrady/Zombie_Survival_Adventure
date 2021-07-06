@@ -3,12 +3,15 @@ package Holly.Zombie_Survival_Adventure.components;
 import Holly.Zombie_Survival_Adventure.models.Survivor;
 import Holly.Zombie_Survival_Adventure.models.SurvivorLevel;
 import Holly.Zombie_Survival_Adventure.models.Zombie;
+import Holly.Zombie_Survival_Adventure.repositories.SurvivorLevelRepository;
 import Holly.Zombie_Survival_Adventure.repositories.SurvivorRepository;
 import Holly.Zombie_Survival_Adventure.repositories.ZombieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -19,6 +22,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     ZombieRepository zombieRepository;
 
+    @Autowired
+    SurvivorLevelRepository survivorLevelRepository;
+
     public DataLoader() {
     }
 
@@ -26,6 +32,13 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCAST, 0);
         survivorRepository.save(holly);
+
+//        SurvivorLevel Soldier = new SurvivorLevel(50, 80, 70,20, 10);
+        survivorLevelRepository.save(SurvivorLevel.SOLDIER);
+        survivorLevelRepository.save(SurvivorLevel.OUTCAST);
+        survivorLevelRepository.save(SurvivorLevel.WANDERER);
+
+        System.out.println(Arrays.stream(SurvivorLevel.values()).distinct());
 
         holly.setSurvivorHealthMax();
 

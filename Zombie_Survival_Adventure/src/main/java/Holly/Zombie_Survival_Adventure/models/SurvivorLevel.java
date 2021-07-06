@@ -1,6 +1,7 @@
 package Holly.Zombie_Survival_Adventure.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "survivor_levels")
@@ -21,13 +22,22 @@ public enum SurvivorLevel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
 
-    private int maxHP;
-    private double gunAccuracy;
-    private double meleeAccuracy;
-    private int strength;
-    private int speed;
+    @Column(name = "maxHP")
+    public int maxHP;
+
+    @Column(name = "gun_accuracy")
+    public double gunAccuracy;
+
+    @Column(name = "melee_accuracy")
+    public double meleeAccuracy;
+
+    @Column(name = "strength")
+    public int strength;
+
+    @Column(name = "speed")
+    public int speed;
 
     SurvivorLevel(int maxHP, double gunAccuracy, double meleeAccuracy, int strength, int speed) {
         this.maxHP = maxHP;
@@ -37,8 +47,19 @@ public enum SurvivorLevel {
         this.speed = speed;
     }
 
+    SurvivorLevel() {
+    }
+
     public String getSurvivorLevel() {
         return this.name();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getHP() {
@@ -60,4 +81,5 @@ public enum SurvivorLevel {
     public int getSpeed() {
         return speed;
     }
+
 }
