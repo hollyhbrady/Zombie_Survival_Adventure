@@ -22,7 +22,7 @@ public class Main {
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
         survivor.addFoodToInventory(Food.IRNBRU);
         survivor.addMeleeToInventory(Melee.KNIFE);
-        survivor.setAmmoInventory(8);
+        survivor.setAmmoInventory(5);
 
         //CHOOSE CHARACTER
 
@@ -35,7 +35,6 @@ public class Main {
         // LEVEL ONE
         Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
 
-        GameLogic.gameStart(survivor);
         GameLogic.fightZombie(zombie, survivor);
         GameLogic.continueOrGoToHut();
 
