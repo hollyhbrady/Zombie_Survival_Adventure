@@ -11,7 +11,8 @@ const Zombies = ({zombies}) => {
     })
 
     return (
-        {zombieList}
+        null
+        // {zombieList}
     )
 }
 
