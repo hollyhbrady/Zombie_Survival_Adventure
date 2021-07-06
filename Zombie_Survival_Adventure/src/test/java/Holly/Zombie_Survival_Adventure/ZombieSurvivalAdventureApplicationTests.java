@@ -28,7 +28,7 @@ class ZombieSurvivalAdventureApplicationTests {
 
 	@Test
 	public void createSurvivor() {
-		Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCASTONE, 50);
+		Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCAST, 50);
 		survivorRepository.save(holly);
 	}
 

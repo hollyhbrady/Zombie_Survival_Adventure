@@ -31,7 +31,7 @@ public class Survivor {
     @Column(name = "knives")
     private ArrayList<Melee> meleeInventory;
 
-    @Column(name = "level")
+    @Column(name = "survivor_level")
     @Enumerated(value = EnumType.STRING)
     public SurvivorLevel survivorLevel;
 

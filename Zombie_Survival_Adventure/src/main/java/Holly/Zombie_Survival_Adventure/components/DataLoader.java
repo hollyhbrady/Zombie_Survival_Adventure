@@ -24,7 +24,7 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCASTONE, 0);
+        Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCAST, 0);
         survivorRepository.save(holly);
 
         holly.setSurvivorHealthMax();

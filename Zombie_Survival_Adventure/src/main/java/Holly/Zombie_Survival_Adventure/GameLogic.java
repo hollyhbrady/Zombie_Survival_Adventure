@@ -149,7 +149,7 @@ public class GameLogic {
                 } else if (input.equals("2")) {
                     if (survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
                         survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.BAKEDBEANS.getRestore());
-                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCASTONE.getHP()) {
+                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCAST.getHP()) {
                             survivor.setSurvivorHealthMax();
                         }
                         survivor.getFoodInventory().remove(Food.BAKEDBEANS);
@@ -157,7 +157,7 @@ public class GameLogic {
                         System.out.println("Your health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
                     } else if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
                         survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.DRIEDFRUIT.getRestore());
-                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCASTONE.getHP()) {
+                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCAST.getHP()) {
                             survivor.setSurvivorHealthMax();
                         }
                         survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
@@ -165,7 +165,7 @@ public class GameLogic {
                         System.out.println("Your health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
                     } else if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
                         survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.IRNBRU.getRestore());
-                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCASTONE.getHP()) {
+                        if (survivor.getSurvivorHealth() > SurvivorLevel.OUTCAST.getHP()) {
                             survivor.setSurvivorHealthMax();
                         }
                         survivor.getFoodInventory().remove(Food.IRNBRU);
@@ -175,7 +175,7 @@ public class GameLogic {
                         System.out.println("You have nothing left to eat!");
                     }
                 } else if (input.equals("3")) {
-                    if (zombieSpeed < SurvivorLevel.OUTCASTONE.getSpeed()) {
+                    if (zombieSpeed < SurvivorLevel.OUTCAST.getSpeed()) {
                         System.out.println("You run away from the " + zombie.getName() + "!");
 //                        zombieFledCount++;
                         continue GAME;

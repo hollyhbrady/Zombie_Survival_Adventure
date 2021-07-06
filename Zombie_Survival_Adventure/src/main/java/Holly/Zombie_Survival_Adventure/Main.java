@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Survivor survivor = new Survivor("Holly", 0, SurvivorLevel.OUTCASTONE, 50);
+        Survivor survivor = new Survivor("Holly", 0, SurvivorLevel.OUTCAST, 50);
         Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
 
         survivor.addFoodToInventory(Food.BAKEDBEANS);
