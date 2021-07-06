@@ -275,7 +275,7 @@ public class GameLogic {
                             survivor.setSurvivorHealthMax();
                         }
                         survivor.getFoodInventory().remove(Food.BAKEDBEANS);
-//                        healthRestoresUsed++;
+                        survivor.HPRestoresUsed++;
                         System.out.println("Your health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
                     } else if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
                         survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.DRIEDFRUIT.getRestore());
@@ -283,7 +283,7 @@ public class GameLogic {
                             survivor.setSurvivorHealthMax();
                         }
                         survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
-//                        healthRestoresUsed++;
+                        survivor.HPRestoresUsed++;
                         System.out.println("Your health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
                     } else if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
                         survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.IRNBRU.getRestore());
@@ -291,7 +291,7 @@ public class GameLogic {
                             survivor.setSurvivorHealthMax();
                         }
                         survivor.getFoodInventory().remove(Food.IRNBRU);
-//                        healthRestoresUsed++;
+                        survivor.HPRestoresUsed++;
                         System.out.println("Your health has been restored by " + Food.IRNBRU.getRestore() + ".");
                     } else {
                         System.out.println("You have nothing left to eat!");
