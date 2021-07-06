@@ -27,14 +27,11 @@ public class Main {
         int healthRestoresUsed = 0;
         int zombieFledCount = 0;
 
-        System.out.println("Welcome to the survival zone!");
-        System.out.println("You have " + survivor.getFoodInventory().size() + " food items to restore health.");
-        System.out.println("You have " + survivor.getMeleeInventory().size() + " knife.");
-        System.out.println("You have " + survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
-        System.out.println("Proceed wisely.");
 
 
+        GameLogic.gameStart(survivor);
         GameLogic.fightZombie(zombie, survivor);
+        GameLogic.continueOrGoToHut();
 
 
 //        System.out.println("You defeated " + zombiesDefeated + " Zombies, fled from " + zombieFledCount + " and used " + healthRestoresUsed + " HP restores.");

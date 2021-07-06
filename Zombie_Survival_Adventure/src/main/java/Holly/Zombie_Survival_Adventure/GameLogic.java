@@ -12,6 +12,14 @@ import java.util.Scanner;
 
 public class GameLogic {
 
+    public static void gameStart(Survivor survivor) {
+        System.out.println("Welcome to the survival zone!");
+        System.out.println("You have " + survivor.getFoodInventory().size() + " food items to restore health.");
+        System.out.println("You have " + survivor.getMeleeInventory().size() + " knife.");
+        System.out.println("You have " + survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
+        System.out.println("Proceed wisely.");
+    }
+
     public static int zombieAttack(Zombie zombie, Survivor survivor) {
         Random rand = new Random();
 
