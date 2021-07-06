@@ -40,7 +40,9 @@ public class Survivor {
 
     public int zombiesEncountered;
 
-    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth, int zombiesEncountered) {
+    public int HPRestoresUsed;
+
+    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth, int zombiesEncountered, int HPRestoresUsed) {
         this.name = name;
         this.survivorLevel = survivorLevel;
         this.ammoInventory = ammoInventory;
@@ -49,6 +51,7 @@ public class Survivor {
         this.meleeInventory = new ArrayList<>();
         this.survivorHealth = survivorHealth;
         this.zombiesEncountered = zombiesEncountered;
+        this.HPRestoresUsed = HPRestoresUsed;
     }
 
     public Survivor() {
@@ -124,6 +127,14 @@ public class Survivor {
 
     public void setZombiesEncountered(int zombiesEncountered) {
         this.zombiesEncountered = zombiesEncountered;
+    }
+
+    public int getHPRestoresUsed() {
+        return HPRestoresUsed;
+    }
+
+    public void setHPRestoresUsed(int HPRestoresUsed) {
+        this.HPRestoresUsed = HPRestoresUsed;
     }
 
     public void setSurvivorHealthMax() {

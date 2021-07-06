@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Survivor survivor = new Survivor("Holly", 0, SurvivorLevel.OUTCAST, 50);
+        Survivor survivor = new Survivor("Holly", 0, SurvivorLevel.OUTCAST, 50, 0, 0);
         Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
 
         survivor.addFoodToInventory(Food.BAKEDBEANS);
@@ -27,14 +27,18 @@ public class Main {
         int healthRestoresUsed = 0;
         int zombieFledCount = 0;
 
-
-
+         //START OF GAME
+        // LEVEL ONE
         GameLogic.gameStart(survivor);
         GameLogic.fightZombie(zombie, survivor);
         GameLogic.continueOrGoToHut();
 
+        // LEVEL TWO
 
-//        System.out.println("You defeated " + zombiesDefeated + " Zombies, fled from " + zombieFledCount + " and used " + healthRestoresUsed + " HP restores.");
-//        System.out.println("Thanks for playing!");
+        // LEVEL THREE
+
+
+        System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, fled from " + zombieFledCount + " and used " + healthRestoresUsed + " HP restores.");
+        System.out.println("Thanks for playing!");
     }
 }
