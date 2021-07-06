@@ -24,8 +24,8 @@ const App = () => {
 
   const requestAll = function() {
     const request = new Request();
-    const zombies = request.get('http://localhost:8080/zombies')
-    const survivorLevels = request.get('http://localhost:8080/survivorLevels')
+    const zombiePromise = request.get('http://localhost:8080/zombies')
+    const survivorLevelPromise = request.get('http://localhost:8080/survivorLevels')
     // .then((data) => {setZombies(data)})
     Promise.all([zombiePromise, survivorLevelPromise])
     .then((data) => {
@@ -38,8 +38,13 @@ const App = () => {
     requestAll()
   }, [])
 
-
   console.log(zombies)
+
+  const handlePost = function(survivor){
+    const request = new Request();
+    request.post("/api/survivors", survivor)
+    .then(() => window.location = '/survivors')
+  }
 
 
   return (
