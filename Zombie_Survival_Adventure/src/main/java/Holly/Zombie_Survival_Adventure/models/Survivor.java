@@ -38,7 +38,9 @@ public class Survivor {
     @Column(name = "survivor_health")
     public int survivorHealth;
 
-    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth) {
+    public int zombiesEncountered;
+
+    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth, int zombiesEncountered) {
         this.name = name;
         this.survivorLevel = survivorLevel;
         this.ammoInventory = ammoInventory;
@@ -46,6 +48,7 @@ public class Survivor {
         this.gunInventory = new ArrayList<>();
         this.meleeInventory = new ArrayList<>();
         this.survivorHealth = survivorHealth;
+        this.zombiesEncountered = zombiesEncountered;
     }
 
     public Survivor() {
@@ -113,6 +116,14 @@ public class Survivor {
 
     public void setSurvivorHealth(int survivorHealth) {
         this.survivorHealth = survivorHealth;
+    }
+
+    public int getZombiesEncountered() {
+        return zombiesEncountered;
+    }
+
+    public void setZombiesEncountered(int zombiesEncountered) {
+        this.zombiesEncountered = zombiesEncountered;
     }
 
     public void setSurvivorHealthMax() {
