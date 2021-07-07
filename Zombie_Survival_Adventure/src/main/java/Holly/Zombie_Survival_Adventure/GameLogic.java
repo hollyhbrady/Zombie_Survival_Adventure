@@ -3,8 +3,8 @@ package Holly.Zombie_Survival_Adventure;
 import Holly.Zombie_Survival_Adventure.models.Survivor;
 import Holly.Zombie_Survival_Adventure.models.SurvivorLevel;
 import Holly.Zombie_Survival_Adventure.models.Zombie;
+import Holly.Zombie_Survival_Adventure.models.loot.Gun;
 import models.loot.Food;
-import models.loot.Gun;
 import models.loot.Melee;
 
 import java.util.Random;
@@ -38,20 +38,20 @@ public class GameLogic {
         String input = in.nextLine();
 
         if (input.equals("1")) {
-            Survivor survivor = new Survivor("Abby", 0, SurvivorLevel.SOLDIER, 50, 0, 0);
+            Survivor survivor = new Survivor("Abby", 0, SurvivorLevel.SOLDIER, 50, 0, 0, 0, 0);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
             survivor.addGunToInventory(Gun.HANDGUN);
             survivor.setAmmoInventory(5);
         } else if (input.equals("2")) {
-            Survivor survivor = new Survivor("Joel", 0, SurvivorLevel.WANDERER, 50, 0, 0);
+            Survivor survivor = new Survivor("Joel", 0, SurvivorLevel.WANDERER, 50, 0, 0, 0, 0);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
             survivor.addMeleeToInventory(Melee.KNIFE);
         } else if (input.equals("3")) {
-            Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0);
+            Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0, 0, 0);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
@@ -178,6 +178,14 @@ public class GameLogic {
 //        }
 //    }
 
+    public static void gunDegradation(Survivor survivor, Gun gun) {
+        survivor.setGunUsed(survivor.gunUsed++);
+        if (survivor.getGunUsed() >= Gun.HANDGUN.getUses()) {
+            survivor.removeGunFromInventory(gun);
+            survivor.setGunUsed(0);
+        }
+    }
+
     public static void zombieAppears(Zombie zombie) {
         System.out.println("A " + zombie.getName() + " is blocking your way!");
     }
@@ -187,6 +195,7 @@ public class GameLogic {
             zombieAppears(zombie);
             fightZombie(survivor, zombie);
         }
+        GameLogic.gameStart(survivor);
         sceneOne(survivor, zombie);
     }
 
@@ -231,7 +240,8 @@ public class GameLogic {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
                             System.out.println("You have taken too much damage to go on. \n" +
-                                    "Welcome to the army of the Dead, you dumb-ass");
+                                    "Welcome to the Army of the Dead, dumb-ass.");
+                            GameLogic.gameStart(survivor);
                             sceneOne(survivor, zombie);
                         }
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {

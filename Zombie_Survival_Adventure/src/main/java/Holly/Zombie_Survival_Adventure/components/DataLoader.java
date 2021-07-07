@@ -6,6 +6,7 @@ import Holly.Zombie_Survival_Adventure.models.Zombie;
 import Holly.Zombie_Survival_Adventure.repositories.SurvivorLevelRepository;
 import Holly.Zombie_Survival_Adventure.repositories.SurvivorRepository;
 import Holly.Zombie_Survival_Adventure.repositories.ZombieRepository;
+import models.ZombieLevel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -30,7 +31,7 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCAST, 0, 0, 0);
+        Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCAST, 50, 0, 0, 0, 0);
         survivorRepository.save(holly);
 
 //        SurvivorLevel Soldier = new SurvivorLevel(50, 80, 70,20, 10);
@@ -46,15 +47,15 @@ public class DataLoader implements ApplicationRunner {
         holly.addFoodToInventory(models.loot.Food.DRIEDFRUIT);
         holly.addFoodToInventory(models.loot.Food.IRNBRU);
         holly.addMeleeToInventory(models.loot.Melee.KNIFE);
-        holly.addGunToInventory(models.loot.Gun.HANDGUN);
+        holly.addGunToInventory(Holly.Zombie_Survival_Adventure.models.loot.Gun.HANDGUN);
 
-        Zombie shambler = new Zombie("Shambler", models.ZombieLevel.ONE);
+        Zombie shambler = new Zombie("Shambler", ZombieLevel.ONE);
         zombieRepository.save(shambler);
 
-        Zombie walker = new Zombie("Walker", models.ZombieLevel.THREE);
+        Zombie walker = new Zombie("Walker", ZombieLevel.THREE);
         zombieRepository.save(walker);
 
-        Zombie runner = new Zombie("Runner", models.ZombieLevel.THREE);
+        Zombie runner = new Zombie("Runner", ZombieLevel.THREE);
         zombieRepository.save(runner);
 
     }

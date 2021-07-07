@@ -5,14 +5,14 @@ import Holly.Zombie_Survival_Adventure.models.SurvivorLevel;
 import Holly.Zombie_Survival_Adventure.models.Zombie;
 import models.ZombieLevel;
 import models.loot.Food;
-import models.loot.Gun;
+import Holly.Zombie_Survival_Adventure.models.loot.Gun;
 import models.loot.Melee;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0);
+        Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0, 0, 0);
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
         survivor.addFoodToInventory(Food.IRNBRU);

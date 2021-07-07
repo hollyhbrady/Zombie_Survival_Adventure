@@ -1,9 +1,9 @@
-package models.loot;
+package Holly.Zombie_Survival_Adventure.models.loot;
 
 public enum Gun {
 
-    HANDGUN(11, 30, 6),
-    RIFLE(25, 20, 2);
+    HANDGUN(11, 10, 6),
+    RIFLE(25, 6, 2);
 
     private int damage;
     private int uses;

@@ -1,7 +1,7 @@
 package Holly.Zombie_Survival_Adventure.models;
 
+import Holly.Zombie_Survival_Adventure.models.loot.Gun;
 import models.loot.Food;
-import models.loot.Gun;
 import models.loot.Melee;
 
 import javax.persistence.*;
@@ -42,7 +42,10 @@ public class Survivor {
 
     public int HPRestoresUsed;
 
-    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth, int zombiesEncountered, int HPRestoresUsed) {
+    public int gunUsed;
+    public int meleeUsed;
+
+    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth, int zombiesEncountered, int HPRestoresUsed, int gunUsed, int meleeUsed) {
         this.name = name;
         this.survivorLevel = survivorLevel;
         this.ammoInventory = ammoInventory;
@@ -52,6 +55,8 @@ public class Survivor {
         this.survivorHealth = survivorHealth;
         this.zombiesEncountered = zombiesEncountered;
         this.HPRestoresUsed = HPRestoresUsed;
+        this.gunUsed = gunUsed;
+        this.meleeUsed = meleeUsed;
     }
 
     public Survivor() {
@@ -137,6 +142,22 @@ public class Survivor {
         this.HPRestoresUsed = HPRestoresUsed;
     }
 
+    public int getGunUsed() {
+        return gunUsed;
+    }
+
+    public void setGunUsed(int gunUsed) {
+        this.gunUsed = gunUsed;
+    }
+
+    public int getMeleeUsed() {
+        return meleeUsed;
+    }
+
+    public void setMeleeUsed(int meleeUsed) {
+        this.meleeUsed = meleeUsed;
+    }
+
     public void setSurvivorHealthMax() {
         this.survivorHealth = survivorLevel.getHP();
     }
@@ -149,8 +170,16 @@ public class Survivor {
         this.meleeInventory.add(melee);
     }
 
+    public void removeMeleeFromInventory(Melee melee) {
+        this.meleeInventory.remove(melee);
+    }
+
     public void addGunToInventory(Gun gun) {
         this.gunInventory.add(gun);
+    }
+
+    public void removeGunFromInventory(Gun gun) {
+        this.gunInventory.remove(gun);
     }
 
     public void addToAmmoInventory(int bullets) {
