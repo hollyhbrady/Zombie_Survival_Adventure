@@ -261,6 +261,16 @@ public class GameLogic {
         sceneOne(survivor, zombie);
     }
 
+    public static void SebsHadesLoopOfHell(Survivor survivor, Zombie zombie) {
+        System.out.println("You have taken too much damage to go on. \n" +
+                "Welcome to the Army of the Dead, dumb-ass.");
+        System.out.println("------------------------------");
+        System.out.println("------------------------------");
+        survivor.setSurvivorHealthMax();
+        GameLogic.gameStart(survivor);
+        sceneOne(survivor, zombie);
+    }
+
     public static int fightZombie (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
@@ -301,10 +311,7 @@ public class GameLogic {
                     if (attackInput.equals("1")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            System.out.println("You have taken too much damage to go on. \n" +
-                                    "Welcome to the Army of the Dead, dumb-ass.");
-                            GameLogic.gameStart(survivor);
-                            sceneOne(survivor, zombie);
+                            SebsHadesLoopOfHell(survivor, zombie);
                         }
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
                             survivor.setAmmoInventory(survivor.getAmmoInventory() - 1);
@@ -325,10 +332,7 @@ public class GameLogic {
                     } else if (attackInput.equals("2")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            System.out.println("You have taken too much damage to go on. \n" +
-                                    "Welcome to the Army of the Dead, dumb-ass.");
-                            GameLogic.gameStart(survivor);
-                            sceneOne(survivor, zombie);
+                            SebsHadesLoopOfHell(survivor, zombie);
                         }
                         if (survivor.getMeleeInventory().size() > 0) {
                             int damageDealt = (rand.nextInt(attackDamage) + Melee.KNIFE.getDamage());
@@ -345,10 +349,7 @@ public class GameLogic {
                     } else if (attackInput.equals("3")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            System.out.println("You have taken too much damage to go on. \n" +
-                                    "Welcome to the Army of the Dead, dumb-ass.");
-                            GameLogic.gameStart(survivor);
-                            sceneOne(survivor, zombie);
+                            SebsHadesLoopOfHell(survivor, zombie);
                         }
                         int damageDealt = rand.nextInt(attackDamage);
                         if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
