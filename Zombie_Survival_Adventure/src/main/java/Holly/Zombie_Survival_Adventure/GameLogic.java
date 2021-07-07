@@ -13,11 +13,13 @@ import java.util.Scanner;
 public class GameLogic {
 
     public static void gameStart(Survivor survivor) {
-        System.out.println("Welcome to the survival zone!");
-        System.out.println("You have " + survivor.getFoodInventory().size() + " food items to restore health.");
-        System.out.println("You have " + survivor.getMeleeInventory().size() + " knife.");
-        System.out.println("You have " + survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
-        System.out.println("Proceed wisely.");
+        System.out.println("You're stumbling through the woods. \n" +
+                "You hear a moan - the shuffle drag of zombie feet. \n" +
+                "You can't go much longer without sleep...");
+        System.out.println("You have " + survivor.getFoodInventory().size() + " food items to restore health, "
+                + survivor.getMeleeInventory().size() + " knife, " +
+                survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets. \n" +
+                "Proceed wisely.");
     }
 
     public static void chooseCharacter() {

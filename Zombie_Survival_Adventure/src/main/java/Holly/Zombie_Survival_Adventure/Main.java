@@ -12,11 +12,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // USE HASHMAP TO RETURN FROM whileZombieIsAlive
-        int zombiesDefeated = 0;
-        int healthRestoresUsed = 0;
-        int zombieFledCount = 0;
-
         Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0);
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
