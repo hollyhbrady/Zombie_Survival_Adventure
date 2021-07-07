@@ -212,11 +212,11 @@ public class GameLogic {
     }
 
     public static void survivorLevelUpCheck(Survivor survivor) {
-        survivor.setZombiesEncountered(survivor.getZombiesEncountered() + 1);
-        if (survivor.getZombiesEncountered() == 10) {
+        survivor.increaseZombieCountByOne();
+        if (survivor.getZombiesEncountered() == 3) {
             reachLevel2Outcast(survivor);
         }
-        if (survivor.getZombiesEncountered() == 20) {
+        if (survivor.getZombiesEncountered() == 5) {
             reachLevel3Outcast(survivor);
         }
     }
@@ -249,7 +249,6 @@ public class GameLogic {
 
     public static void zombieAppears(Survivor survivor, Zombie zombie) {
         System.out.println("A " + zombie.getName() + " is blocking your way!");
-        survivorLevelUpCheck(survivor);
     }
 
     public static void zombieDeathLoop(Survivor survivor, Zombie zombie) {
@@ -424,6 +423,7 @@ public class GameLogic {
             }
             System.out.println("------------------------------");
             System.out.println("You survived the " + zombie.getName() + "!");
+            survivorLevelUpCheck(survivor);
             foodDrop(survivor);
             weaponDrop(survivor, zombie);
             inventoryCheck(survivor);
@@ -531,7 +531,7 @@ public class GameLogic {
     public static void sceneSix(Survivor survivor, Zombie zombie) {
         System.out.println("The " + zombie.getName() + " has a back pack on, must have been someone else seeking shelter in the woods. \n" +
                 "You search it and come up empty. Sucks to be you... \n" +
-                "Wait, did it just move!?");
+                "Wait, was that a branch snapping behind you?");
         fightZombie(survivor, zombie);
         sceneEight(survivor, zombie);
     }

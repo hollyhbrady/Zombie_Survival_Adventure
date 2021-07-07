@@ -134,6 +134,10 @@ public class Survivor {
         this.zombiesEncountered = zombiesEncountered;
     }
 
+    public void increaseZombieCountByOne() {
+        this.zombiesEncountered = this.getZombiesEncountered() + 1;
+    }
+
     public int getHPRestoresUsed() {
         return HPRestoresUsed;
     }
