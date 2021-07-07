@@ -486,7 +486,7 @@ public class GameLogic {
     }
 
     public static void sceneThree(Survivor survivor, Zombie zombie) {
-        System.out.println("Oh no! A " + zombie.getName() + " lurches out from behind the tent! Do you: \n" +
+        System.out.println("Oh no! A " + zombie.getName() + " lurches out from behind bushes yo your left! Do you: \n" +
                 "1. Fight your way past, or \n" +
                 "2. Attempt to flee?");
 
@@ -505,7 +505,7 @@ public class GameLogic {
     }
 
     public static void sceneFour(Survivor survivor, Zombie zombie) {
-        System.out.println("Score! A gun, some loose bullets and more food! \n" +
+        System.out.println("Score! A gun, some loose bullets and more food in the tent! \n" +
                 "What happened to the people that left these?");
         survivor.addGunToInventory(Gun.HANDGUN);
         survivor.addToAmmoInventory(4);
@@ -537,7 +537,7 @@ public class GameLogic {
     }
 
     public static void sceneSeven(Survivor survivor, Zombie zombie) {
-        System.out.println("You get up, dust yourself off and see light reflecting off some glass in the bushes. \n" +
+        System.out.println("You check your surroundings and see light reflecting off some glass in the bushes. \n" +
                 "Is it a hut? Could you finally have found shelter? Do you: \n" +
                 "1. Investigate, or \n" +
                 "2. Stay in the open and carry on down the road");
@@ -570,7 +570,8 @@ public class GameLogic {
     }
 
     public static void sceneNine(Survivor survivor, Zombie zombie) {
-        System.out.println("You are not the only person who has been here, there are ashes from a fire on the ground. \n" +
+        System.out.println("Its an abandoned hut! \n" +
+                "You are not the only person who has been here, there are ashes from a fire on the ground. \n" +
                 "Empty cans and crisp packets are strewn around. \n" +
                 "The windows look like they have been smashed from the inside... \n" +
                 "Desperate for sleep and shelter, you spend the night.");
