@@ -222,8 +222,9 @@ public class GameLogic {
                     if (attackInput.equals("1")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            System.out.println("You have taken too much damage to go on.");
-                            break;
+                            System.out.println("You have taken too much damage to go on. \n" +
+                                    "Welcome to the army of the Dead, you dumb-ass");
+                            sceneOne(survivor, zombie);
                         }
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
                             survivor.setAmmoInventory(survivor.getAmmoInventory() - 1);
@@ -452,7 +453,8 @@ public class GameLogic {
     }
 
     public static void sceneSeven(Survivor survivor, Zombie zombie) {
-
+        System.out.println("Light reflects off some glass in the bushes. \n" +
+                "is it a hut? Could you finally have found shelter?");
     }
 
     public static void sceneEight(Survivor survivor, Zombie zombie) {
