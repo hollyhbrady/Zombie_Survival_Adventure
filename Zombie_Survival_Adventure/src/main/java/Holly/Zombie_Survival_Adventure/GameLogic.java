@@ -22,6 +22,8 @@ public class GameLogic {
                 "Proceed wisely.");
     }
 
+
+
     public static void chooseCharacter() {
         System.out.println("Who are you?");
         System.out.println("1. A Soldier");
@@ -122,7 +124,7 @@ public class GameLogic {
             System.out.println("'That's one sweet looking knife there, don't mind if I do!'");
         } else if (rand.nextInt(100) < bulletDropChance1 && survivor.getAmmoInventory() > 3  ) {
             survivor.addToAmmoInventory(3);
-            System.out.println("a magazine with 3 bullets fell from the " + zombie.getName() + " as it hit the ground");
+            System.out.println("A magazine with 3 bullets fell from the " + zombie.getName() + " as it hit the ground");
             if (survivor.getAmmoInventory() == 0) {
                 System.out.println("'Phew I was all out, thank you bullet fairy!'");
             } else {
@@ -286,7 +288,7 @@ public class GameLogic {
                                 System.out.println("That was the last can!");
                             }
                         } else {
-                            System.out.println("... awkward. You don't have any.");
+                            System.out.println("... Awkward. You don't have any.");
                         }
                     } else if (foodInput.equals("2")) {
                         if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
@@ -301,7 +303,7 @@ public class GameLogic {
                                 System.out.println("That was the last packet!");
                             }
                         } else {
-                            System.out.println("... awkward. You don't have any.");
+                            System.out.println("... Awkward. You don't have any.");
                         }
                     } else if (foodInput.equals("3")) {
                         if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
@@ -316,7 +318,7 @@ public class GameLogic {
                                 System.out.println("That was the last can!");
                             }
                         } else {
-                        System.out.println("... awkward. You don't have any.");
+                        System.out.println("... Awkward. You don't have any.");
                         }
                     } else {
                         System.out.println("Invalid command.");
@@ -334,7 +336,6 @@ public class GameLogic {
             }
             System.out.println("------------------------------");
             System.out.println("The " + zombie.getName() + " was defeated!");
-//        zombiesDefeated++;
             survivor.zombiesEncountered++;
             foodDrop(survivor);
             weaponDrop(survivor, zombie);
@@ -364,5 +365,60 @@ public class GameLogic {
             System.out.println("You return to your hut for a rest.");
         }
     }
+
+    public static void sceneOne(Zombie zombie, Survivor survivor) {
+        System.out.println("There is a fork in the road, do you go: \n" +
+                "1. To the left, or \n" +
+                "2. Take the right?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        if (input.equals("1")) {
+            sceneTwo();
+        }
+        else if (input.equals("2")) {
+            GameLogic.fightZombie(zombie, survivor);;
+        }
+
+    }
+
+    public static void sceneTwo() {
+        System.out.println("You come across an abandoned campsite. Do you: \n" +
+                "1. Do you stop to check for loot, or \n" +
+                "2. Keep moving?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        if (input.equals("1")) {
+            sceneFour();
+        }
+        else if (input.equals("2")) {
+            System.out.println("You return to your hut for a rest.");
+        }
+    }
+
+    public static void sceneThree() {
+
+    }
+
+    public static void sceneFour() {
+        System.out.println("Score! A gun, more bullets");
+    }
+
+    public static void sceneFive() {
+
+    }
+
+    public static void sceneSix() {
+
+    }
+
+
+
+
+
+
 
 }
