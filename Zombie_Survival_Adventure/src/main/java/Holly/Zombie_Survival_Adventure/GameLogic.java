@@ -192,6 +192,11 @@ public class GameLogic {
         }
     }
 
+    public static void meleeDegradation(Survivor survivor) {
+        survivor.setMeleeUsed(survivor.getMeleeUsed() + 1);
+        checkMeleeUses(survivor);
+    }
+
     public static void checkMeleeUses(Survivor survivor) {
         if (survivor.getMeleeUsed() >= Melee.KNIFE.getUses()) {
             survivor.removeMeleeFromInventory(Melee.KNIFE);
@@ -285,6 +290,7 @@ public class GameLogic {
                             int damageDealt = (rand.nextInt(attackDamage) + Melee.KNIFE.getDamage());
                             if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
                                 zombieHealth -= damageDealt;
+                                meleeDegradation(survivor);
                                 System.out.println("You slash the " + zombie.getName() + " for " + damageDealt + " damage.");
                             } else {
                                 System.out.println("You take a swing and miss!");
