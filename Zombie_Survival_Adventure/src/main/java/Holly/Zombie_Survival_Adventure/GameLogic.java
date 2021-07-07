@@ -201,7 +201,7 @@ public class GameLogic {
         if (survivor.getMeleeUsed() >= Melee.KNIFE.getUses()) {
 
             Random rand = new Random();
-            int meleeBluntChance = 20;
+            int meleeBluntChance = 50;
 
             if (rand.nextInt(100) < meleeBluntChance) {
                 survivor.removeMeleeFromInventory(Melee.KNIFE);
