@@ -514,6 +514,7 @@ public class GameLogic {
         System.out.println("You trip! Is that a legless " + zombie.getName() + "?!");
         GameLogic.fightZombie(survivor, zombie);
         sceneSeven(survivor, zombie);
+
     }
 
     public static void sceneSix(Survivor survivor, Zombie zombie) {
@@ -528,11 +529,31 @@ public class GameLogic {
     }
 
     public static void sceneSeven(Survivor survivor, Zombie zombie) {
-        System.out.println("Light reflects off some glass in the bushes. \n" +
-                "Is it a hut? Could you finally have found shelter?");
+        System.out.println("You get up, dust yourself off and see light reflecting off some glass in the bushes. \n" +
+                "Is it a hut? Could you finally have found shelter? Do you: \n" +
+                "1. Investigate, or \n" +
+                "2. Stay in the open and carry on down the road");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        if (input.equals("1")) {
+            sceneNine(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneTen(survivor, zombie);
+        }
     }
 
     public static void sceneEight(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneNine(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneTen(Survivor survivor, Zombie zombie) {
 
     }
 
