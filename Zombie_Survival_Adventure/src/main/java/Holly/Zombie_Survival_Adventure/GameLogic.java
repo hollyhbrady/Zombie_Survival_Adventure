@@ -245,6 +245,7 @@ public class GameLogic {
     public static void sleep(Survivor survivor) {
         survivor.setSurvivorHealth(survivor.getSurvivorHealth() * 2);
         checkHealthDoesntExceedMax(survivor);
+        System.out.println("Your health has been restored to " + survivor.getSurvivorHealth());
     }
 
     public static void zombieAppears(Survivor survivor, Zombie zombie) {
@@ -493,6 +494,8 @@ public class GameLogic {
             sceneSix(survivor, zombie);
         }
         else if (input.equals("2")) {
+            System.out.println("Phew you escaped!" +
+                    "But wait....");
             sceneFive(survivor, zombie);
         }
     }
@@ -511,7 +514,7 @@ public class GameLogic {
     }
 
     public static void sceneFive(Survivor survivor, Zombie zombie) {
-        System.out.println("You trip! Is that a legless " + zombie.getName() + "?!");
+        System.out.println("You trip over a legless " + zombie.getName() + "!");
         GameLogic.fightZombie(survivor, zombie);
         sceneSeven(survivor, zombie);
 
