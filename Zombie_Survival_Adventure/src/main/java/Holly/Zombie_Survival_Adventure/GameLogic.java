@@ -197,7 +197,7 @@ public class GameLogic {
             }
             int attackDamage = survivor.survivorLevel.getMaxStrength();
 
-            System.out.println("A " + zombie.getName() + " has appeared!");
+            System.out.println("A " + zombie.getName() + " is blocking your way!");
 
             while (zombieHealth > 0) {
                 System.out.println("Your HP: " + survivor.getSurvivorHealth());
@@ -379,7 +379,7 @@ public class GameLogic {
         String input = in.nextLine();
 
         if (input.equals("1")) {
-            sceneTwo();
+            sceneTwo(survivor, zombie);
         }
         else if (input.equals("2")) {
             GameLogic.fightZombie(zombie, survivor);;
@@ -387,7 +387,7 @@ public class GameLogic {
 
     }
 
-    public static void sceneTwo() {
+    public static void sceneTwo(Survivor survivor, Zombie zombie) {
         System.out.println("You come across an abandoned campsite. Do you: \n" +
                 "1. Do you stop to check for loot, or \n" +
                 "2. Keep moving?");
@@ -396,7 +396,7 @@ public class GameLogic {
         String input = in.nextLine();
 
         if (input.equals("1")) {
-            sceneFour();
+            sceneFour(survivor, zombie);
         }
         else if (input.equals("2")) {
             System.out.println("You return to your hut for a rest.");
@@ -407,8 +407,16 @@ public class GameLogic {
 
     }
 
-    public static void sceneFour() {
-        System.out.println("Score! A gun, more bullets");
+    public static void sceneFour(Survivor survivor, Zombie zombie) {
+        System.out.println("Score! A gun, some loose bullets and more food! \n +" +
+                "What happened to the people that left these?");
+        survivor.addGunToInventory(Gun.HANDGUN);
+        survivor.setAmmoInventory(4);
+        survivor.addFoodToInventory(Food.BAKEDBEANS);
+        survivor.addFoodToInventory(Food.DRIEDFRUIT);
+        inventoryCheck(survivor);
+        System.out.println("You step out of the tent and ...");
+        GameLogic.fightZombie(zombie, survivor);
     }
 
     public static void sceneFive() {
