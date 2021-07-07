@@ -413,6 +413,7 @@ public class GameLogic {
         String input = in.nextLine();
 
         if (input.equals("1")) {
+            GameLogic.fightZombie(survivor, zombie);
             sceneSix(survivor, zombie);
         }
         else if (input.equals("2")) {
@@ -436,13 +437,25 @@ public class GameLogic {
     public static void sceneFive(Survivor survivor, Zombie zombie) {
         System.out.println("You trip! Is that a legless " + zombie.getName() + "?!");
         GameLogic.fightZombie(survivor, zombie);
+        sceneSeven(survivor, zombie);
     }
 
     public static void sceneSix(Survivor survivor, Zombie zombie) {
-
+        System.out.println("The " + zombie.getName() + " has a back pack on, must have been someone else seeking shelter in the woods. \n" +
+                "A gun, 2 bullets and some food. They don't need this stuff anymore...");
+        survivor.addGunToInventory(Gun.HANDGUN);
+        survivor.setAmmoInventory(2);
+        survivor.addFoodToInventory(Food.IRNBRU);
+        survivor.addFoodToInventory(Food.DRIEDFRUIT);
+        inventoryCheck(survivor);
+        sceneEight(survivor, zombie);
     }
 
     public static void sceneSeven(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneEight(Survivor survivor, Zombie zombie) {
 
     }
 
