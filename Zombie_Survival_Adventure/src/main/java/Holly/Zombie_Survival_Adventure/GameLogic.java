@@ -287,16 +287,6 @@ public class GameLogic {
         sceneOne(survivor, zombie);
     }
 
-    public static void invalidResetLoop(){
-        Scanner in = new Scanner(System.in);
-        String input = in.nextLine();
-
-        while(!input.equals("1") && !input.equals("2")) {
-            System.out.println("Invalid command");
-            input = in.nextLine();
-        }
-    }
-
     public static int fightZombie (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
@@ -491,7 +481,10 @@ public class GameLogic {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
-        invalidResetLoop();
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
         if (input.equals("1")) {
             sceneTwo(survivor, zombie);
         }
@@ -508,7 +501,10 @@ public class GameLogic {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
-        invalidResetLoop();
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
         if (input.equals("1")) {
             sceneFour(survivor, zombie);
         }
@@ -525,7 +521,10 @@ public class GameLogic {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
-        invalidResetLoop();
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
         if (input.equals("1")) {
             fightZombie(survivor, zombie);
             sceneSix(survivor, zombie);
@@ -575,7 +574,10 @@ public class GameLogic {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
-        invalidResetLoop();
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
         if (input.equals("1")) {
             sceneNine(survivor, zombie);
         }
@@ -592,7 +594,10 @@ public class GameLogic {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
-        invalidResetLoop();
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
         if (input.equals("1")) {
             sceneSeven(survivor, zombie);
         }
@@ -632,7 +637,10 @@ public class GameLogic {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
-        invalidResetLoop();
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
         if (input.equals("1")) {
             sceneTen(survivor, zombie);
         }
