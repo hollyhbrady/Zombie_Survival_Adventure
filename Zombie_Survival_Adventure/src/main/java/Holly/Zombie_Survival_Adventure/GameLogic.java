@@ -184,7 +184,7 @@ public class GameLogic {
     }
 
     public static void checkGunUses(Survivor survivor) {
-        if (survivor.getGunUsed() >= Gun.HANDGUN.getUses()) {
+        if (survivor.getGunUsed() == Gun.HANDGUN.getUses()) {
             survivor.removeGunFromInventory(Gun.HANDGUN);
             survivor.setGunUsed(0);
             System.out.println("Oh no, my gun has jammed! Too much zombie guts. \n" +
@@ -199,10 +199,16 @@ public class GameLogic {
 
     public static void checkMeleeUses(Survivor survivor) {
         if (survivor.getMeleeUsed() >= Melee.KNIFE.getUses()) {
-            survivor.removeMeleeFromInventory(Melee.KNIFE);
-            survivor.setMeleeUsed(0);
-            System.out.println("Oh no, my knife is too blunt! Those zombie skulls are thick.... \n" +
-                    "I better be more careful with the next one");
+
+            Random rand = new Random();
+            int meleeBluntChance = 20;
+
+            if (rand.nextInt(100) < meleeBluntChance) {
+                survivor.removeMeleeFromInventory(Melee.KNIFE);
+                survivor.setMeleeUsed(0);
+                System.out.println("Oh no, my knife is too blunt! Those zombie skulls are thick.... \n" +
+                        "I better be more careful with the next one");
+            }
         }
     }
 
