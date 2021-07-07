@@ -42,6 +42,6 @@ public class Main {
 
 
         System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, and used " + survivor.getHPRestoresUsed() + " HP restores.");
-        System.out.println("Thanks for playing!");
+        System.out.println("To be continued...");
     }
 }

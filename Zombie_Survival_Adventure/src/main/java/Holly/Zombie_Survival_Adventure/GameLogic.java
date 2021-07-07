@@ -18,12 +18,11 @@ public class GameLogic {
                 "You can't go much longer without sleep...");
         System.out.println("You have " + survivor.getFoodInventory().size() + " food items to restore health, "
                 + survivor.getMeleeInventory().size() + " knife, " +
-                survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets. \n" +
-                "Proceed wisely.");
+                survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
     }
 
     public static void inventoryCheck(Survivor survivor) {
-        System.out.println("You now have " + survivor.getFoodInventory().size() + " food item(s) to restore health, "
+        System.out.println("You have " + survivor.getFoodInventory().size() + " food item(s) to restore health, "
                 + survivor.getMeleeInventory().size() + " knives, " +
                 survivor.getGunInventory().size() + " gun(s) and " + survivor.getAmmoInventory() + " bullet(s).");
     }
@@ -455,6 +454,8 @@ public class GameLogic {
     }
 
     public static void sceneOne(Survivor survivor, Zombie zombie) {
+        zombieAppears(survivor, zombie);
+        fightZombie(survivor, zombie);
         System.out.println("There is a fork in the road, do you go: \n" +
                 "1. To the left, or \n" +
                 "2. Take the right?");
@@ -528,7 +529,9 @@ public class GameLogic {
 
     public static void sceneSix(Survivor survivor, Zombie zombie) {
         System.out.println("The " + zombie.getName() + " has a back pack on, must have been someone else seeking shelter in the woods. \n" +
-                "You search it and come up empty. Sucks to be you...");
+                "You search it and come up empty. Sucks to be you... \n" +
+                "Wait, did it just move!?");
+        fightZombie(survivor, zombie);
         sceneEight(survivor, zombie);
     }
 
