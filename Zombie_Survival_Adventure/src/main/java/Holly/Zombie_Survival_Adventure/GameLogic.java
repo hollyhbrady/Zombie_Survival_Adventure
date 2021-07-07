@@ -242,7 +242,10 @@ public class GameLogic {
         }
     }
 
-
+    public static void sleep(Survivor survivor) {
+        survivor.setSurvivorHealth(survivor.getSurvivorHealth() * 2);
+        checkHealthDoesntExceedMax(survivor);
+    }
 
     public static void zombieAppears(Survivor survivor, Zombie zombie) {
         System.out.println("A " + zombie.getName() + " is blocking your way!");
