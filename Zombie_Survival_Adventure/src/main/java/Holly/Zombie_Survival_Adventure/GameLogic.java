@@ -63,7 +63,7 @@ public class GameLogic {
 //        return survivor;
     }
 
-    public static int zombieAttack(Zombie zombie, Survivor survivor) {
+    public static int zombieAttack(Survivor survivor, Zombie zombie) {
         Random rand = new Random();
 
         if (rand.nextInt(100) < zombie.getZLevel().getAccuracy()) {
@@ -178,7 +178,7 @@ public class GameLogic {
 //        }
 //    }
 
-    public static int fightZombie (Zombie zombie, Survivor survivor){
+    public static int fightZombie (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
         Scanner in = new Scanner(System.in);
@@ -218,7 +218,7 @@ public class GameLogic {
                     String attackInput = in.nextLine();
 
                     if (attackInput.equals("1")) {
-                        zombieAttack(zombie, survivor);
+                        zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
                             System.out.println("You have taken too much damage to go on.");
                             break;
@@ -239,7 +239,7 @@ public class GameLogic {
                             System.out.println("You don't have a gun!");
                         }
                     } else if (attackInput.equals("2")) {
-                        zombieAttack(zombie, survivor);
+                        zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
                             System.out.println("You have taken too much damage to go on.");
                             break;
@@ -256,7 +256,7 @@ public class GameLogic {
                             System.out.println("You don't have a close quarters weapon!");
                         }
                     } else if (attackInput.equals("3")) {
-                        zombieAttack(zombie, survivor);
+                        zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
                             System.out.println("You have taken too much damage to go on.");
                             break;
@@ -370,7 +370,7 @@ public class GameLogic {
         }
     }
 
-    public static void sceneOne(Zombie zombie, Survivor survivor) {
+    public static void sceneOne(Survivor survivor, Zombie zombie) {
         System.out.println("There is a fork in the road, do you go: \n" +
                 "1. To the left, or \n" +
                 "2. Take the right?");
@@ -382,9 +382,8 @@ public class GameLogic {
             sceneTwo(survivor, zombie);
         }
         else if (input.equals("2")) {
-            GameLogic.fightZombie(zombie, survivor);;
+            sceneThree(survivor, zombie);
         }
-
     }
 
     public static void sceneTwo(Survivor survivor, Zombie zombie) {
@@ -399,12 +398,12 @@ public class GameLogic {
             sceneFour(survivor, zombie);
         }
         else if (input.equals("2")) {
-            System.out.println("You return to your hut for a rest.");
+            sceneFive(survivor, zombie);
         }
     }
 
-    public static void sceneThree() {
-
+    public static void sceneThree(Survivor survivor, Zombie zombie) {
+        GameLogic.fightZombie(survivor, zombie);
     }
 
     public static void sceneFour(Survivor survivor, Zombie zombie) {
@@ -416,11 +415,12 @@ public class GameLogic {
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
         inventoryCheck(survivor);
         System.out.println("You step out of the tent and ...");
-        GameLogic.fightZombie(zombie, survivor);
+        GameLogic.fightZombie(survivor, zombie);
     }
 
-    public static void sceneFive() {
-
+    public static void sceneFive(Survivor survivor, Zombie zombie) {
+        System.out.println("You trip! Is that a legless zombie?!");
+        GameLogic.fightZombie(survivor, zombie);
     }
 
     public static void sceneSix() {
