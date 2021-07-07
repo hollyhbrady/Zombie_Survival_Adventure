@@ -50,6 +50,10 @@ public class GameLogic {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
+        while(!input.equals("1") && !input.equals("2") && !input.equals("3")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
         if (input.equals("1")) {
             Survivor survivor = new Survivor("Abby", 0, SurvivorLevel.SOLDIER, 50, 0, 0, 0, 0);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
@@ -70,8 +74,6 @@ public class GameLogic {
             survivor.addFoodToInventory(Food.IRNBRU);
             survivor.addMeleeToInventory(Melee.KNIFE);
             survivor.setAmmoInventory(8);
-        } else {
-            System.out.println("Invalid command.");
         }
 //        return survivor;
     }
