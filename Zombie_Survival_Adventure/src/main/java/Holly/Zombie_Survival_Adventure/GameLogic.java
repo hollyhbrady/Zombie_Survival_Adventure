@@ -22,7 +22,11 @@ public class GameLogic {
                 "Proceed wisely.");
     }
 
-
+    public static void inventoryCheck(Survivor survivor) {
+        System.out.println("You have " + survivor.getFoodInventory().size() + " food item(s) to restore health, "
+                + survivor.getMeleeInventory().size() + " knives, " +
+                survivor.getGunInventory().size() + " gun(s) and " + survivor.getAmmoInventory() + " bullet(s).");
+    }
 
     public static void chooseCharacter() {
         System.out.println("Who are you?");
