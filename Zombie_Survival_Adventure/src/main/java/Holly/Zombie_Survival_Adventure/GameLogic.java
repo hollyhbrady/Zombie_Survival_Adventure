@@ -215,21 +215,21 @@ public class GameLogic {
     public static void survivorLevelUpCheck(Survivor survivor) {
         survivor.setZombiesEncountered(survivor.getZombiesEncountered() + 1);
         if (survivor.getZombiesEncountered() == 10) {
-            reachLevel2(survivor);
+            reachLevel2Outcast(survivor);
         }
         if (survivor.getZombiesEncountered() == 20) {
-            reachLevel3(survivor);
+            reachLevel3Outcast(survivor);
         }
     }
 
-    public static void reachLevel2(Survivor survivor) {
+    public static void reachLevel2Outcast(Survivor survivor) {
         survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTWO);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
                 "Are you feeling it? Cause you are faster, stronger and that accuracy is way better! " +
                 "Well done for making it to Level Two ");
     }
 
-    public static void reachLevel3(Survivor survivor) {
+    public static void reachLevel3Outcast(Survivor survivor) {
         survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTHREE);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
                 "Are you feeling it? Cause you are faster, stronger and that accuracy on point! " +
@@ -549,20 +549,71 @@ public class GameLogic {
     }
 
     public static void sceneEight(Survivor survivor, Zombie zombie) {
+        System.out.println("The road sweeps off to the left, and you see light reflecting off some glass in the bushes ahead. Do you: \n" +
+                "1. Investigate, or \n" +
+                "2. Follow where the road leads");
 
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        if (input.equals("1")) {
+            sceneSeven(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneTen(survivor, zombie);
+        }
     }
 
     public static void sceneNine(Survivor survivor, Zombie zombie) {
-
+        System.out.println("You are not the only person who has been here, there are ashes from a fire on the ground. \n" +
+                "Empty cans and crisp packets are strewn around. \n" +
+                "The windows look like they have been smashed from the inside... \n" +
+                "Desperate for sleep and shelter, you spend the night.");
+        sleep(survivor);
+        sceneEleven(survivor, zombie);
     }
 
     public static void sceneTen(Survivor survivor, Zombie zombie) {
 
     }
 
+    public static void sceneEleven(Survivor survivor, Zombie zombie) {
+        System.out.println("------------------------------");
+        System.out.println("In the morning light, you search the hut top to bottom. \n" +
+                "You find food hidden under debris in the corner");
+        survivor.addFoodToInventory(Food.BAKEDBEANS);
+        survivor.addFoodToInventory(Food.IRNBRU);
+        inventoryCheck(survivor);
+        System.out.println("You cannot spend another night like that, do you: \n" +
+                "1. Explore to find safer shelter or \n" +
+                "2. Fortify your hut?");
 
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
 
+        if (input.equals("1")) {
+            sceneFifteen(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneTen(survivor, zombie);
+        }
+    }
 
+    public static void sceneTwelve(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneThirteen(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneFourteen(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneFifteen(Survivor survivor, Zombie zombie) {
+
+    }
 
 
 
