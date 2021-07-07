@@ -132,7 +132,7 @@ public class GameLogic {
             if (survivor.getAmmoInventory() == 0) {
                 System.out.println("'Phew I was all out, thank you bullet fairy!'");
             } else {
-                System.out.println("'Now thats what I call luck!'");
+                System.out.println("'Now that's what I call luck!'");
             }
             System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
         } else if (rand.nextInt(100) < bulletDropChance2 && survivor.getAmmoInventory() > 4  ) {
@@ -212,13 +212,38 @@ public class GameLogic {
         }
     }
 
-    public static void zombieAppears(Zombie zombie) {
+    public static void survivorLevelUpCheck(Survivor survivor) {
+        survivor.setZombiesEncountered(survivor.getZombiesEncountered() + 1);
+        if (survivor.getZombiesEncountered() == 10) {
+            reachLevel2(survivor);
+        }
+        if (survivor.getZombiesEncountered() == 20) {
+            reachLevel3(survivor);
+        }
+    }
+
+    public static void reachLevel2(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTWO);
+        System.out.println("Woah, you've survived a lot of zombies. \n" +
+                "Are you feeling it? Cause you are faster, stronger and that accuracy is way better! " +
+                "Well done for making it to Level Two ");
+    }
+
+    public static void reachLevel3(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTHREE);
+        System.out.println("Woah, you've survived a lot of zombies. \n" +
+                "Are you feeling it? Cause you are faster, stronger and that accuracy on point! " +
+                "Well done for making it to Level Three ");
+    }
+
+    public static void zombieAppears(Survivor survivor, Zombie zombie) {
         System.out.println("A " + zombie.getName() + " is blocking your way!");
+        survivorLevelUpCheck(survivor);
     }
 
     public static void zombieDeathLoop(Survivor survivor, Zombie zombie) {
         while (survivor.getSurvivorHealth() > 0) {
-            zombieAppears(zombie);
+            zombieAppears(survivor, zombie);
             fightZombie(survivor, zombie);
         }
         GameLogic.gameStart(survivor);
@@ -389,7 +414,6 @@ public class GameLogic {
             }
             System.out.println("------------------------------");
             System.out.println("The " + zombie.getName() + " was defeated!");
-            survivor.zombiesEncountered++;
             foodDrop(survivor);
             weaponDrop(survivor, zombie);
 
