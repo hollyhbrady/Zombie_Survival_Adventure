@@ -79,7 +79,7 @@ public class GameLogic {
 
     public static void foodDrop(Survivor survivor) {
         Random rand = new Random();
-        int foodDropChance = 40;
+        int foodDropChance = 20;
         if (rand.nextInt(100) < foodDropChance) {
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             System.out.println("It dropped a can of baked beans!");
@@ -116,9 +116,9 @@ public class GameLogic {
         int gunDropChance = 30;
         int knifeDropChance = 40;
 
-        int bulletDropChance1 = 30;
-        int bulletDropChance2 = 50;
-        int bulletDropChance3 = 60;
+        int bulletDropChance1 = 20;
+        int bulletDropChance2 = 30;
+        int bulletDropChance3 = 40;
 
         if (rand.nextInt(100) < gunDropChance && survivor.getGunInventory().size() == 0) {
             survivor.addGunToInventory(Gun.HANDGUN);
@@ -426,6 +426,7 @@ public class GameLogic {
             System.out.println("You survived the " + zombie.getName() + "!");
             foodDrop(survivor);
             weaponDrop(survivor, zombie);
+            inventoryCheck(survivor);
             System.out.println("------------------------------");
             break;
         }
@@ -486,7 +487,7 @@ public class GameLogic {
     }
 
     public static void sceneThree(Survivor survivor, Zombie zombie) {
-        System.out.println("Oh no! A " + zombie.getName() + " lurches out from behind bushes yo your left! Do you: \n" +
+        System.out.println("Oh no! A " + zombie.getName() + " lurches out from behind bushes to your left! Do you: \n" +
                 "1. Fight your way past, or \n" +
                 "2. Attempt to flee?");
 
@@ -527,12 +528,7 @@ public class GameLogic {
 
     public static void sceneSix(Survivor survivor, Zombie zombie) {
         System.out.println("The " + zombie.getName() + " has a back pack on, must have been someone else seeking shelter in the woods. \n" +
-                "A gun, 2 bullets and some food. They don't need this stuff anymore...");
-        survivor.addGunToInventory(Gun.HANDGUN);
-        survivor.setAmmoInventory(2);
-        survivor.addFoodToInventory(Food.IRNBRU);
-        survivor.addFoodToInventory(Food.DRIEDFRUIT);
-        inventoryCheck(survivor);
+                "You search it and come up empty. Sucks to be you...");
         sceneEight(survivor, zombie);
     }
 
