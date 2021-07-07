@@ -1,8 +1,8 @@
 package Holly.Zombie_Survival_Adventure.models;
 
 import Holly.Zombie_Survival_Adventure.models.loot.Gun;
-import models.loot.Food;
-import models.loot.Melee;
+import Holly.Zombie_Survival_Adventure.models.loot.Food;
+import Holly.Zombie_Survival_Adventure.models.loot.Melee;
 
 import javax.persistence.*;
 import java.util.ArrayList;

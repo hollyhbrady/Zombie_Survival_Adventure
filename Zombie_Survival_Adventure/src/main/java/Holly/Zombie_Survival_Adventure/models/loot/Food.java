@@ -1,4 +1,4 @@
-package models.loot;
+package Holly.Zombie_Survival_Adventure.models.loot;
 
 public enum Food {
 

@@ -3,6 +3,8 @@ package Holly.Zombie_Survival_Adventure.components;
 import Holly.Zombie_Survival_Adventure.models.Survivor;
 import Holly.Zombie_Survival_Adventure.models.SurvivorLevel;
 import Holly.Zombie_Survival_Adventure.models.Zombie;
+import Holly.Zombie_Survival_Adventure.models.loot.Food;
+import Holly.Zombie_Survival_Adventure.models.loot.Melee;
 import Holly.Zombie_Survival_Adventure.repositories.SurvivorLevelRepository;
 import Holly.Zombie_Survival_Adventure.repositories.SurvivorRepository;
 import Holly.Zombie_Survival_Adventure.repositories.ZombieRepository;
@@ -43,10 +45,10 @@ public class DataLoader implements ApplicationRunner {
 
         holly.setSurvivorHealthMax();
 
-        holly.addFoodToInventory(models.loot.Food.BAKEDBEANS);
-        holly.addFoodToInventory(models.loot.Food.DRIEDFRUIT);
-        holly.addFoodToInventory(models.loot.Food.IRNBRU);
-        holly.addMeleeToInventory(models.loot.Melee.KNIFE);
+        holly.addFoodToInventory(Food.BAKEDBEANS);
+        holly.addFoodToInventory(Food.DRIEDFRUIT);
+        holly.addFoodToInventory(Food.IRNBRU);
+        holly.addMeleeToInventory(Melee.KNIFE);
         holly.addGunToInventory(Holly.Zombie_Survival_Adventure.models.loot.Gun.HANDGUN);
 
         Zombie shambler = new Zombie("Shambler", ZombieLevel.ONE);

@@ -4,9 +4,8 @@ import Holly.Zombie_Survival_Adventure.models.Survivor;
 import Holly.Zombie_Survival_Adventure.models.SurvivorLevel;
 import Holly.Zombie_Survival_Adventure.models.Zombie;
 import models.ZombieLevel;
-import models.loot.Food;
-import Holly.Zombie_Survival_Adventure.models.loot.Gun;
-import models.loot.Melee;
+import Holly.Zombie_Survival_Adventure.models.loot.Food;
+import Holly.Zombie_Survival_Adventure.models.loot.Melee;
 
 public class Main {
 
@@ -40,8 +39,6 @@ public class Main {
 
         // LEVEL THREE
         zombie = new Zombie("Runner", ZombieLevel.THREE);
-
-
 
 
         System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, and used " + survivor.getHPRestoresUsed() + " HP restores.");

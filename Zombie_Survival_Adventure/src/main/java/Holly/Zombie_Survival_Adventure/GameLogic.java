@@ -4,8 +4,8 @@ import Holly.Zombie_Survival_Adventure.models.Survivor;
 import Holly.Zombie_Survival_Adventure.models.SurvivorLevel;
 import Holly.Zombie_Survival_Adventure.models.Zombie;
 import Holly.Zombie_Survival_Adventure.models.loot.Gun;
-import models.loot.Food;
-import models.loot.Melee;
+import Holly.Zombie_Survival_Adventure.models.loot.Food;
+import Holly.Zombie_Survival_Adventure.models.loot.Melee;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -295,7 +295,7 @@ public class GameLogic {
                     System.out.println("How are you going to fight?");
                     System.out.println("1. Use my gun");
                     System.out.println("2. With my knife");
-                    System.out.println("3. I have no weapons left!");
+                    System.out.println("3. Bare hands!");
 
                     String attackInput = in.nextLine();
 
@@ -326,8 +326,10 @@ public class GameLogic {
                     } else if (attackInput.equals("2")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            System.out.println("You have taken too much damage to go on.");
-                            break;
+                            System.out.println("You have taken too much damage to go on. \n" +
+                                    "Welcome to the Army of the Dead, dumb-ass.");
+                            GameLogic.gameStart(survivor);
+                            sceneOne(survivor, zombie);
                         }
                         if (survivor.getMeleeInventory().size() > 0) {
                             int damageDealt = (rand.nextInt(attackDamage) + Melee.KNIFE.getDamage());
@@ -339,13 +341,15 @@ public class GameLogic {
                                 System.out.println("You take a swing and miss!");
                             }
                         } else {
-                            System.out.println("You don't have a close quarters weapon!");
+                            System.out.println("You don't have a knife!");
                         }
                     } else if (attackInput.equals("3")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            System.out.println("You have taken too much damage to go on.");
-                            break;
+                            System.out.println("You have taken too much damage to go on. \n" +
+                                    "Welcome to the Army of the Dead, dumb-ass.");
+                            GameLogic.gameStart(survivor);
+                            sceneOne(survivor, zombie);
                         }
                         int damageDealt = rand.nextInt(attackDamage);
                         if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
@@ -409,8 +413,8 @@ public class GameLogic {
                     }
                 } else if (input.equals("3")) {
                     if (zombieSpeed < SurvivorLevel.OUTCAST.getSpeed()) {
-                        System.out.println("You run away from the " + zombie.getName() + "!");
-                        continue GAME;
+                        System.out.println("You successfully run away!");
+                        break;
                     } else {
                         System.out.println("Cannot escape! Are you going to be zombie dinner!?");
                     }
@@ -419,10 +423,10 @@ public class GameLogic {
                 }
             }
             System.out.println("------------------------------");
-            System.out.println("The " + zombie.getName() + " was defeated!");
+            System.out.println("You survived the " + zombie.getName() + "!");
             foodDrop(survivor);
             weaponDrop(survivor, zombie);
-
+            System.out.println("------------------------------");
             break;
         }
         return survivor.getSurvivorHealth();
@@ -482,7 +486,7 @@ public class GameLogic {
     }
 
     public static void sceneThree(Survivor survivor, Zombie zombie) {
-        System.out.println("Oh no! A " + zombie.getName() + "lurches out from behind the tent! Do you: \n" +
+        System.out.println("Oh no! A " + zombie.getName() + " lurches out from behind the tent! Do you: \n" +
                 "1. Fight your way past, or \n" +
                 "2. Attempt to flee?");
 
@@ -501,14 +505,15 @@ public class GameLogic {
     }
 
     public static void sceneFour(Survivor survivor, Zombie zombie) {
-        System.out.println("Score! A gun, some loose bullets and more food! \n +" +
+        System.out.println("Score! A gun, some loose bullets and more food! \n" +
                 "What happened to the people that left these?");
         survivor.addGunToInventory(Gun.HANDGUN);
-        survivor.setAmmoInventory(4);
+        survivor.addToAmmoInventory(4);
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
         inventoryCheck(survivor);
-        System.out.println("You step out of the tent and a " + zombie.getName() + "lurches at you!");
+        System.out.println("------------------------------");
+        System.out.println("You step out of the tent and a " + zombie.getName() + " lurches at you!");
         GameLogic.fightZombie(survivor, zombie);
         sceneSeven(survivor, zombie);
     }
