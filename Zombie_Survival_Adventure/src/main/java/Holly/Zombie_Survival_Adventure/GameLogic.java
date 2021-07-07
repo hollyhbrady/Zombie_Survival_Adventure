@@ -182,6 +182,14 @@ public class GameLogic {
         System.out.println("A " + zombie.getName() + " is blocking your way!");
     }
 
+    public static void zombieDeathLoop(Survivor survivor, Zombie zombie) {
+        while (survivor.getSurvivorHealth() > 0) {
+            zombieAppears(zombie);
+            fightZombie(survivor, zombie);
+        }
+        sceneOne(survivor, zombie);
+    }
+
     public static int fightZombie (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
