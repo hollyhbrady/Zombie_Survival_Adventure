@@ -102,6 +102,10 @@ public class Survivor {
         this.foodInventory = foodInventory;
     }
 
+    public void emptyFoodInventory() {
+        this.foodInventory = new ArrayList<>();
+    }
+
     public List<Gun> getGunInventory() {
         return gunInventory;
     }
@@ -110,12 +114,20 @@ public class Survivor {
         this.gunInventory = gunInventory;
     }
 
+    public void emptyGunInventory() {
+        this.gunInventory = new ArrayList<>();
+    }
+
     public List<Melee> getMeleeInventory() {
         return meleeInventory;
     }
 
     public void setMeleeInventory(ArrayList<Melee> meleeInventory) {
         this.meleeInventory = meleeInventory;
+    }
+
+    public void emptyMeleeInventory() {
+        this.meleeInventory = new ArrayList<>();
     }
 
     public int getSurvivorHealth() {

@@ -13,6 +13,20 @@ import java.util.Scanner;
 public class GameLogic {
 
     public static void gameStart(Survivor survivor) {
+        resetLevel1Outcast(survivor);
+        survivor.setSurvivorHealthMax();
+        survivor.setAmmoInventory(5);
+        survivor.emptyFoodInventory();
+        survivor.addFoodToInventory(Food.BAKEDBEANS);
+        survivor.addFoodToInventory(Food.DRIEDFRUIT);
+        survivor.addFoodToInventory(Food.IRNBRU);
+        survivor.emptyGunInventory();
+        survivor.emptyMeleeInventory();
+        survivor.addMeleeToInventory(Melee.KNIFE);
+        survivor.setZombiesEncountered(0);
+        survivor.setHPRestoresUsed(0);
+        survivor.setGunUsed(0);
+        survivor.setMeleeUsed(0);
         System.out.println("You're stumbling through the woods. \n" +
                 "You hear a moan - the shuffle drag of zombie feet. \n" +
                 "You can't go much longer without sleep...");
@@ -221,18 +235,22 @@ public class GameLogic {
         }
     }
 
+    public static void resetLevel1Outcast(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
+    }
+
     public static void reachLevel2Outcast(Survivor survivor) {
         survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTWO);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
-                "Are you feeling it? Cause you are faster, stronger and that accuracy is way better! " +
-                "Well done for making it to Level Two ");
+                "Are you feeling it? Cause you are faster, stronger and that accuracy is way better! \n" +
+                "Well done for making it to Level Two.");
     }
 
     public static void reachLevel3Outcast(Survivor survivor) {
         survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTHREE);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
-                "Are you feeling it? Cause you are faster, stronger and that accuracy on point! " +
-                "Well done for making it to Level Three ");
+                "Are you feeling it? Cause you are faster, stronger and that accuracy on point! \n" +
+                "Well done for making it to Level Three. ");
     }
 
     public static void checkHealthDoesntExceedMax(Survivor survivor) {
@@ -244,7 +262,7 @@ public class GameLogic {
     public static void sleep(Survivor survivor) {
         survivor.setSurvivorHealth(survivor.getSurvivorHealth() * 2);
         checkHealthDoesntExceedMax(survivor);
-        System.out.println("Your health has been restored to " + survivor.getSurvivorHealth());
+        System.out.println("Your health has doubled to " + survivor.getSurvivorHealth() + ".");
     }
 
     public static void zombieAppears(Survivor survivor, Zombie zombie) {
@@ -265,8 +283,7 @@ public class GameLogic {
                 "Welcome to the Army of the Dead, dumb-ass.");
         System.out.println("------------------------------");
         System.out.println("------------------------------");
-        survivor.setSurvivorHealthMax();
-        GameLogic.gameStart(survivor);
+        gameStart(survivor);
         sceneOne(survivor, zombie);
     }
 
@@ -497,7 +514,7 @@ public class GameLogic {
         String input = in.nextLine();
 
         if (input.equals("1")) {
-            GameLogic.fightZombie(survivor, zombie);
+            fightZombie(survivor, zombie);
             sceneSix(survivor, zombie);
         }
         else if (input.equals("2")) {
@@ -517,13 +534,13 @@ public class GameLogic {
         inventoryCheck(survivor);
         System.out.println("------------------------------");
         System.out.println("You step out of the tent and a " + zombie.getName() + " lurches at you!");
-        GameLogic.fightZombie(survivor, zombie);
+        fightZombie(survivor, zombie);
         sceneSeven(survivor, zombie);
     }
 
     public static void sceneFive(Survivor survivor, Zombie zombie) {
         System.out.println("You trip over a legless " + zombie.getName() + "!");
-        GameLogic.fightZombie(survivor, zombie);
+        fightZombie(survivor, zombie);
         sceneSeven(survivor, zombie);
 
     }
@@ -571,7 +588,10 @@ public class GameLogic {
 
     public static void sceneNine(Survivor survivor, Zombie zombie) {
         System.out.println("Its an abandoned hut! \n" +
-                "You are not the only person who has been here, there are ashes from a fire on the ground. \n" +
+                        "Or not so abandoned...");
+        zombieAppears(survivor, zombie);
+        fightZombie(survivor, zombie);
+        System.out.println("You are not the only person who has been here, there are ashes from a fire on the ground. \n" +
                 "Empty cans and crisp packets are strewn around. \n" +
                 "The windows look like they have been smashed from the inside... \n" +
                 "Desperate for sleep and shelter, you spend the night.");
@@ -580,7 +600,7 @@ public class GameLogic {
     }
 
     public static void sceneTen(Survivor survivor, Zombie zombie) {
-
+        System.out.println("You follow the road and find a river of gently rotting bodies");
     }
 
     public static void sceneEleven(Survivor survivor, Zombie zombie) {
@@ -598,10 +618,10 @@ public class GameLogic {
         String input = in.nextLine();
 
         if (input.equals("1")) {
-            sceneFifteen(survivor, zombie);
+            sceneTen(survivor, zombie);
         }
         else if (input.equals("2")) {
-            sceneTen(survivor, zombie);
+            sceneFifteen(survivor, zombie);
         }
     }
 
@@ -618,7 +638,7 @@ public class GameLogic {
     }
 
     public static void sceneFifteen(Survivor survivor, Zombie zombie) {
-
+        System.out.println("You venture down the road.");
     }
 
 
