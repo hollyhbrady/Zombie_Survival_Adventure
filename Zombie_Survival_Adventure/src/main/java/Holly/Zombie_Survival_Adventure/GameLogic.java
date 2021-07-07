@@ -178,11 +178,17 @@ public class GameLogic {
 //        }
 //    }
 
-    public static void gunDegradation(Survivor survivor, Gun gun) {
-        survivor.setGunUsed(survivor.gunUsed++);
+    public static void gunDegradation(Survivor survivor) {
+        survivor.setGunUsed(survivor.getGunUsed() + 1);
+        checkGunUses(survivor);
+    }
+
+    public static void checkGunUses(Survivor survivor) {
         if (survivor.getGunUsed() >= Gun.HANDGUN.getUses()) {
-            survivor.removeGunFromInventory(gun);
+            survivor.removeGunFromInventory(Gun.HANDGUN);
             survivor.setGunUsed(0);
+            System.out.println("Oh no, my gun has jammed! Too much zombie guts. \n" +
+                    "I better be more careful with the next one");
         }
     }
 
@@ -253,6 +259,7 @@ public class GameLogic {
                             } else {
                                 System.out.println("Your shot missed!");
                             }
+                            gunDegradation(survivor);
                             System.out.println("You have " + survivor.getAmmoInventory() + " bullets left");
                         } else if (survivor.getGunInventory().size() > 0) {
                             System.out.println("You don't have any bullets left!");
