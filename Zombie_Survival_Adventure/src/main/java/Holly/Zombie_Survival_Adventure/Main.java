@@ -31,7 +31,6 @@ public class Main {
         Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
 
         GameLogic.sceneOne(survivor, zombie);
-        GameLogic.continueOrGoToHut();
 
         // LEVEL TWO
         zombie = new Zombie("Walker", ZombieLevel.TWO);

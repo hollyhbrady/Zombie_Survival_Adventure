@@ -23,7 +23,7 @@ public class GameLogic {
     }
 
     public static void inventoryCheck(Survivor survivor) {
-        System.out.println("You have " + survivor.getFoodInventory().size() + " food item(s) to restore health, "
+        System.out.println("You now have " + survivor.getFoodInventory().size() + " food item(s) to restore health, "
                 + survivor.getMeleeInventory().size() + " knives, " +
                 survivor.getGunInventory().size() + " gun(s) and " + survivor.getAmmoInventory() + " bullet(s).");
     }
@@ -178,6 +178,10 @@ public class GameLogic {
 //        }
 //    }
 
+    public static void zombieAppears(Zombie zombie) {
+        System.out.println("A " + zombie.getName() + " is blocking your way!");
+    }
+
     public static int fightZombie (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
@@ -196,8 +200,6 @@ public class GameLogic {
                 zombieSpeed = 1;
             }
             int attackDamage = survivor.survivorLevel.getMaxStrength();
-
-            System.out.println("A " + zombie.getName() + " is blocking your way!");
 
             while (zombieHealth > 0) {
                 System.out.println("Your HP: " + survivor.getSurvivorHealth());
@@ -403,7 +405,19 @@ public class GameLogic {
     }
 
     public static void sceneThree(Survivor survivor, Zombie zombie) {
-        GameLogic.fightZombie(survivor, zombie);
+        System.out.println("Oh no! A " + zombie.getName() + "lurches out from behind the tent! Do you: \n" +
+                "1. Fight your way past, or \n" +
+                "2. Attempt to flee?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        if (input.equals("1")) {
+            sceneSix(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneFive(survivor, zombie);
+        }
     }
 
     public static void sceneFour(Survivor survivor, Zombie zombie) {
@@ -414,16 +428,21 @@ public class GameLogic {
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
         inventoryCheck(survivor);
-        System.out.println("You step out of the tent and ...");
+        System.out.println("You step out of the tent and a " + zombie.getName() + "lurches at you!");
         GameLogic.fightZombie(survivor, zombie);
+        sceneSeven(survivor, zombie);
     }
 
     public static void sceneFive(Survivor survivor, Zombie zombie) {
-        System.out.println("You trip! Is that a legless zombie?!");
+        System.out.println("You trip! Is that a legless " + zombie.getName() + "?!");
         GameLogic.fightZombie(survivor, zombie);
     }
 
-    public static void sceneSix() {
+    public static void sceneSix(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneSeven(Survivor survivor, Zombie zombie) {
 
     }
 
