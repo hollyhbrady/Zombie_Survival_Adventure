@@ -94,7 +94,7 @@ public class GameLogic {
 
     public static void foodDrop(Survivor survivor) {
         Random rand = new Random();
-        int foodDropChance = 20;
+        int foodDropChance = 30;
         if (rand.nextInt(100) < foodDropChance) {
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             System.out.println("It dropped a can of baked beans!");
@@ -440,12 +440,14 @@ public class GameLogic {
                     System.out.println("Invalid command.");
                 }
             }
-            System.out.println("------------------------------");
-            System.out.println("You survived the " + zombie.getName() + "!");
-            survivorLevelUpCheck(survivor);
-            foodDrop(survivor);
-            weaponDrop(survivor, zombie);
-            inventoryCheck(survivor);
+            if (zombieHealth < 1) {
+                System.out.println("------------------------------");
+                System.out.println("You killed the " + zombie.getName() + "!");
+                survivorLevelUpCheck(survivor);
+                foodDrop(survivor);
+                weaponDrop(survivor, zombie);
+                inventoryCheck(survivor);
+            }
             System.out.println("------------------------------");
             break;
         }
