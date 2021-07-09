@@ -255,7 +255,7 @@ public class GameLogic {
                 "Well done for making it to Level Three. ");
     }
 
-    public static void checkHealthDoesntExceedMax(Survivor survivor) {
+    public static void checkHealthDoesNotExceedMax(Survivor survivor) {
         if (survivor.getSurvivorHealth() > survivor.getSurvivorLevel().getHP()) {
             survivor.setSurvivorHealthMax();
         }
@@ -263,7 +263,7 @@ public class GameLogic {
 
     public static void sleep(Survivor survivor) {
         survivor.setSurvivorHealth(survivor.getSurvivorHealth() * 2);
-        checkHealthDoesntExceedMax(survivor);
+        checkHealthDoesNotExceedMax(survivor);
         System.out.println("Your health has doubled to " + survivor.getSurvivorHealth() + ".");
     }
 
@@ -299,8 +299,8 @@ public class GameLogic {
             System.out.println("------------------------------");
 
             int zombieHealth = rand.nextInt(zombie.getZLevel().getHP());
-            if (zombieHealth < 1) {
-                zombieHealth = 1;
+            if (zombieHealth < 5) {
+                zombieHealth = 5;
             }
             int zombieSpeed = rand.nextInt(zombie.getZLevel().getSpeed());
             if (zombieSpeed < 1) {
@@ -390,7 +390,7 @@ public class GameLogic {
                     if (foodInput.equals("1")) {
                         if (survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
                             survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.BAKEDBEANS.getRestore());
-                            checkHealthDoesntExceedMax(survivor);
+                            checkHealthDoesNotExceedMax(survivor);
                             survivor.getFoodInventory().remove(Food.BAKEDBEANS);
                             survivor.HPRestoresUsed++;
                             System.out.println("Your health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
@@ -403,7 +403,7 @@ public class GameLogic {
                     } else if (foodInput.equals("2")) {
                         if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
                             survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.DRIEDFRUIT.getRestore());
-                            checkHealthDoesntExceedMax(survivor);
+                            checkHealthDoesNotExceedMax(survivor);
                             survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
                             survivor.HPRestoresUsed++;
                             System.out.println("Your health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
@@ -416,7 +416,7 @@ public class GameLogic {
                     } else if (foodInput.equals("3")) {
                         if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
                             survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.IRNBRU.getRestore());
-                            checkHealthDoesntExceedMax(survivor);
+                            checkHealthDoesNotExceedMax(survivor);
                             survivor.getFoodInventory().remove(Food.IRNBRU);
                             survivor.HPRestoresUsed++;
                             System.out.println("Your health has been restored by " + Food.IRNBRU.getRestore() + ".");
