@@ -171,28 +171,6 @@ public class GameLogic {
         }
     }
 
-//    public static void afterZombieFight() {
-//        System.out.println("------------------------------");
-//        System.out.println("What would you like to do?");
-//        System.out.println("1. Continue on your path");
-//        System.out.println("2. Return to hut");
-//
-//        Scanner in = new Scanner(System.in);
-//        String input = in.nextLine();
-//
-//        while(!input.equals("1") && !input.equals("2")) {
-//            System.out.println("Invalid command");
-//            input = in.nextLine();
-//        }
-//        if (input.equals("1")) {
-//            System.out.println("You continue further down the path.");
-//        }
-//        else if (input.equals("2")) {
-//            System.out.println("You return to your hut for a rest.");
-////            break;
-//        }
-//    }
-
     public static void gunDegradation(Survivor survivor) {
         survivor.setGunUsed(survivor.getGunUsed() + 1);
         checkGunUses(survivor);
@@ -303,9 +281,6 @@ public class GameLogic {
                 zombieHealth = 5;
             }
             int zombieSpeed = rand.nextInt(zombie.getZLevel().getSpeed());
-            if (zombieSpeed < 1) {
-                zombieSpeed = 1;
-            }
             int attackDamage = survivor.survivorLevel.getMaxStrength();
 
             while (zombieHealth > 0) {
