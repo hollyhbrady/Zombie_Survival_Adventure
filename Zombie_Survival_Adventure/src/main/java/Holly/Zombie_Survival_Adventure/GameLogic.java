@@ -267,6 +267,51 @@ public class GameLogic {
         sceneOne(survivor, zombie);
     }
 
+    public static void eatBeans(Survivor survivor) {
+        if (survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
+            survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.BAKEDBEANS.getRestore());
+            checkHealthDoesNotExceedMax(survivor);
+            survivor.getFoodInventory().remove(Food.BAKEDBEANS);
+            survivor.HPRestoresUsed++;
+            System.out.println("Your health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
+            if (!survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
+                System.out.println("That was the last can!");
+            }
+        } else {
+            System.out.println("... Awkward. You don't have any.");
+        }
+    }
+
+    public static void eatFruit(Survivor survivor) {
+        if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
+            survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.DRIEDFRUIT.getRestore());
+            checkHealthDoesNotExceedMax(survivor);
+            survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
+            survivor.HPRestoresUsed++;
+            System.out.println("Your health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
+            if (!survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
+                System.out.println("That was the last packet!");
+            }
+        } else {
+            System.out.println("... Awkward. You don't have any.");
+        }
+    }
+
+    public static void drinkIrnBru(Survivor survivor) {
+        if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
+            survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.IRNBRU.getRestore());
+            checkHealthDoesNotExceedMax(survivor);
+            survivor.getFoodInventory().remove(Food.IRNBRU);
+            survivor.HPRestoresUsed++;
+            System.out.println("Your health has been restored by " + Food.IRNBRU.getRestore() + ".");
+            if (!survivor.getFoodInventory().contains(Food.IRNBRU)) {
+                System.out.println("That was the last can!");
+            }
+        } else {
+            System.out.println("... Awkward. You don't have any.");
+        }
+    }
+
     public static int fightZombie (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
@@ -363,44 +408,11 @@ public class GameLogic {
                     String foodInput = in.nextLine();
 
                     if (foodInput.equals("1")) {
-                        if (survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
-                            survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.BAKEDBEANS.getRestore());
-                            checkHealthDoesNotExceedMax(survivor);
-                            survivor.getFoodInventory().remove(Food.BAKEDBEANS);
-                            survivor.HPRestoresUsed++;
-                            System.out.println("Your health has been restored by " + Food.BAKEDBEANS.getRestore() + ".");
-                            if (!survivor.getFoodInventory().contains(Food.BAKEDBEANS)) {
-                                System.out.println("That was the last can!");
-                            }
-                        } else {
-                            System.out.println("... Awkward. You don't have any.");
-                        }
+                        eatBeans(survivor);
                     } else if (foodInput.equals("2")) {
-                        if (survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
-                            survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.DRIEDFRUIT.getRestore());
-                            checkHealthDoesNotExceedMax(survivor);
-                            survivor.getFoodInventory().remove(Food.DRIEDFRUIT);
-                            survivor.HPRestoresUsed++;
-                            System.out.println("Your health has been restored by " + Food.DRIEDFRUIT.getRestore() + ".");
-                            if (!survivor.getFoodInventory().contains(Food.DRIEDFRUIT)) {
-                                System.out.println("That was the last packet!");
-                            }
-                        } else {
-                            System.out.println("... Awkward. You don't have any.");
-                        }
+                        eatFruit(survivor);
                     } else if (foodInput.equals("3")) {
-                        if (survivor.getFoodInventory().contains(Food.IRNBRU)) {
-                            survivor.setSurvivorHealth(survivor.getSurvivorHealth() + Food.IRNBRU.getRestore());
-                            checkHealthDoesNotExceedMax(survivor);
-                            survivor.getFoodInventory().remove(Food.IRNBRU);
-                            survivor.HPRestoresUsed++;
-                            System.out.println("Your health has been restored by " + Food.IRNBRU.getRestore() + ".");
-                            if (!survivor.getFoodInventory().contains(Food.IRNBRU)) {
-                                System.out.println("That was the last can!");
-                            }
-                        } else {
-                        System.out.println("... Awkward. You don't have any.");
-                        }
+                        drinkIrnBru(survivor);
                     } else {
                         System.out.println("Invalid command.");
                     }
