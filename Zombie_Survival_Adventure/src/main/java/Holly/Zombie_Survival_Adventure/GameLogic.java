@@ -207,10 +207,10 @@ public class GameLogic {
 
     public static void survivorLevelUpCheck(Survivor survivor) {
         survivor.increaseZombieCountByOne();
-        if (survivor.getZombiesEncountered() == 3) {
+        if (survivor.getZombiesEncountered() == 10) {
             reachLevel2Outcast(survivor);
         }
-        if (survivor.getZombiesEncountered() == 5) {
+        if (survivor.getZombiesEncountered() == 20) {
             reachLevel3Outcast(survivor);
         }
     }
