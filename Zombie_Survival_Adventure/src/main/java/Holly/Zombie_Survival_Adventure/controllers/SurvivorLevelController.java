@@ -35,3 +35,7 @@ public class SurvivorLevelController {
         return enums;
     }
 }
+
+// payload objects: for 1 results 2 give options 3 take info back the other way.
+// where prompt use, handle input and send response data back
+// class room channel pinned videos from Roosa

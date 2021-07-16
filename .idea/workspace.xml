@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b92fa741-445b-4a35-bda0-9c734719534c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zombie_Survival_Adventure_Part_1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/GameLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Survivor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/Survivor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/SurvivorLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/SurvivorLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/Zombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/ZombieLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/ZombieLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/loot/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/loot/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/loot/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/loot/Gun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/loot/Loot.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/loot/Loot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/loot/Melee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/src/main/java/Holly/Zombie_Survival_Adventure/models/loot/Melee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zombie_Survival_Adventure/db/survival_db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/db/survival_db.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zombie_Survival_Adventure/db/survival_db.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Survival_Adventure/db/survival_db.trace.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
