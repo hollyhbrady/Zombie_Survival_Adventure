@@ -1,7 +1,7 @@
 import './App.css';
 
 import React, {useEffect, useState} from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import NewPlayer from "./components/NewPlayer";
 import Game from "./components/Game";
 import Zombies from "./components/Zombies";
