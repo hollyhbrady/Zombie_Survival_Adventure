@@ -1,5 +1,7 @@
-# Zombie_Survival_Adventure_Part_1
-Codeclan Capstone project. A Text Adventure Game written in Java.
+<h1 align="center">U+1f9df U+200d U+2640 U+fe0f Zombie Survival Adventure U+1F9DF</h1>
+<h3 align="center">A Text Adventure Game written in Java </h3>
+<h3 align="center">Codeclan Capstone project </h3>
+
 Follow the steps below to play:
 
 1. Fork this repository
