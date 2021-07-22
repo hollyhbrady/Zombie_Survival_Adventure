@@ -11,7 +11,7 @@
 <p align="justify"> The game will start and you are face to face with your first zombie! Pay attention to your starting inventory. Every zombie has randomised speed and strength stats so beware trying to run away, you won't always be successful. You are also rewarded with food and weapons for every zombie you defeat. 
 </p>
 
-<p align="justify"> Not all paths will lead you to safety... but if you die you get tacken back to the beginning to make better survival choices!</p>
+<p align="justify"> Not all paths will lead you to safety... but if you die you get taken back to the beginning to make better survival choices!</p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
