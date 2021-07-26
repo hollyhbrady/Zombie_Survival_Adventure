@@ -211,8 +211,15 @@ public class GameLogic {
         survivor.setExpGained(survivor.getExpGained() + expFromZombie);
     }
 
-    public static void survivorLevelUpCheckOutcast(Survivor survivor, int expFromZombie) {
+    public static void survivorLevelUpCheck(Survivor survivor, int expFromZombie) {
         survivorExpIncreaseByZombieStrength(survivor, expFromZombie);
+        survivorLevelUpCheckOutcast(survivor);
+        survivorLevelUpCheckWanderer(survivor);
+        survivorLevelUpCheckSoldier(survivor);
+    }
+
+
+    public static void survivorLevelUpCheckOutcast(Survivor survivor) {
         if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCAST && survivor.getZombiesEncountered() >= 10) {
             reachLevel2Outcast(survivor);
         }
@@ -239,8 +246,7 @@ public class GameLogic {
                 "Well done for making it to Level Three. ");
     }
 
-    public static void survivorLevelUpCheckWanderer(Survivor survivor, int expFromZombie) {
-        survivorExpIncreaseByZombieStrength(survivor, expFromZombie);
+    public static void survivorLevelUpCheckWanderer(Survivor survivor) {
         if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERER && survivor.getZombiesEncountered() >= 10) {
             reachLevel2Wanderer(survivor);
         }
@@ -267,8 +273,7 @@ public class GameLogic {
                 "Well done for making it to Level Three. ");
     }
 
-    public static void survivorLevelUpCheckSoldier(Survivor survivor, int expFromZombie) {
-        survivorExpIncreaseByZombieStrength(survivor, expFromZombie);
+    public static void survivorLevelUpCheckSoldier(Survivor survivor) {
         if (survivor.getSurvivorLevel() == SurvivorLevel.SOLDIER && survivor.getZombiesEncountered() >= 10) {
             reachLevel2Soldier(survivor);
         }
@@ -493,9 +498,7 @@ public class GameLogic {
             if (zombieHealth < 1) {
                 System.out.println("------------------------------");
                 System.out.println("You killed the " + zombie.getName() + "!");
-                survivorLevelUpCheckOutcast(survivor, expFromZombie);
-                survivorLevelUpCheckWanderer(survivor, expFromZombie);
-                survivorLevelUpCheckSoldier(survivor, expFromZombie);
+                survivorLevelUpCheck(survivor, expFromZombie);
                 foodDrop(survivor);
                 weaponDrop(survivor, zombie);
                 inventoryCheck(survivor);
