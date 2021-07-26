@@ -14,6 +14,8 @@ public class GameLogic {
 
     public static void gameStart(Survivor survivor) {
         resetLevel1Outcast(survivor);
+        resetLevel1Wanderer(survivor);
+        resetLevel1Soldier(survivor);
         survivor.setSurvivorHealthMax();
         survivor.setAmmoInventory(5);
         survivor.emptyFoodInventory();
@@ -275,6 +277,10 @@ public class GameLogic {
         }
     }
 
+    public static void resetLevel1Soldier(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
+    }
+
     public static void reachLevel2Soldier(Survivor survivor) {
         survivor.setSurvivorLevel(SurvivorLevel.SOLDIERTWO);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
@@ -287,10 +293,6 @@ public class GameLogic {
         System.out.println("Woah, you've survived a lot of zombies. \n" +
                 "Are you feeling it? Cause you are faster, stronger and that accuracy on point! \n" +
                 "Well done for making it to Level Three. ");
-    }
-
-    public static void resetLevel1Soldier(Survivor survivor) {
-        survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
     }
 
     public static void checkHealthDoesNotExceedMax(Survivor survivor) {
