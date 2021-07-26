@@ -205,16 +205,16 @@ public class GameLogic {
         }
     }
 
-    public static void survivorExpIncreaseByZombieStrength(Survivor survivor, Zombie zombie, int expFromZombie) {
+    public static void survivorExpIncreaseByZombieStrength(Survivor survivor, int expFromZombie) {
         survivor.setExpGained(survivor.getExpGained() + expFromZombie);
     }
 
-    public static void survivorLevelUpCheck(Survivor survivor) {
-        survivor.increaseZombieCountByOne();
-        if (survivor.getZombiesEncountered() == 10) {
+    public static void survivorLevelUpCheckOutcast(Survivor survivor, int expFromZombie) {
+        survivorExpIncreaseByZombieStrength(survivor, expFromZombie);
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCAST && survivor.getZombiesEncountered() >= 10) {
             reachLevel2Outcast(survivor);
         }
-        if (survivor.getZombiesEncountered() == 20) {
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO &&survivor.getZombiesEncountered() == 20) {
             reachLevel3Outcast(survivor);
         }
     }
@@ -435,7 +435,7 @@ public class GameLogic {
             if (zombieHealth < 1) {
                 System.out.println("------------------------------");
                 System.out.println("You killed the " + zombie.getName() + "!");
-                survivorLevelUpCheck(survivor);
+                survivorLevelUpCheckOutcast(survivor, expFromZombie);
                 foodDrop(survivor);
                 weaponDrop(survivor, zombie);
                 inventoryCheck(survivor);
