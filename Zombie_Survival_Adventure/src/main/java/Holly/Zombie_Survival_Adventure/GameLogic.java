@@ -227,10 +227,6 @@ public class GameLogic {
         }
     }
 
-    public static void resetLevel1Outcast(Survivor survivor) {
-        survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
-    }
-
     public static void reachLevel2Outcast(Survivor survivor) {
         survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTWO);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
@@ -252,10 +248,6 @@ public class GameLogic {
         if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO &&survivor.getZombiesEncountered() >= 20) {
             reachLevel3Wanderer(survivor);
         }
-    }
-
-    public static void resetLevel1Wanderer(Survivor survivor) {
-        survivor.setSurvivorLevel(SurvivorLevel.WANDERER);
     }
 
     public static void reachLevel2Wanderer(Survivor survivor) {
@@ -281,10 +273,6 @@ public class GameLogic {
         }
     }
 
-    public static void resetLevel1Soldier(Survivor survivor) {
-        survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
-    }
-
     public static void reachLevel2Soldier(Survivor survivor) {
         survivor.setSurvivorLevel(SurvivorLevel.SOLDIERTWO);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
@@ -297,6 +285,28 @@ public class GameLogic {
         System.out.println("Woah, you've survived a lot of zombies. \n" +
                 "Are you feeling it? Cause you are faster, stronger and that accuracy on point! \n" +
                 "Well done for making it to Level Three. ");
+    }
+
+
+    public static void resetLevel1Outcast(Survivor survivor) {
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO)
+        survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTHREE)
+            survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
+    }
+
+    public static void resetLevel1Wanderer(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.WANDERER);
+    }
+
+    public static void resetLevel1Soldier(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
+    }
+
+    public static void resetToLevel1(Survivor survivor) {
+        resetLevel1Outcast(survivor);
+        resetLevel1Wanderer(survivor);
+        resetLevel1Soldier(survivor);
     }
 
     public static void checkHealthDoesNotExceedMax(Survivor survivor) {
