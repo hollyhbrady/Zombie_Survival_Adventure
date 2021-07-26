@@ -218,12 +218,11 @@ public class GameLogic {
         survivorLevelUpCheckSoldier(survivor);
     }
 
-
     public static void survivorLevelUpCheckOutcast(Survivor survivor) {
         if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCAST && survivor.getZombiesEncountered() >= 10) {
             reachLevel2Outcast(survivor);
         }
-        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO &&survivor.getZombiesEncountered() == 20) {
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO &&survivor.getZombiesEncountered() >= 20) {
             reachLevel3Outcast(survivor);
         }
     }
@@ -250,7 +249,7 @@ public class GameLogic {
         if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERER && survivor.getZombiesEncountered() >= 10) {
             reachLevel2Wanderer(survivor);
         }
-        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO &&survivor.getZombiesEncountered() == 20) {
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO &&survivor.getZombiesEncountered() >= 20) {
             reachLevel3Wanderer(survivor);
         }
     }
@@ -277,7 +276,7 @@ public class GameLogic {
         if (survivor.getSurvivorLevel() == SurvivorLevel.SOLDIER && survivor.getZombiesEncountered() >= 10) {
             reachLevel2Soldier(survivor);
         }
-        if (survivor.getSurvivorLevel() == SurvivorLevel.SOLDIERTWO &&survivor.getZombiesEncountered() == 20) {
+        if (survivor.getSurvivorLevel() == SurvivorLevel.SOLDIERTWO &&survivor.getZombiesEncountered() >= 20) {
             reachLevel3Soldier(survivor);
         }
     }
