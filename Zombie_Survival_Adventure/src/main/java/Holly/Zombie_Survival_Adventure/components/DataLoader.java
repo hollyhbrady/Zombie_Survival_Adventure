@@ -33,7 +33,7 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCAST, 50, 0, 0, 0, 0);
+        Survivor holly = new Survivor("Holly", 6, SurvivorLevel.OUTCAST, 50, 0, 0, 0,0, 0);
         survivorRepository.save(holly);
 
 //        SurvivorLevel Soldier = new SurvivorLevel(50, 80, 70,20, 10);
