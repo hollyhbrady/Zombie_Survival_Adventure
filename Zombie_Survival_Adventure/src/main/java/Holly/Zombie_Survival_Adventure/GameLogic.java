@@ -493,6 +493,7 @@ public class GameLogic {
                 System.out.println("You killed the " + zombie.getName() + "!");
                 survivorLevelUpCheckOutcast(survivor, expFromZombie);
                 survivorLevelUpCheckWanderer(survivor, expFromZombie);
+                survivorLevelUpCheckSoldier(survivor, expFromZombie);
                 foodDrop(survivor);
                 weaponDrop(survivor, zombie);
                 inventoryCheck(survivor);
