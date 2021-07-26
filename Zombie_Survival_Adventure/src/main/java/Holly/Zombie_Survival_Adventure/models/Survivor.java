@@ -153,6 +153,14 @@ public class Survivor {
         this.zombiesEncountered = this.getZombiesEncountered() + 1;
     }
 
+    public int getExpGained() {
+        return expGained;
+    }
+
+    public void setExpGained(int expGained) {
+        this.expGained = expGained;
+    }
+
     public int getHPRestoresUsed() {
         return HPRestoresUsed;
     }
