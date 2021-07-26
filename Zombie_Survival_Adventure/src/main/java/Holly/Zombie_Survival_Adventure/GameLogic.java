@@ -247,6 +247,10 @@ public class GameLogic {
         }
     }
 
+    public static void resetLevel1Wanderer(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.WANDERER);
+    }
+
     public static void reachLevel2Wanderer(Survivor survivor) {
         survivor.setSurvivorLevel(SurvivorLevel.WANDERERTWO);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
