@@ -265,6 +265,16 @@ public class GameLogic {
                 "Well done for making it to Level Three. ");
     }
 
+    public static void survivorLevelUpCheckSoldier(Survivor survivor, int expFromZombie) {
+        survivorExpIncreaseByZombieStrength(survivor, expFromZombie);
+        if (survivor.getSurvivorLevel() == SurvivorLevel.SOLDIER && survivor.getZombiesEncountered() >= 10) {
+            reachLevel2Soldier(survivor);
+        }
+        if (survivor.getSurvivorLevel() == SurvivorLevel.SOLDIERTWO &&survivor.getZombiesEncountered() == 20) {
+            reachLevel3Soldier(survivor);
+        }
+    }
+
     public static void checkHealthDoesNotExceedMax(Survivor survivor) {
         if (survivor.getSurvivorHealth() > survivor.getSurvivorLevel().getHP()) {
             survivor.setSurvivorHealthMax();
@@ -464,6 +474,7 @@ public class GameLogic {
                 System.out.println("------------------------------");
                 System.out.println("You killed the " + zombie.getName() + "!");
                 survivorLevelUpCheckOutcast(survivor, expFromZombie);
+                survivorLevelUpCheckWanderer(survivor, expFromZombie);
                 foodDrop(survivor);
                 weaponDrop(survivor, zombie);
                 inventoryCheck(survivor);
