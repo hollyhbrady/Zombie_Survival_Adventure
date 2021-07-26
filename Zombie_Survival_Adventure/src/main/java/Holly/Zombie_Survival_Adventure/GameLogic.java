@@ -289,6 +289,10 @@ public class GameLogic {
                 "Well done for making it to Level Three. ");
     }
 
+    public static void resetLevel1Soldier(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
+    }
+
     public static void checkHealthDoesNotExceedMax(Survivor survivor) {
         if (survivor.getSurvivorHealth() > survivor.getSurvivorLevel().getHP()) {
             survivor.setSurvivorHealthMax();
