@@ -55,20 +55,20 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
-            Survivor survivor = new Survivor("Abby", 0, SurvivorLevel.SOLDIER, 50, 0, 0, 0, 0);
+            Survivor survivor = new Survivor("Abby", 0, SurvivorLevel.SOLDIER, 50, 0, 0, 0, 0, 0);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
             survivor.addGunToInventory(Gun.HANDGUN);
             survivor.setAmmoInventory(5);
         } else if (input.equals("2")) {
-            Survivor survivor = new Survivor("Joel", 0, SurvivorLevel.WANDERER, 50, 0, 0, 0, 0);
+            Survivor survivor = new Survivor("Joel", 0, SurvivorLevel.WANDERER, 50, 0, 0, 0, 0, 0);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
             survivor.addMeleeToInventory(Melee.KNIFE);
         } else if (input.equals("3")) {
-            Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0, 0, 0);
+            Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0, 0, 0, 0);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
@@ -205,6 +205,10 @@ public class GameLogic {
         }
     }
 
+    public static void survivorExpIncreaseByZombieStrength(Survivor survivor, Zombie zombie, int expFromZombie) {
+        survivor.setExpGained(survivor.getExpGained() + expFromZombie);
+    }
+
     public static void survivorLevelUpCheck(Survivor survivor) {
         survivor.increaseZombieCountByOne();
         if (survivor.getZombiesEncountered() == 10) {
@@ -325,6 +329,7 @@ public class GameLogic {
             if (zombieHealth < 5) {
                 zombieHealth = 5;
             }
+            int expFromZombie = zombieHealth;
             int zombieSpeed = rand.nextInt(zombie.getZLevel().getSpeed());
             int attackDamage = survivor.survivorLevel.getMaxStrength();
 
