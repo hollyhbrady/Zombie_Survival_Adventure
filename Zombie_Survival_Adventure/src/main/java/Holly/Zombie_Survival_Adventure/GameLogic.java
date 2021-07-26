@@ -230,6 +230,16 @@ public class GameLogic {
                 "Well done for making it to Level Two.");
     }
 
+    public static void survivorLevelUpCheckWanderer(Survivor survivor, int expFromZombie) {
+        survivorExpIncreaseByZombieStrength(survivor, expFromZombie);
+        if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERER && survivor.getZombiesEncountered() >= 10) {
+            reachLevel2Wanderer(survivor);
+        }
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO &&survivor.getZombiesEncountered() == 20) {
+            reachLevel3Wanderer(survivor);
+        }
+    }
+
     public static void reachLevel3Outcast(Survivor survivor) {
         survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTHREE);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
