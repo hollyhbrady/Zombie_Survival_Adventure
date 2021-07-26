@@ -275,6 +275,13 @@ public class GameLogic {
         }
     }
 
+    public static void reachLevel2Soldier(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.SOLDIERTWO);
+        System.out.println("Woah, you've survived a lot of zombies. \n" +
+                "Are you feeling it? Cause you are faster, stronger and that accuracy is way better! \n" +
+                "Well done for making it to Level Two.");
+    }
+
     public static void checkHealthDoesNotExceedMax(Survivor survivor) {
         if (survivor.getSurvivorHealth() > survivor.getSurvivorLevel().getHP()) {
             survivor.setSurvivorHealthMax();
