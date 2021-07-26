@@ -40,12 +40,14 @@ public class Survivor {
 
     public int zombiesEncountered;
 
+    public int expGained;
+
     public int HPRestoresUsed;
 
     public int gunUsed;
     public int meleeUsed;
 
-    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth, int zombiesEncountered, int HPRestoresUsed, int gunUsed, int meleeUsed) {
+    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth, int zombiesEncountered, int expGained, int HPRestoresUsed, int gunUsed, int meleeUsed) {
         this.name = name;
         this.survivorLevel = survivorLevel;
         this.ammoInventory = ammoInventory;
@@ -54,6 +56,7 @@ public class Survivor {
         this.meleeInventory = new ArrayList<>();
         this.survivorHealth = survivorHealth;
         this.zombiesEncountered = zombiesEncountered;
+        this.expGained = expGained;
         this.HPRestoresUsed = HPRestoresUsed;
         this.gunUsed = gunUsed;
         this.meleeUsed = meleeUsed;
