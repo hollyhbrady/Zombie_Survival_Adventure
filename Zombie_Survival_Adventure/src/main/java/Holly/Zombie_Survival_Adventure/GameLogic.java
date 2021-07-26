@@ -230,6 +230,13 @@ public class GameLogic {
                 "Well done for making it to Level Two.");
     }
 
+    public static void reachLevel3Outcast(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTHREE);
+        System.out.println("Woah, you've survived a lot of zombies. \n" +
+                "Are you feeling it? Cause you are faster, stronger and that accuracy on point! \n" +
+                "Well done for making it to Level Three. ");
+    }
+
     public static void survivorLevelUpCheckWanderer(Survivor survivor, int expFromZombie) {
         survivorExpIncreaseByZombieStrength(survivor, expFromZombie);
         if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERER && survivor.getZombiesEncountered() >= 10) {
@@ -240,11 +247,11 @@ public class GameLogic {
         }
     }
 
-    public static void reachLevel3Outcast(Survivor survivor) {
-        survivor.setSurvivorLevel(SurvivorLevel.OUTCASTTHREE);
+    public static void reachLevel2Wanderer(Survivor survivor) {
+        survivor.setSurvivorLevel(SurvivorLevel.WANDERERTWO);
         System.out.println("Woah, you've survived a lot of zombies. \n" +
-                "Are you feeling it? Cause you are faster, stronger and that accuracy on point! \n" +
-                "Well done for making it to Level Three. ");
+                "Are you feeling it? Cause you are faster, stronger and that accuracy is way better! \n" +
+                "Well done for making it to Level Two.");
     }
 
     public static void checkHealthDoesNotExceedMax(Survivor survivor) {
