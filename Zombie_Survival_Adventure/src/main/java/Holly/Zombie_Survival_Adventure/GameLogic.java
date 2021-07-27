@@ -13,9 +13,7 @@ import java.util.Scanner;
 public class GameLogic {
 
     public static void gameStart(Survivor survivor) {
-        resetLevel1Outcast(survivor);
-        resetLevel1Wanderer(survivor);
-        resetLevel1Soldier(survivor);
+        resetToLevel1(survivor);
         survivor.setSurvivorHealthMax();
         survivor.setAmmoInventory(5);
         survivor.emptyFoodInventory();
