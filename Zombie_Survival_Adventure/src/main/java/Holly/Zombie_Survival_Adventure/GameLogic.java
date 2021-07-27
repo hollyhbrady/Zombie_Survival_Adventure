@@ -289,10 +289,12 @@ public class GameLogic {
 
 
     public static void resetLevel1Outcast(Survivor survivor) {
-        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO)
-        survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
-        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTHREE)
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO) {
             survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
+        }
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTHREE) {
+            survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
+        }
     }
 
     public static void resetLevel1Wanderer(Survivor survivor) {
