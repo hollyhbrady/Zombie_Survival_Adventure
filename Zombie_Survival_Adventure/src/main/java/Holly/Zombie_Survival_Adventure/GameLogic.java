@@ -296,7 +296,12 @@ public class GameLogic {
     }
 
     public static void resetLevel1Wanderer(Survivor survivor) {
-        survivor.setSurvivorLevel(SurvivorLevel.WANDERER);
+        if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERERTWO) {
+            survivor.setSurvivorLevel(SurvivorLevel.WANDERER);
+        }
+        if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERERTHREE) {
+            survivor.setSurvivorLevel(SurvivorLevel.WANDERER);
+        }
     }
 
     public static void resetLevel1Soldier(Survivor survivor) {
