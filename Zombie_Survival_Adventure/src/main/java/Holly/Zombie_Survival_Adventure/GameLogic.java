@@ -307,7 +307,12 @@ public class GameLogic {
     }
 
     public static void resetLevel1Soldier(Survivor survivor) {
-        survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
+        if (survivor.getSurvivorLevel() == SurvivorLevel.SOLDIERTWO) {
+            survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
+        }
+        if (survivor.getSurvivorLevel() == SurvivorLevel.SOLDIERTHREE) {
+            survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
+        }
     }
 
     public static void resetToLevel1(Survivor survivor) {
