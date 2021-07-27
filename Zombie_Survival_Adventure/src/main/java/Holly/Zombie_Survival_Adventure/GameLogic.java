@@ -528,25 +528,15 @@ public class GameLogic {
         return survivor.getSurvivorHealth();
     }
 
-    public static void continueOrGoToHut() {
+    public static void returnToHut(Survivor survivor, Zombie zombie) {
         System.out.println("------------------------------");
-        System.out.println("What would you like to do?");
-        System.out.println("1. Continue on your path");
-        System.out.println("2. Return to hut");
+        System.out.println("You make it back to the hut safely. \n" +
+                "Best try and sleep, things are always better in the morning... \n" +
+                "unless of course you are stuck in zombie purgatory!");
+        sleep(survivor);
+        System.out.println("Time to get moving!");
+        sceneEleven(survivor, zombie);
 
-        Scanner in = new Scanner(System.in);
-        String input = in.nextLine();
-
-        while(!input.equals("1") && !input.equals("2")) {
-            System.out.println("Invalid command");
-            input = in.nextLine();
-        }
-        if (input.equals("1")) {
-            System.out.println("You continue further down the path.");
-        }
-        else if (input.equals("2")) {
-            System.out.println("You return to your hut for a rest.");
-        }
     }
 
     public static void sceneOne(Survivor survivor, Zombie zombie) {
