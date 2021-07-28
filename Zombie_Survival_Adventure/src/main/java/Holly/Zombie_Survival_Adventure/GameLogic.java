@@ -700,7 +700,7 @@ public class GameLogic {
         inventoryCheck(survivor);
         System.out.println("You cannot spend another night like that, do you: \n" +
                 "1. Explore to find safer shelter or \n" +
-                "2. Fortify your hut?");
+                "2. Scavenge the area for more supplies?");
 
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
