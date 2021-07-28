@@ -758,13 +758,15 @@ public class GameLogic {
         survivor.addGunToInventory(Gun.HANDGUN);
         survivor.addToAmmoInventory(8);
         inventoryCheck(survivor);
-        System.out.println("You close the trunk and a hand grabs you from under the car! \n" +
-                "The cop whose guns you've stolen is re-animated and hungry for revenge");
+        System.out.println("You close the door and a hand grabs you from under the car! \n" +
+                "The cop whose guns you've stolen is re-animated and hungry for revenge.");
         fightZombie(survivor, zombie);
     }
 
     public static void sceneThirteen(Survivor survivor, Zombie zombie) {
-
+        System.out.println("A hoard hears the fight. Do you: \n" +
+                "1. Hide in the car or \n" +
+                "2. Run back to the river? ");
     }
 
     public static void sceneFourteen(Survivor survivor, Zombie zombie) {
