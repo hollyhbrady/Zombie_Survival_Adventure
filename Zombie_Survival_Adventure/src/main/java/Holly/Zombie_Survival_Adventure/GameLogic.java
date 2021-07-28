@@ -770,7 +770,9 @@ public class GameLogic {
     }
 
     public static void sceneFourteen(Survivor survivor, Zombie zombie) {
-
+        System.out.println("You climb in and cower on the backseat, but see too late that the window opposite is down!\n" +
+                "The zombies pile into the car and feast on your body, you dumb-ass");
+//        insert game loop here
     }
 
     public static void sceneFifteen(Survivor survivor, Zombie zombie) {
