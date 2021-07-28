@@ -534,8 +534,23 @@ public class GameLogic {
                 "Best try and sleep, things are always better in the morning... \n" +
                 "unless of course you are stuck in zombie purgatory!");
         sleep(survivor);
-        System.out.println("Time to get moving!");
-        sceneEleven(survivor, zombie);
+        System.out.println("Time to get moving! Do you: \n" +
+                "1. Explore to find safer shelter or \n" +
+                "2. Scavenge the area for more supplies?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
+        if (input.equals("1")) {
+            sceneTen(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneFifteen(survivor, zombie);
+        }
 
     }
 
