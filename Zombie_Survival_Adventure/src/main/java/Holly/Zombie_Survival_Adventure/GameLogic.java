@@ -776,7 +776,12 @@ public class GameLogic {
     }
 
     public static void sceneFifteen(Survivor survivor, Zombie zombie) {
-        System.out.println("You venture down the road.");
+        System.out.println("You venture down the road and find a \n" +
+                "boat house with \n" +
+                "plywood and a gun. \n" +
+                "Do you take these \n" +
+                "back or search for \n" +
+                "something better?");
     }
 
     public static void sceneSixteen(Survivor survivor, Zombie zombie) {
