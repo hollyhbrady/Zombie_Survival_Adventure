@@ -546,7 +546,7 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
-            sceneTen(survivor, zombie);
+            sceneNineteen(survivor, zombie);
         }
         else if (input.equals("2")) {
             sceneFifteen(survivor, zombie);
@@ -725,7 +725,7 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
-            sceneTen(survivor, zombie);
+            sceneNineteen(survivor, zombie);
         }
         else if (input.equals("2")) {
             sceneFifteen(survivor, zombie);
@@ -746,6 +746,22 @@ public class GameLogic {
 
     public static void sceneFifteen(Survivor survivor, Zombie zombie) {
         System.out.println("You venture down the road.");
+    }
+
+    public static void sceneSixteen(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneSeventeen(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneEighteen(Survivor survivor, Zombie zombie) {
+
+    }
+
+    public static void sceneNineteen(Survivor survivor, Zombie zombie) {
+
     }
 
 
