@@ -682,7 +682,7 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
-            sceneSeven(survivor, zombie);
+            sceneNine(survivor, zombie);
         }
         else if (input.equals("2")) {
             sceneTen(survivor, zombie);
