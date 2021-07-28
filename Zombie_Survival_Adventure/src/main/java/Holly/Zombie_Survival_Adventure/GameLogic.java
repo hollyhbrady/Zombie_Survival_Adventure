@@ -703,7 +703,24 @@ public class GameLogic {
     }
 
     public static void sceneTen(Survivor survivor, Zombie zombie) {
-        System.out.println("You follow the road and find a river of gently rotting bodies");
+        System.out.println("You follow the road and find a river of gently rotting bodies.\n" +
+                "The wind changes and you can smell the sweet stench of their corpses. Do you:\n" +
+                "1. Cross the river or \n" +
+                "2. Follow the bank?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
+        if (input.equals("1")) {
+            sceneTwelve(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneNineteen(survivor, zombie);
+        }
     }
 
     public static void sceneEleven(Survivor survivor, Zombie zombie) {
@@ -725,7 +742,7 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
-            sceneNineteen(survivor, zombie);
+            sceneTen(survivor, zombie);
         }
         else if (input.equals("2")) {
             sceneFifteen(survivor, zombie);
