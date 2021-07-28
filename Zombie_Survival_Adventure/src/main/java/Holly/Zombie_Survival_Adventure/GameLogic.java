@@ -750,7 +750,17 @@ public class GameLogic {
     }
 
     public static void sceneTwelve(Survivor survivor, Zombie zombie) {
-
+        System.out.println("You wade past the corpses, nudging a few out of your way...\n" +
+                "The last one moves, it's still alive!");
+        fightZombie(survivor, zombie);
+        System.out.println("You drag yourself up the river bank and see a cop car parked nearby, \n" +
+                "through the back window you can see an ammo stash!");
+        survivor.addGunToInventory(Gun.HANDGUN);
+        survivor.addToAmmoInventory(8);
+        inventoryCheck(survivor);
+        System.out.println("You close the trunk and a hand grabs you from under the car! \n" +
+                "The cop whose guns you've stolen is re-animated and hungry for revenge");
+        fightZombie(survivor, zombie);
     }
 
     public static void sceneThirteen(Survivor survivor, Zombie zombie) {
