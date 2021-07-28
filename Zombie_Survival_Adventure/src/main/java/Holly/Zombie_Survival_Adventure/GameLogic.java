@@ -785,7 +785,12 @@ public class GameLogic {
     }
 
     public static void sceneSixteen(Survivor survivor, Zombie zombie) {
-
+        System.out.println("Search more - \n" +
+                "You come across a \n" +
+                "horde...Is the lead \n" +
+                "zombie Bob who \n" +
+                "bullied you at school!?\n" +
+                "Do you fight or flee?");
     }
 
     public static void sceneSeventeen(Survivor survivor, Zombie zombie) {
