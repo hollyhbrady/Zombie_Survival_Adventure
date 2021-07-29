@@ -836,7 +836,7 @@ public class GameLogic {
     public static void sceneSixteen(Survivor survivor, Zombie zombie) {
         System.out.println("You come across a horde...\n" +
                 "Is the lead zombie Bob who bullied you at school!? Do you \n" +
-                "1. Fight or \n" +
+                "1. Take revenge on Bob and his buddies or \n" +
                 "2. Flee?");
     }
 
