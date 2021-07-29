@@ -342,7 +342,7 @@ public class GameLogic {
             zombieAppears(survivor, zombie);
             fightZombie(survivor, zombie);
         }
-        GameLogic.gameStart(survivor);
+        gameStart(survivor);
         sceneOne(survivor, zombie);
     }
 
@@ -801,16 +801,17 @@ public class GameLogic {
         else if (input.equals("2")) {
             sceneTwenty(survivor, zombie);
         }
-
     }
 
     public static void sceneFourteen(Survivor survivor, Zombie zombie) {
-        System.out.println("A hoard hears the fight. Do you: \n" +
-                "1. Hide in the car or \n" +
-                "2. Run back to the river? ");
-        System.out.println("You climb in and cower on the backseat, but see too late that the window opposite is down!\n" +
-                "The zombies pile into the car and feast on your body, you dumb-ass");
-//        insert game loop here
+        System.out.println("You climb in and cower on the backseat, but remember too late that the window is broken!\n" +
+                "A " + zombie.getName() + " lurches through at you!");
+        fightZombie(survivor, zombie);
+        System.out.println("The zombies are fighting to be the first in to feast on your body");
+        fightZombie(survivor, zombie);
+        System.out.println("The front gives way, zombies pile into the car...\n" +
+                "You should have run you dumb-ass");
+        zombieDeathLoop(survivor, zombie);
     }
 
     public static void sceneFifteen(Survivor survivor, Zombie zombie) {
