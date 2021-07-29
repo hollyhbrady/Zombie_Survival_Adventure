@@ -808,7 +808,7 @@ public class GameLogic {
         fightZombie(survivor, zombie);
         System.out.println("The zombies are fighting to be the first in to feast on your body");
         fightZombie(survivor, zombie);
-        System.out.println("The front gives way, zombies pile into the car...\n" +
+        System.out.println("The front window gives way, zombies pile into the car.\n" +
                 "You should have run while you still could...");
         zombieDeathLoop(survivor, zombie);
     }
@@ -844,11 +844,10 @@ public class GameLogic {
     }
 
     public static void sceneTwenty(Survivor survivor, Zombie zombie) {
-        System.out.println("Leave it, (good there \n" +
-                "was a hoard) carry \n" +
-                "on find a bridge \n" +
-                "and cross it, \n" +
-                "covered in cars");
+        System.out.println("You run off down the bank and trip over some debris" +
+                "add zombie here"
+                "carry on find a bridge and cross it or river?, \n" +
+                "covered in cars, barrier");
     }
 
 }
