@@ -773,16 +773,35 @@ public class GameLogic {
         else if (input.equals("2")) {
             sceneTwenty(survivor, zombie);
         }
-
     }
 
     public static void sceneThirteen(Survivor survivor, Zombie zombie) {
+        System.out.println("The car is locked, so you break a back window and reach in for the gear.\n" +
+                "A gun and 12 bullets. That's a score!");
         survivor.addGunToInventory(Gun.HANDGUN);
-        survivor.addToAmmoInventory(8);
+        survivor.addToAmmoInventory(12);
         inventoryCheck(survivor);
-        System.out.println("You close the door and a hand grabs you from under the car! \n" +
-                "The cop whose guns you've stolen is re-animated and hungry for revenge.");
+        System.out.println("You put your new items away, but as you step away a hand grabs you from under the car. \n" +
+                "The cop whose car you've damaged is re-animated and hungry for revenge!");
         fightZombie(survivor, zombie);
+        System.out.println("A hoard heard you and are on their way! Do you:\n" +
+                "1. Hide in the car or\n" +
+                "2. Flee along the bank?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
+        if (input.equals("1")) {
+            sceneFourteen(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneTwenty(survivor, zombie);
+        }
+
     }
 
     public static void sceneFourteen(Survivor survivor, Zombie zombie) {
