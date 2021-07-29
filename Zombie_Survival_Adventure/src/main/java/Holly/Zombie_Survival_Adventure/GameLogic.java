@@ -342,8 +342,7 @@ public class GameLogic {
             zombieAppears(survivor, zombie);
             fightZombie(survivor, zombie);
         }
-        gameStart(survivor);
-        sceneOne(survivor, zombie);
+        SebsHadesLoopOfHell(survivor, zombie);
     }
 
     public static void SebsHadesLoopOfHell(Survivor survivor, Zombie zombie) {
@@ -810,7 +809,7 @@ public class GameLogic {
         System.out.println("The zombies are fighting to be the first in to feast on your body");
         fightZombie(survivor, zombie);
         System.out.println("The front gives way, zombies pile into the car...\n" +
-                "You should have run you dumb-ass");
+                "You should have run while you still could...");
         zombieDeathLoop(survivor, zombie);
     }
 
