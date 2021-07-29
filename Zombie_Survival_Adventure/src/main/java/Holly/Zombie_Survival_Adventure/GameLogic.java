@@ -792,7 +792,9 @@ public class GameLogic {
     }
 
     public static void sceneSeventeen(Survivor survivor, Zombie zombie) {
-
+        System.out.println("You can't run! \n" +
+                "One of them has flanked you!");
+//                "Force a fight here"
     }
 
     public static void sceneEighteen(Survivor survivor, Zombie zombie) {
