@@ -840,7 +840,11 @@ public class GameLogic {
     }
 
     public static void sceneNineteen(Survivor survivor, Zombie zombie) {
-
+        System.out.println("Follow the bank\n" +
+                "along and see a\n" +
+                "bridge with \n" +
+                "blockade climb it \n" +
+                "or return back? ");
     }
 
     public static void sceneTwenty(Survivor survivor, Zombie zombie) {
