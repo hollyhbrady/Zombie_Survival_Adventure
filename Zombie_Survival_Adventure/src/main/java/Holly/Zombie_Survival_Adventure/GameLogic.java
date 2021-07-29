@@ -814,12 +814,23 @@ public class GameLogic {
     }
 
     public static void sceneFifteen(Survivor survivor, Zombie zombie) {
-        System.out.println("You venture down the road and find a \n" +
-                "boat house with \n" +
-                "plywood and a gun. \n" +
-                "Do you take these \n" +
-                "back or search for \n" +
-                "something better?");
+        System.out.println("You venture down the road and find a boat house with sheets of plywood. Do you: \n" +
+                "1. Take these back or \n" +
+                "2. Search for something better?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
+        if (input.equals("1")) {
+            sceneEighteen(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneSixteen(survivor, zombie);
+        }
     }
 
     public static void sceneSixteen(Survivor survivor, Zombie zombie) {
