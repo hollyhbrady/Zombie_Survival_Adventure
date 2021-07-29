@@ -824,6 +824,12 @@ public class GameLogic {
 
     }
 
-
+    public static void sceneTwenty(Survivor survivor, Zombie zombie) {
+        System.out.println("Leave it, (good there \n" +
+                "was a hoard) carry \n" +
+                "on find a bridge \n" +
+                "and cross it, \n" +
+                "covered in cars");
+    }
 
 }
