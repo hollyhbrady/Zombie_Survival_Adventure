@@ -33,13 +33,11 @@ public class Main {
 
         // LEVEL TWO
         zombie = new Zombie("Walker", ZombieLevel.TWO);
-
-//        GameLogic.continueOrGoToHut();
-//        GameLogic.fightZombie(zombie, survivor);
+        System.out.println("about L2 zombie here");
 
         // LEVEL THREE
         zombie = new Zombie("Runner", ZombieLevel.THREE);
-
+        System.out.println("about L2 zombie here");
 
         System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, and used " + survivor.getHPRestoresUsed() + " HP restores.");
         System.out.println("To be continued...");

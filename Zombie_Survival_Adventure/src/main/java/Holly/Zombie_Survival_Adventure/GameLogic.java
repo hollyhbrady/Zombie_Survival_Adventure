@@ -6,6 +6,7 @@ import Holly.Zombie_Survival_Adventure.models.Zombie;
 import Holly.Zombie_Survival_Adventure.models.loot.Gun;
 import Holly.Zombie_Survival_Adventure.models.loot.Food;
 import Holly.Zombie_Survival_Adventure.models.loot.Melee;
+import models.ZombieLevel;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -27,6 +28,7 @@ public class GameLogic {
         survivor.setHPRestoresUsed(0);
         survivor.setGunUsed(0);
         survivor.setMeleeUsed(0);
+
         System.out.println("You're stumbling through the woods. \n" +
                 "You hear a moan - the shuffle drag of zombie feet. \n" +
                 "You can't go much longer without sleep...");
@@ -240,10 +242,10 @@ public class GameLogic {
     }
 
     public static void survivorLevelUpCheckWanderer(Survivor survivor) {
-        if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERER && survivor.getZombiesEncountered() >= 10) {
+        if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERER && survivor.getZombiesEncountered() >= 5) {
             reachLevel2Wanderer(survivor);
         }
-        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO &&survivor.getZombiesEncountered() >= 20) {
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO &&survivor.getZombiesEncountered() >= 15) {
             reachLevel3Wanderer(survivor);
         }
     }
@@ -754,7 +756,27 @@ public class GameLogic {
                 "The last one moves, it's still alive!");
         fightZombie(survivor, zombie);
         System.out.println("You drag yourself up the river bank and see a cop car parked nearby, \n" +
-                "through the back window you can see an ammo stash!");
+                "through the back window you can see an ammo stash! Do you:\n" +
+                "1. Try and get the guns or" +
+                "2. Carry on?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
+        if (input.equals("1")) {
+            sceneThirteen(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneTwenty(survivor, zombie);
+        }
+
+    }
+
+    public static void sceneThirteen(Survivor survivor, Zombie zombie) {
         survivor.addGunToInventory(Gun.HANDGUN);
         survivor.addToAmmoInventory(8);
         inventoryCheck(survivor);
@@ -763,13 +785,10 @@ public class GameLogic {
         fightZombie(survivor, zombie);
     }
 
-    public static void sceneThirteen(Survivor survivor, Zombie zombie) {
+    public static void sceneFourteen(Survivor survivor, Zombie zombie) {
         System.out.println("A hoard hears the fight. Do you: \n" +
                 "1. Hide in the car or \n" +
                 "2. Run back to the river? ");
-    }
-
-    public static void sceneFourteen(Survivor survivor, Zombie zombie) {
         System.out.println("You climb in and cower on the backseat, but see too late that the window opposite is down!\n" +
                 "The zombies pile into the car and feast on your body, you dumb-ass");
 //        insert game loop here
@@ -787,7 +806,7 @@ public class GameLogic {
     public static void sceneSixteen(Survivor survivor, Zombie zombie) {
         System.out.println("You come across a horde...\n" +
                 "Is the lead zombie Bob who bullied you at school!? Do you \n" +
-                "1. Fight or " +
+                "1. Fight or \n" +
                 "2. Flee?");
     }
 
