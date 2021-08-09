@@ -6,16 +6,13 @@ import Holly.Zombie_Survival_Adventure.models.Zombie;
 import Holly.Zombie_Survival_Adventure.models.loot.Gun;
 import Holly.Zombie_Survival_Adventure.models.loot.Food;
 import Holly.Zombie_Survival_Adventure.models.loot.Melee;
-import models.ZombieLevel;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class GameLogic {
 
-    public static void gameStart(Survivor survivor) {
-        resetToLevel1(survivor);
-        survivor.setSurvivorHealthMax();
+    public static void gameStartWanderer(Survivor survivor) {
         survivor.setAmmoInventory(5);
         survivor.emptyFoodInventory();
         survivor.addFoodToInventory(Food.BAKEDBEANS);
@@ -35,6 +32,10 @@ public class GameLogic {
         System.out.println("You have " + survivor.getFoodInventory().size() + " food items to restore health, "
                 + survivor.getMeleeInventory().size() + " knife, " +
                 survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
+    }
+
+    public static void gameStart(Survivor survivor) {
+
     }
 
     public static void inventoryCheck(Survivor survivor) {
@@ -286,7 +287,6 @@ public class GameLogic {
                 "Are you feeling it? Cause you are faster, stronger and that accuracy on point! \n" +
                 "Well done for making it to Level Three. ");
     }
-
 
     public static void resetLevel1Outcast(Survivor survivor) {
         if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCASTTWO) {
@@ -860,7 +860,7 @@ public class GameLogic {
 
     public static void sceneTwenty(Survivor survivor, Zombie zombie) {
         System.out.println("You run off down the bank and trip over some debris" +
-                "add zombie here"
+//                "add zombie here"
                 "carry on find a bridge and cross it or river?, \n" +
                 "covered in cars, barrier");
     }
