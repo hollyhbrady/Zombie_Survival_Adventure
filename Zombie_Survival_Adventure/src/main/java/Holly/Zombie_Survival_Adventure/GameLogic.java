@@ -46,6 +46,25 @@ public class GameLogic {
         }
     }
 
+    public static void gameStartSoldier(Survivor survivor) {
+        if (survivor.getSurvivorLevel() == SurvivorLevel.SOLDIER) {
+            survivor.setAmmoInventory(0);
+            survivor.emptyFoodInventory();
+            survivor.addFoodToInventory(Food.BAKEDBEANS);
+            survivor.addFoodToInventory(Food.DRIEDFRUIT);
+            survivor.addFoodToInventory(Food.IRNBRU);
+            survivor.emptyGunInventory();
+            survivor.addGunToInventory(Gun.HANDGUN);
+            survivor.emptyMeleeInventory();
+            survivor.addMeleeToInventory(Melee.KNIFE);
+
+            System.out.println("You're stumbling through the woods. \n" +
+                    "You're out of bullets and getting desperate. \n" +
+                    "You hear a moan - the shuffle drag of zombie feet." +
+                    "Are you still being pursued by the zombies that finished off your unit?");
+        }
+    }
+
     public static void gameStartStatsAnnouncement(Survivor survivor) {
         System.out.println("You have " + survivor.getFoodInventory().size() + " food items to restore health, "
                 + survivor.getMeleeInventory().size() + " knife, " +
@@ -60,6 +79,7 @@ public class GameLogic {
         survivor.setGunUsed(0);
         survivor.setMeleeUsed(0);
         gameStartWanderer(survivor);
+        gameStartOutcast(survivor);
         gameStartStatsAnnouncement(survivor);
     }
 
