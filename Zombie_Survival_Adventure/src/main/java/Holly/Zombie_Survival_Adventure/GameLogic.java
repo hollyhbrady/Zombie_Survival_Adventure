@@ -27,10 +27,6 @@ public class GameLogic {
                     "You hear a moan - the shuffle drag of zombie feet. \n" +
                     "You can't go much longer without sleep...");
         }
-        survivor.setZombiesEncountered(0);
-        survivor.setHPRestoresUsed(0);
-        survivor.setGunUsed(0);
-        survivor.setMeleeUsed(0);
     }
 
     public static void gameStartStatsAnnouncement(Survivor survivor) {
@@ -42,6 +38,10 @@ public class GameLogic {
     public static void gameStart(Survivor survivor) {
         resetToLevel1(survivor);
         survivor.setSurvivorHealthMax();
+        survivor.setZombiesEncountered(0);
+        survivor.setHPRestoresUsed(0);
+        survivor.setGunUsed(0);
+        survivor.setMeleeUsed(0);
         gameStartWanderer(survivor);
         gameStartStatsAnnouncement(survivor);
     }
