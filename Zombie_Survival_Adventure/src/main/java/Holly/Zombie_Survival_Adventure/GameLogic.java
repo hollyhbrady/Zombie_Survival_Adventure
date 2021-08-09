@@ -23,9 +23,9 @@ public class GameLogic {
             survivor.emptyMeleeInventory();
             survivor.addMeleeToInventory(Melee.KNIFE);
 
-            System.out.println("You're stumbling through the woods. \n" +
-                    "You hear a moan - the shuffle drag of zombie feet. \n" +
-                    "You can't go much longer without sleep...");
+            System.out.println("You're running through the woods. \n" +
+                    "You've been avoiding a hoard of zombies and need to keep quiet, and keep moving. \n" +
+                    "Was that a moan? And the shuffle drag of zombie feet?");
         }
     }
 
