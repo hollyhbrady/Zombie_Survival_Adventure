@@ -22,16 +22,18 @@ public class GameLogic {
             survivor.emptyGunInventory();
             survivor.emptyMeleeInventory();
             survivor.addMeleeToInventory(Melee.KNIFE);
-        }
 
+            System.out.println("You're stumbling through the woods. \n" +
+                    "You hear a moan - the shuffle drag of zombie feet. \n" +
+                    "You can't go much longer without sleep...");
+        }
         survivor.setZombiesEncountered(0);
         survivor.setHPRestoresUsed(0);
         survivor.setGunUsed(0);
         survivor.setMeleeUsed(0);
+    }
 
-        System.out.println("You're stumbling through the woods. \n" +
-                "You hear a moan - the shuffle drag of zombie feet. \n" +
-                "You can't go much longer without sleep...");
+    public static void gameStartStatsAnnouncement(Survivor survivor) {
         System.out.println("You have " + survivor.getFoodInventory().size() + " food items to restore health, "
                 + survivor.getMeleeInventory().size() + " knife, " +
                 survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
@@ -41,6 +43,7 @@ public class GameLogic {
         resetToLevel1(survivor);
         survivor.setSurvivorHealthMax();
         gameStartWanderer(survivor);
+        gameStartStatsAnnouncement(survivor);
     }
 
     public static void inventoryCheck(Survivor survivor) {
