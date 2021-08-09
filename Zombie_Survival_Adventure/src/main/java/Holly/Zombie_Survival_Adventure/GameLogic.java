@@ -35,7 +35,9 @@ public class GameLogic {
     }
 
     public static void gameStart(Survivor survivor) {
-
+        resetToLevel1(survivor);
+        survivor.setSurvivorHealthMax();
+        gameStartWanderer(survivor);
     }
 
     public static void inventoryCheck(Survivor survivor) {
