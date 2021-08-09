@@ -13,6 +13,23 @@ import java.util.Scanner;
 public class GameLogic {
 
     public static void gameStartWanderer(Survivor survivor) {
+        if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERER) {
+            survivor.setAmmoInventory(5);
+            survivor.emptyFoodInventory();
+            survivor.addFoodToInventory(Food.BAKEDBEANS);
+            survivor.addFoodToInventory(Food.DRIEDFRUIT);
+            survivor.addFoodToInventory(Food.IRNBRU);
+            survivor.emptyGunInventory();
+            survivor.emptyMeleeInventory();
+            survivor.addMeleeToInventory(Melee.KNIFE);
+
+            System.out.println("You're stumbling through the woods. \n" +
+                    "You hear a moan - the shuffle drag of zombie feet. \n" +
+                    "You can't go much longer without sleep...");
+        }
+    }
+
+    public static void gameStartOutcast(Survivor survivor) {
         if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCAST) {
             survivor.setAmmoInventory(5);
             survivor.emptyFoodInventory();
