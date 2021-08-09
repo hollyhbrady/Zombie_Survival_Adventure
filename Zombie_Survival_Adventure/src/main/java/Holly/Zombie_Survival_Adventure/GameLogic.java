@@ -14,9 +14,12 @@ public class GameLogic {
 
     public static void gameStartWanderer(Survivor survivor) {
         if (survivor.getSurvivorLevel() == SurvivorLevel.WANDERER) {
-            survivor.setAmmoInventory(5);
+            survivor.setAmmoInventory(0);
             survivor.emptyFoodInventory();
             survivor.addFoodToInventory(Food.BAKEDBEANS);
+            survivor.addFoodToInventory(Food.BAKEDBEANS);
+            survivor.addFoodToInventory(Food.DRIEDFRUIT);
+            survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
             survivor.emptyGunInventory();
@@ -24,7 +27,8 @@ public class GameLogic {
             survivor.addMeleeToInventory(Melee.KNIFE);
 
             System.out.println("You're running through the woods. \n" +
-                    "You've been avoiding a hoard of zombies and need to keep quiet, and keep moving. \n" +
+                    "You're well stocked in food from your last raid, " +
+                    "but you have been on the move without a chance to sleep in a long time...\n" +
                     "Was that a moan? And the shuffle drag of zombie feet?");
         }
     }
@@ -80,6 +84,7 @@ public class GameLogic {
         survivor.setMeleeUsed(0);
         gameStartWanderer(survivor);
         gameStartOutcast(survivor);
+        gameStartSoldier(survivor);
         gameStartStatsAnnouncement(survivor);
     }
 
