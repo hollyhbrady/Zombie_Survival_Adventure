@@ -13,14 +13,17 @@ import java.util.Scanner;
 public class GameLogic {
 
     public static void gameStartWanderer(Survivor survivor) {
-        survivor.setAmmoInventory(5);
-        survivor.emptyFoodInventory();
-        survivor.addFoodToInventory(Food.BAKEDBEANS);
-        survivor.addFoodToInventory(Food.DRIEDFRUIT);
-        survivor.addFoodToInventory(Food.IRNBRU);
-        survivor.emptyGunInventory();
-        survivor.emptyMeleeInventory();
-        survivor.addMeleeToInventory(Melee.KNIFE);
+        if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCAST) {
+            survivor.setAmmoInventory(5);
+            survivor.emptyFoodInventory();
+            survivor.addFoodToInventory(Food.BAKEDBEANS);
+            survivor.addFoodToInventory(Food.DRIEDFRUIT);
+            survivor.addFoodToInventory(Food.IRNBRU);
+            survivor.emptyGunInventory();
+            survivor.emptyMeleeInventory();
+            survivor.addMeleeToInventory(Melee.KNIFE);
+        }
+
         survivor.setZombiesEncountered(0);
         survivor.setHPRestoresUsed(0);
         survivor.setGunUsed(0);
