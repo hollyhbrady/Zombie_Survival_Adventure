@@ -109,7 +109,7 @@ public class GameLogic {
         else System.out.println(survivor.getFoodInventory().size() + " food items to restore health,");
     }
 
-    public static void gameStartStatsAnnouncement(Survivor survivor) {
+    public static void gameStatsAnnouncement(Survivor survivor) {
         System.out.println("You have:");
         gameStartStatsAnnouncementFood(survivor);
         gameStartStatsAnnouncementKnife(survivor);
@@ -127,7 +127,7 @@ public class GameLogic {
         gameStartWanderer(survivor);
         gameStartOutcast(survivor);
         gameStartSoldier(survivor);
-        gameStartStatsAnnouncement(survivor);
+        gameStatsAnnouncement(survivor);
     }
 
     public static void inventoryCheck(Survivor survivor) {
