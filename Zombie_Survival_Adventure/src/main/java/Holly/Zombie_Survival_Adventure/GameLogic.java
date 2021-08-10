@@ -69,13 +69,6 @@ public class GameLogic {
         }
     }
 
-    public static void gameStartStatsAnnouncement(Survivor survivor) {
-        System.out.println("You have: \n" +
-                survivor.getFoodInventory().size() + " food items to restore health, ");
-                gameStartStatsAnnouncementKnife(survivor);
-        System.out.println(survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
-    }
-
     public static void gameStartStatsAnnouncementKnife(Survivor survivor) {
         if (survivor.getMeleeInventory().size() == 1) {
             System.out.println("1 knife, ");
@@ -84,6 +77,23 @@ public class GameLogic {
             System.out.println("no knives, ");
         }
         else System.out.println(survivor.getMeleeInventory().size() + " knives, ");
+    }
+
+    public static void gameStartStatsAnnouncementGun(Survivor survivor) {
+        if (survivor.getGunInventory().size() == 1) {
+            System.out.println("1 gun, ");
+        }
+        else if (survivor.getGunInventory().size() == 0) {
+            System.out.println("no gun, ");
+        }
+        else System.out.println(survivor.getGunInventory().size() + " guns, ");
+    }
+
+    public static void gameStartStatsAnnouncement(Survivor survivor) {
+        System.out.println("You have: \n" +
+                survivor.getFoodInventory().size() + " food items to restore health, ");
+        gameStartStatsAnnouncementKnife(survivor);
+        System.out.println(survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
     }
 
     public static void gameStart(Survivor survivor) {
