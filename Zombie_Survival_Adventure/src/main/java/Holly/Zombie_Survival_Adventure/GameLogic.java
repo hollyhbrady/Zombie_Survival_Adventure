@@ -109,7 +109,7 @@ public class GameLogic {
         else System.out.println(survivor.getFoodInventory().size() + " food items to restore health,");
     }
 
-    public static void gameStatsAnnouncement(Survivor survivor) {
+    public static void inventoryAnnouncement(Survivor survivor) {
         System.out.println("You have:");
         gameStartStatsAnnouncementFood(survivor);
         gameStartStatsAnnouncementKnife(survivor);
@@ -127,13 +127,7 @@ public class GameLogic {
         gameStartWanderer(survivor);
         gameStartOutcast(survivor);
         gameStartSoldier(survivor);
-        gameStatsAnnouncement(survivor);
-    }
-
-    public static void inventoryCheck(Survivor survivor) {
-        System.out.println("You have " + survivor.getFoodInventory().size() + " food item(s) to restore health, "
-                + survivor.getMeleeInventory().size() + " knives, " +
-                survivor.getGunInventory().size() + " gun(s) and " + survivor.getAmmoInventory() + " bullet(s).");
+        inventoryAnnouncement(survivor);
     }
 
     public static void chooseCharacter() {
@@ -718,7 +712,7 @@ public class GameLogic {
         survivor.addToAmmoInventory(4);
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.DRIEDFRUIT);
-        inventoryCheck(survivor);
+        inventoryAnnouncement(survivor);
         System.out.println("------------------------------");
         System.out.println("You step out of the tent and a " + zombie.getName() + " lurches at you!");
         fightZombie(survivor, zombie);
@@ -821,7 +815,7 @@ public class GameLogic {
                 "You find food hidden under debris in the corner");
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         survivor.addFoodToInventory(Food.IRNBRU);
-        inventoryCheck(survivor);
+        inventoryAnnouncement(survivor);
         System.out.println("You cannot spend another night like that, do you: \n" +
                 "1. Explore to find safer shelter or \n" +
                 "2. Scavenge the area for more supplies?");
@@ -870,7 +864,7 @@ public class GameLogic {
                 "A gun and 12 bullets. That's a score!");
         survivor.addGunToInventory(Gun.HANDGUN);
         survivor.addToAmmoInventory(12);
-        inventoryCheck(survivor);
+        inventoryAnnouncement(survivor);
         System.out.println("You put your new items away, but as you step away a hand grabs you from under the car. \n" +
                 "The cop whose car you've damaged is re-animated and hungry for revenge!");
         fightZombie(survivor, zombie);
