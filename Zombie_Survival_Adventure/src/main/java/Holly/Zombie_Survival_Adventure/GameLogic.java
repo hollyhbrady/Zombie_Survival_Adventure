@@ -101,7 +101,7 @@ public class GameLogic {
 
     public static void gameStartStatsAnnouncementFood(Survivor survivor) {
         if (survivor.getFoodInventory().size() == 1) {
-            System.out.println(survivor.getFoodInventory().size() + " food item to restore health,");
+            System.out.println("1 food item to restore health,");
         }
         else if (survivor.getFoodInventory().size() == 0) {
             System.out.println("No food items to restore health,");
@@ -613,7 +613,6 @@ public class GameLogic {
                 survivorLevelUpCheck(survivor, expFromZombie);
                 foodDrop(survivor);
                 weaponDrop(survivor, zombie);
-                inventoryCheck(survivor);
             }
             System.out.println("------------------------------");
             break;
