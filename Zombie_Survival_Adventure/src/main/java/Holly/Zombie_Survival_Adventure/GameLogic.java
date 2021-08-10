@@ -75,6 +75,16 @@ public class GameLogic {
                 survivor.getGunInventory().size() + " gun and " + survivor.getAmmoInventory() + " bullets.");
     }
 
+    public static void gameStartStatsAnnouncementKnife(Survivor survivor) {
+        if (survivor.getMeleeInventory().size() == 1) {
+            System.out.println("1 knife, ");
+        }
+        else if (survivor.getMeleeInventory().size() == 0) {
+            System.out.println("no knives, ");
+        }
+        else System.out.println(survivor.getMeleeInventory().size() + " knives, ");
+    }
+
     public static void gameStart(Survivor survivor) {
         resetToLevel1(survivor);
         survivor.setSurvivorHealthMax();
