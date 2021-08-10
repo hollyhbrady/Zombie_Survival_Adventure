@@ -99,6 +99,16 @@ public class GameLogic {
         else System.out.println("and " + survivor.getAmmoInventory() + " bullets.");
     }
 
+    public static void gameStartStatsAnnouncementFood(Survivor survivor) {
+        if (survivor.getFoodInventory().size() == 1) {
+            System.out.println(survivor.getFoodInventory().size() + " food item to restore health, ");
+        }
+        else if (survivor.getFoodInventory().size() == 0) {
+            System.out.println("No food items to restore health, ");
+        }
+        else System.out.println(survivor.getFoodInventory().size() + " food items to restore health, ");
+    }
+
     public static void gameStartStatsAnnouncement(Survivor survivor) {
         System.out.println("You have: \n" +
                 survivor.getFoodInventory().size() + " food items to restore health, ");
