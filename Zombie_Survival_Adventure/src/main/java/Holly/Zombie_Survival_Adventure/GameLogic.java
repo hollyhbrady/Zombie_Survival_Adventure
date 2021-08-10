@@ -104,7 +104,7 @@ public class GameLogic {
                 survivor.getFoodInventory().size() + " food items to restore health, ");
         gameStartStatsAnnouncementKnife(survivor);
         gameStartStatsAnnouncementGun(survivor);
-        System.out.println(" and " + survivor.getAmmoInventory() + " bullets.");
+        gameStartStatsAnnouncementBullets(survivor);
     }
 
     public static void gameStart(Survivor survivor) {
