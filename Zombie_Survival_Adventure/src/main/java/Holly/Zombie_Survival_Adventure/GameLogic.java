@@ -901,7 +901,7 @@ public class GameLogic {
         System.out.println("Its an abandoned hut! \n" +
                         "Or not so abandoned...");
         zombieAppears(survivor, zombie);
-        fightZombie(survivor, zombie);
+        fightZombieTrapped(survivor, zombie);
         System.out.println("You are not the only person who has been here, there are ashes from a fire on the ground. \n" +
                 "Empty cans and crisp packets are strewn around. \n" +
                 "The windows look like they have been smashed from the inside... \n" +
