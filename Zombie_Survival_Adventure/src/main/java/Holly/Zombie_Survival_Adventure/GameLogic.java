@@ -1012,9 +1012,9 @@ public class GameLogic {
     public static void sceneFourteen(Survivor survivor, Zombie zombie) {
         System.out.println("You climb in and cower on the backseat, but remember too late that the window is broken!\n" +
                 "A " + zombie.getName() + " lurches through at you!");
-        fightZombie(survivor, zombie);
+        fightZombieTrapped(survivor, zombie);
         System.out.println("The zombies are fighting to be the first in to feast on your body");
-        fightZombie(survivor, zombie);
+        fightZombieTrapped(survivor, zombie);
         System.out.println("The front window gives way, zombies pile into the car.\n" +
                 "You should have run while you still could...");
         zombieDeathLoop(survivor, zombie);
