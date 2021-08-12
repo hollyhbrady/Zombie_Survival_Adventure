@@ -425,8 +425,7 @@ public class GameLogic {
 
     public static void zombieDeathLoop(Survivor survivor, Zombie zombie) {
         while (survivor.getSurvivorHealth() > 0) {
-            // add sout here?
-            zombieAppears(survivor, zombie);
+            System.out.println("There are too many " + zombie.getName() + "'s, I can't escape!");
             fightZombieTrapped(survivor, zombie);
         }
         SebsHadesLoopOfHell(survivor, zombie);
