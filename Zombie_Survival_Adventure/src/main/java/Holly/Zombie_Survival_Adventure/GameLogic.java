@@ -485,6 +485,7 @@ public class GameLogic {
         }
     }
 
+    // standard fight zombie sequence
     public static int fightZombie (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
@@ -718,6 +719,118 @@ public class GameLogic {
                         drinkIrnBru(survivor);
                     } else {
                         System.out.println("Invalid command.");
+                    }
+                } else {
+                    System.out.println("Invalid command.");
+                }
+            }
+            if (zombieHealth < 1) {
+                System.out.println("------------------------------");
+                System.out.println("You killed the " + zombie.getName() + "!");
+                survivorLevelUpCheck(survivor, expFromZombie);
+                foodDrop(survivor);
+                weaponDrop(survivor, zombie);
+            }
+            System.out.println("------------------------------");
+            break;
+        }
+        return survivor.getSurvivorHealth();
+    }
+
+    // eating (used to regain health) is not an option here
+    public static int fightZombieRushed (Survivor survivor, Zombie zombie){
+        boolean running = true;
+        Random rand = new Random();
+        Scanner in = new Scanner(System.in);
+
+        GAME:
+        while(running) {
+            System.out.println("------------------------------");
+
+            int zombieHealth = rand.nextInt(zombie.getZLevel().getHP());
+            if (zombieHealth < 5) {
+                zombieHealth = 5;
+            }
+            int expFromZombie = zombieHealth;
+            int zombieSpeed = rand.nextInt(zombie.getZLevel().getSpeed());
+            int attackDamage = survivor.survivorLevel.getMaxStrength();
+
+            while (zombieHealth > 0) {
+                System.out.println("Your HP: " + survivor.getSurvivorHealth());
+                System.out.println(zombie.getName() + "'s HP: " + zombieHealth);
+                System.out.println("What would you like to do?");
+                System.out.println("1. Attack");
+                System.out.println("2. Run!");
+
+                String input = in.nextLine();
+
+                if (input.equals("1")) {
+                    System.out.println("How are you going to fight?");
+                    System.out.println("1. Use my gun");
+                    System.out.println("2. With my knife");
+                    System.out.println("3. Bare hands!");
+
+                    String attackInput = in.nextLine();
+
+                    if (attackInput.equals("1")) {
+                        zombieAttack(survivor, zombie);
+                        if (survivor.getSurvivorHealth() < 1) {
+                            SebsHadesLoopOfHell(survivor, zombie);
+                        }
+                        if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
+                            survivor.setAmmoInventory(survivor.getAmmoInventory() - 1);
+                            int damageDealt = (rand.nextInt(attackDamage) + Gun.HANDGUN.getDamage());
+                            if (rand.nextInt(100) < survivor.getSurvivorLevel().getGunAccuracy()) {
+                                zombieHealth -= damageDealt;
+                                System.out.println("You shoot the " + zombie.getName() + " and do " + damageDealt + " damage.");
+                            } else {
+                                System.out.println("Your shot missed!");
+                            }
+                            gunDegradation(survivor);
+                            System.out.println("You have " + survivor.getAmmoInventory() + " bullets left");
+                        } else if (survivor.getGunInventory().size() > 0) {
+                            System.out.println("You don't have any bullets left!");
+                        } else {
+                            System.out.println("You don't have a gun!");
+                        }
+                    } else if (attackInput.equals("2")) {
+                        zombieAttack(survivor, zombie);
+                        if (survivor.getSurvivorHealth() < 1) {
+                            SebsHadesLoopOfHell(survivor, zombie);
+                        }
+                        if (survivor.getMeleeInventory().size() > 0) {
+                            int damageDealt = (rand.nextInt(attackDamage) + Melee.KNIFE.getDamage());
+                            if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
+                                zombieHealth -= damageDealt;
+                                meleeDegradation(survivor);
+                                System.out.println("You slash the " + zombie.getName() + " for " + damageDealt + " damage.");
+                            } else {
+                                System.out.println("You take a swing and miss!");
+                            }
+                        } else {
+                            System.out.println("You don't have a knife!");
+                        }
+                    } else if (attackInput.equals("3")) {
+                        zombieAttack(survivor, zombie);
+                        if (survivor.getSurvivorHealth() < 1) {
+                            SebsHadesLoopOfHell(survivor, zombie);
+                        }
+                        int damageDealt = rand.nextInt(attackDamage);
+                        if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
+                            zombieHealth -= damageDealt;
+                            System.out.println("You grapple with the " + zombie.getName() + " and cause " + damageDealt + " damage.");
+                        } else {
+                            System.out.println("You trip and and miss, the " + zombie.getName() + " is on top of you!");
+                        }
+                    } else {
+                        System.out.println("Invalid command.");
+                    }
+                } else if (input.equals("2")) {
+                    if (zombieSpeed < SurvivorLevel.OUTCAST.getSpeed()) {
+                        System.out.println("You successfully run away!");
+                        break;
+                    } else {
+                        System.out.println("This one is fast, you can't escape! Are you going to be zombie dinner!?");
                     }
                 } else {
                     System.out.println("Invalid command.");
