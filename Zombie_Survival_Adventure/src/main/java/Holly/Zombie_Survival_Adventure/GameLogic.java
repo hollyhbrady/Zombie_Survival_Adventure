@@ -425,8 +425,9 @@ public class GameLogic {
 
     public static void zombieDeathLoop(Survivor survivor, Zombie zombie) {
         while (survivor.getSurvivorHealth() > 0) {
+            // add sout here?
             zombieAppears(survivor, zombie);
-            fightZombie(survivor, zombie);
+            fightZombieTrapped(survivor, zombie);
         }
         SebsHadesLoopOfHell(survivor, zombie);
     }
@@ -485,7 +486,7 @@ public class GameLogic {
         }
     }
 
-    // standard fight zombie sequence
+    // Standard fight zombie sequence. Can fight, eat, or try to run
     public static int fightZombie (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
@@ -872,7 +873,6 @@ public class GameLogic {
         else if (input.equals("2")) {
             sceneFifteen(survivor, zombie);
         }
-
     }
 
     public static void fightZombieRushedOrWanderer(Survivor survivor, Zombie zombie) {
