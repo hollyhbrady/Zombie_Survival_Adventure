@@ -1110,7 +1110,7 @@ public class GameLogic {
         inventoryAnnouncement(survivor);
         System.out.println("You put your new items away, but as you step away a hand grabs you from under the car. \n" +
                 "The cop whose car you've damaged is re-animated and hungry for revenge!");
-        fightZombie(survivor, zombie);
+        fightZombieTrapped(survivor, zombie);
         System.out.println("A hoard heard you and are on their way! Do you:\n" +
                 "1. Hide in the car or\n" +
                 "2. Flee along the bank?");
