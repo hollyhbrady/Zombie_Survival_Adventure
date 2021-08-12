@@ -964,7 +964,7 @@ public class GameLogic {
 
     public static void sceneFive(Survivor survivor, Zombie zombie) {
         System.out.println("You trip over a legless " + zombie.getName() + "!");
-        fightZombie(survivor, zombie);
+        fightZombieRushedOrWanderer(survivor, zombie);
         sceneSeven(survivor, zombie);
 
     }
@@ -1171,6 +1171,7 @@ public class GameLogic {
     public static void sceneSeventeen(Survivor survivor, Zombie zombie) {
         System.out.println("You can't run! \n" +
                 "One of them has flanked you!");
+        fightZombieRushed(survivor, zombie);
 //                "Force a fight here"
     }
 
