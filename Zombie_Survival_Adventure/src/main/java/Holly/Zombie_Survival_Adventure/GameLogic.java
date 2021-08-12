@@ -877,7 +877,6 @@ public class GameLogic {
 
     public static void fightZombieRushedOrWanderer(Survivor survivor, Zombie zombie) {
         if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCAST || survivor.getSurvivorLevel() ==SurvivorLevel.SOLDIER) {
-            zombieAppears(survivor, zombie);
             fightZombieRushed(survivor, zombie);
         } else {
             fightZombie(survivor, zombie);
@@ -885,8 +884,8 @@ public class GameLogic {
     }
 
     public static void sceneOne(Survivor survivor, Zombie zombie) {
-
-        fightZombie(survivor, zombie);
+        zombieAppears(survivor, zombie);
+        fightZombieRushedOrWanderer(survivor, zombie);
         System.out.println("There is a fork in the road, do you go: \n" +
                 "1. To the left, or \n" +
                 "2. Take the right?");
