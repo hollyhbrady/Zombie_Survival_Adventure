@@ -428,10 +428,10 @@ public class GameLogic {
             System.out.println("There are too many " + zombie.getName() + "'s, I can't escape!");
             fightZombieTrapped(survivor, zombie);
         }
-        SebsHadesLoopOfHell(survivor, zombie);
+        SebsHadesLoop(survivor, zombie);
     }
 
-    public static void SebsHadesLoopOfHell(Survivor survivor, Zombie zombie) {
+    public static void SebsHadesLoop(Survivor survivor, Zombie zombie) {
         System.out.println("You have taken too much damage to go on. \n" +
                 "Welcome to the Army of the Dead, dumb-ass.");
         System.out.println("------------------------------");
@@ -524,7 +524,7 @@ public class GameLogic {
                     if (attackInput.equals("1")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            SebsHadesLoopOfHell(survivor, zombie);
+                            SebsHadesLoop(survivor, zombie);
                         }
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
                             survivor.setAmmoInventory(survivor.getAmmoInventory() - 1);
@@ -545,7 +545,7 @@ public class GameLogic {
                     } else if (attackInput.equals("2")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            SebsHadesLoopOfHell(survivor, zombie);
+                            SebsHadesLoop(survivor, zombie);
                         }
                         if (survivor.getMeleeInventory().size() > 0) {
                             int damageDealt = (rand.nextInt(attackDamage) + Melee.KNIFE.getDamage());
@@ -562,7 +562,7 @@ public class GameLogic {
                     } else if (attackInput.equals("3")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            SebsHadesLoopOfHell(survivor, zombie);
+                            SebsHadesLoop(survivor, zombie);
                         }
                         int damageDealt = rand.nextInt(attackDamage);
                         if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
@@ -630,7 +630,6 @@ public class GameLogic {
                 zombieHealth = 5;
             }
             int expFromZombie = zombieHealth;
-            int zombieSpeed = rand.nextInt(zombie.getZLevel().getSpeed());
             int attackDamage = survivor.survivorLevel.getMaxStrength();
 
             while (zombieHealth > 0) {
@@ -653,7 +652,7 @@ public class GameLogic {
                     if (attackInput.equals("1")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            SebsHadesLoopOfHell(survivor, zombie);
+                            SebsHadesLoop(survivor, zombie);
                         }
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
                             survivor.setAmmoInventory(survivor.getAmmoInventory() - 1);
@@ -674,7 +673,7 @@ public class GameLogic {
                     } else if (attackInput.equals("2")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            SebsHadesLoopOfHell(survivor, zombie);
+                            SebsHadesLoop(survivor, zombie);
                         }
                         if (survivor.getMeleeInventory().size() > 0) {
                             int damageDealt = (rand.nextInt(attackDamage) + Melee.KNIFE.getDamage());
@@ -691,7 +690,7 @@ public class GameLogic {
                     } else if (attackInput.equals("3")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            SebsHadesLoopOfHell(survivor, zombie);
+                            SebsHadesLoop(survivor, zombie);
                         }
                         int damageDealt = rand.nextInt(attackDamage);
                         if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
@@ -775,7 +774,7 @@ public class GameLogic {
                     if (attackInput.equals("1")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            SebsHadesLoopOfHell(survivor, zombie);
+                            SebsHadesLoop(survivor, zombie);
                         }
                         if (survivor.getGunInventory().size() > 0 && survivor.getAmmoInventory() > 0) {
                             survivor.setAmmoInventory(survivor.getAmmoInventory() - 1);
@@ -796,7 +795,7 @@ public class GameLogic {
                     } else if (attackInput.equals("2")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            SebsHadesLoopOfHell(survivor, zombie);
+                            SebsHadesLoop(survivor, zombie);
                         }
                         if (survivor.getMeleeInventory().size() > 0) {
                             int damageDealt = (rand.nextInt(attackDamage) + Melee.KNIFE.getDamage());
@@ -813,7 +812,7 @@ public class GameLogic {
                     } else if (attackInput.equals("3")) {
                         zombieAttack(survivor, zombie);
                         if (survivor.getSurvivorHealth() < 1) {
-                            SebsHadesLoopOfHell(survivor, zombie);
+                            SebsHadesLoop(survivor, zombie);
                         }
                         int damageDealt = rand.nextInt(attackDamage);
                         if (rand.nextInt(100) < survivor.getSurvivorLevel().getMeleeAccuracy()) {
