@@ -40,7 +40,9 @@ public class Main {
 
         // LEVEL THREE
         zombie = new Zombie("Runner", ZombieLevel.THREE);
-        System.out.println("about L3 zombie here");
+        System.out.println("Oh no! This is a whole new breed of zombie. \n" +
+                "Are they as fast as I am!" +
+                "I'm going to need to be a lot smarter about my choices going forward...");
 
         System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, and used " + survivor.getHPRestoresUsed() + " HP restores.");
         System.out.println("To be continued...");
