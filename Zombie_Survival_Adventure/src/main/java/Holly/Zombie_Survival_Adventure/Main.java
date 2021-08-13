@@ -27,8 +27,9 @@ public class Main {
         GameLogic.gameStart(survivor);
 
         // LEVEL ONE
-        Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
-        System.out.println("about L1 zombie here");
+        Zombie zombie = new Zombie("Biter", ZombieLevel.ONE);
+        System.out.println("These zombies aren't so smart, or fast. \n" +
+                "I've heard stories of much worse. Were they exaggerated?");
 
         GameLogic.sceneOne(survivor, zombie);
 
