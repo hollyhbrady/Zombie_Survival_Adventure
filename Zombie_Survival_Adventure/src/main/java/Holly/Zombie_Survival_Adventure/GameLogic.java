@@ -423,7 +423,7 @@ public class GameLogic {
         System.out.println("A " + zombie.getName() + " is blocking your way!");
     }
 
-    public static void zombieDeathLoop(Survivor survivor, Zombie zombie) {
+    public static void zombieLoop(Survivor survivor, Zombie zombie) {
         while (survivor.getSurvivorHealth() > 0) {
             System.out.println("There are too many " + zombie.getName() + "'s, I can't escape!");
             fightZombieTrapped(survivor, zombie);
@@ -1137,7 +1137,7 @@ public class GameLogic {
         fightZombieTrapped(survivor, zombie);
         System.out.println("The front window gives way, zombies pile into the car.\n" +
                 "You should have run while you still could...");
-        zombieDeathLoop(survivor, zombie);
+        zombieLoop(survivor, zombie);
     }
 
     public static void sceneFifteen(Survivor survivor, Zombie zombie) {
