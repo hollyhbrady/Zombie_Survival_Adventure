@@ -28,16 +28,19 @@ public class Main {
 
         // LEVEL ONE
         Zombie zombie = new Zombie("Shambler", ZombieLevel.ONE);
+        System.out.println("about L1 zombie here");
 
         GameLogic.sceneOne(survivor, zombie);
 
         // LEVEL TWO
         zombie = new Zombie("Walker", ZombieLevel.TWO);
-        System.out.println("about L2 zombie here");
+        System.out.println("Are these zombies getting faster? \n" +
+                "Maybe they have been recently turned... or are they better fed closer to the city? \n" +
+                "Hmmm, I'm going to call these ones WALKERS");
 
         // LEVEL THREE
         zombie = new Zombie("Runner", ZombieLevel.THREE);
-        System.out.println("about L2 zombie here");
+        System.out.println("about L3 zombie here");
 
         System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, and used " + survivor.getHPRestoresUsed() + " HP restores.");
         System.out.println("To be continued...");
