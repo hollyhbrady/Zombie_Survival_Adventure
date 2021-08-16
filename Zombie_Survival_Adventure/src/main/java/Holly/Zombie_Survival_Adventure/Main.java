@@ -28,8 +28,9 @@ public class Main {
 
         // LEVEL ONE
         Zombie zombie = new Zombie("Biter", ZombieLevel.ONE);
-        System.out.println("These zombies aren't so smart, or fast. \n" +
-                "I've heard stories of much worse. Were they exaggerated?");
+        System.out.println("These zombies aren't so smart, or fast. \n " +
+                "I've heard stories of much worse. Were they exaggerated? \n" +
+                "All these can do is bite, damn BITERS!");
 
         GameLogic.sceneOne(survivor, zombie);
 
@@ -42,7 +43,8 @@ public class Main {
         // LEVEL THREE
         zombie = new Zombie("Runner", ZombieLevel.THREE);
         System.out.println("Oh no! This is a whole new breed of zombie. \n" +
-                "Are they as fast as I am!" +
+                "They can run as fast as I can! \n" +
+                "How can I outrun these RUNNERS!? \n" +
                 "I'm going to need to be a lot smarter about my choices going forward...");
 
         System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, and used " + survivor.getHPRestoresUsed() + " HP restores.");
