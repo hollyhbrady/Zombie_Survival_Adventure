@@ -40,6 +40,8 @@ public class Main {
                 "Maybe they have been recently turned... or are they better fed closer to the city? \n" +
                 "Hmmm, I'm going to call these ones WALKERS");
 
+        GameLogic.sceneEleven(survivor, zombie);
+
         // LEVEL THREE
         zombie = new Zombie("Runner", ZombieLevel.THREE);
         System.out.println("Oh no! This is a whole new breed of zombie. \n" +
