@@ -1061,6 +1061,27 @@ public class GameLogic {
         }
     }
 
+    public static void sceneElevenA(Survivor survivor, Zombie zombie) {
+        System.out.println("Were those nightmares last night or was it" + zombie.getName() + "'s shuffling around the shed?! \n" +
+                "You can't handle that again... But what will you do?" +
+                "1. Explore to find safer shelter, or \n" +
+                "2. Scavenge the area for more supplies?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
+        if (input.equals("1")) {
+            sceneTen(survivor, zombie);
+        }
+        else if (input.equals("2")) {
+            sceneFifteen(survivor, zombie);
+        }
+    }
+
     public static void sceneEleven(Survivor survivor, Zombie zombie) {
         System.out.println("------------------------------");
         System.out.println("In the morning light, you search the hut top to bottom. \n" +
@@ -1087,8 +1108,9 @@ public class GameLogic {
             sceneFifteen(survivor, zombie);
         }
         else if (input.equals("3")) {
-            System.out.println("An extra day of rest was a good idea, and you manage to get to sleep for another night.");
+            System.out.println("An extra day of rest was a good idea, you were so exhausted you managed to sleep another night.");
             sleep(survivor);
+            sceneElevenA(survivor, zombie);
         }
     }
 
