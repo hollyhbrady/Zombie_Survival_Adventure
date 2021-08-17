@@ -989,6 +989,9 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
+            System.out.println("The tall grass ahead rustles.." +
+                    "A " + zombie.getName() + " jumps out!");
+            fightZombie(survivor, zombie);
             sceneNine(survivor, zombie);
         }
         else if (input.equals("2")) {
@@ -1009,6 +1012,9 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
+            System.out.println("The tall grass ahead rustles.." +
+                    "A " + zombie.getName() + " jumps out!");
+            fightZombie(survivor, zombie);
             sceneNine(survivor, zombie);
         }
         else if (input.equals("2")) {
@@ -1017,7 +1023,7 @@ public class GameLogic {
     }
 
     public static void sceneNineA(Survivor survivor, Zombie zombie) {
-        System.out.println("It's definitely a shelter of some kind, and it doesn't look like anyone is nearby..." +
+        System.out.println("It's definitely a shelter of some kind, and it doesn't look like anyone is nearby... \n" +
                 "I'm going in!");
         sceneNine(survivor, zombie);
     }
