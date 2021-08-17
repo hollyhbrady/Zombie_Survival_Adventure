@@ -1017,12 +1017,13 @@ public class GameLogic {
     }
 
     public static void sceneNineA(Survivor survivor, Zombie zombie) {
-        // secondary option - investigate hut?
+        System.out.println("It's definitely a shelter of some kind, and it doesn't look like anyone is nearby..." +
+                "I'm going in!");
         sceneNine(survivor, zombie);
     }
 
     public static void sceneNine(Survivor survivor, Zombie zombie) {
-        System.out.println("Its an abandoned hut! \n" +
+        System.out.println("Its an abandoned woodshed! \n" +
                         "Or not so abandoned...");
         zombieAppears(survivor, zombie);
         fightZombieTrapped(survivor, zombie);
