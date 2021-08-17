@@ -989,10 +989,10 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
-            sceneNineA(survivor, zombie);
+            sceneNine(survivor, zombie);
         }
         else if (input.equals("2")) {
-            sceneTen(survivor, zombie);
+            sceneNineA(survivor, zombie);
         }
     }
 
@@ -1009,10 +1009,10 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
-            sceneNineA(survivor, zombie);
+            sceneNine(survivor, zombie);
         }
         else if (input.equals("2")) {
-            sceneTen(survivor, zombie);
+            sceneNineA(survivor, zombie);
         }
     }
 
