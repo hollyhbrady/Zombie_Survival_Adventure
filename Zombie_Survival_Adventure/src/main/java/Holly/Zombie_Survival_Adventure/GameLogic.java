@@ -1016,6 +1016,11 @@ public class GameLogic {
         }
     }
 
+    public static void sceneNineA(Survivor survivor, Zombie zombie) {
+        // secondary option - investigate hut?
+        sceneNine(survivor, zombie);
+    }
+
     public static void sceneNine(Survivor survivor, Zombie zombie) {
         System.out.println("Its an abandoned hut! \n" +
                         "Or not so abandoned...");
