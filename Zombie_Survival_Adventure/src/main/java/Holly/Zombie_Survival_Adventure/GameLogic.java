@@ -978,8 +978,8 @@ public class GameLogic {
     public static void sceneSeven(Survivor survivor, Zombie zombie) {
         System.out.println("You check your surroundings and see light reflecting off some glass in the bushes. \n" +
                 "Is it a hut? Could you finally have found shelter? Do you: \n" +
-                "1. Investigate, or \n" +
-                "2. Stay in the open and carry on down the road");
+                "1. Sneak through the undergrowth towards it, or \n" +
+                "2. Stay in the open and loop around to case the other side?");
 
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
@@ -998,8 +998,8 @@ public class GameLogic {
 
     public static void sceneEight(Survivor survivor, Zombie zombie) {
         System.out.println("The road sweeps off to the left, and you see light reflecting off some glass in the bushes ahead. Do you: \n" +
-                "1. Investigate, or \n" +
-                "2. Follow where the road leads");
+                "1. Sneak through the undergrowth towards it, or \n" +
+                "2. Stay in the open and loop around to case the other side?");
 
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
