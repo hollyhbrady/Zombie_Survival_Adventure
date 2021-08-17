@@ -1038,7 +1038,6 @@ public class GameLogic {
                 "The windows look like they have been smashed from the inside... \n" +
                 "Desperate for sleep and shelter, you spend the night.");
         sleep(survivor);
-        sceneEleven(survivor, zombie);
     }
 
     public static void sceneTen(Survivor survivor, Zombie zombie) {
