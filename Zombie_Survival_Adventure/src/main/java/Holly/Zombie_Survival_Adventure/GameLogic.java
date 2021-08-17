@@ -1069,13 +1069,14 @@ public class GameLogic {
         survivor.addFoodToInventory(Food.IRNBRU);
         inventoryAnnouncement(survivor);
         System.out.println("You cannot spend another night like that, do you: \n" +
-                "1. Explore to find safer shelter or \n" +
-                "2. Scavenge the area for more supplies?");
+                "1. Explore to find safer shelter, \n" +
+                "2. Scavenge the area for more supplies, or \n" +
+                "3. Rest up for the day to gain more health?");
 
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
-        while(!input.equals("1") && !input.equals("2")) {
+        while(!input.equals("1") && !input.equals("2") && !input.equals("3")) {
             System.out.println("Invalid command");
             input = in.nextLine();
         }
@@ -1084,6 +1085,10 @@ public class GameLogic {
         }
         else if (input.equals("2")) {
             sceneFifteen(survivor, zombie);
+        }
+        else if (input.equals("3")) {
+            System.out.println("An extra day of rest was a good idea, and you manage to get to sleep for another night.");
+            sleep(survivor);
         }
     }
 
