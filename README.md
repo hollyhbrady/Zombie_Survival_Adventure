@@ -20,7 +20,7 @@
 <ol>
   <li>Copy the url of this repository</li>
   <li>In your terminal: git clone *paste copied url* . </li>
-  <li>cd to Zombie_Survival_Adventure</li>
+  <li>cd to Zombie_Survival_Text_Adventure</li>
   <li>Open in IntelliJ IDEA CE</li>
   <li>Run Main</li>
   <li>Follow the commands in your terminal</li>
