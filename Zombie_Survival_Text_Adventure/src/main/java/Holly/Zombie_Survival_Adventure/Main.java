@@ -28,7 +28,7 @@ public class Main {
 
         // LEVEL ONE
         Zombie zombie = new Zombie("Biter", ZombieLevel.ONE);
-        System.out.println("These zombies aren't so smart, or fast. \n " +
+        System.out.println("These zombies aren't so smart, or fast. \n" +
                 "I've heard stories of much worse. Were they exaggerated? \n" +
                 "All these can do is bite, damn BITERS!");
 
