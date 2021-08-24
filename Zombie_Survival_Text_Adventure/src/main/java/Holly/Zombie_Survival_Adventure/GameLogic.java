@@ -214,6 +214,10 @@ public class GameLogic {
         }
     }
 
+    public static void reportBeansCount(Survivor survivor) {
+        System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+    }
+
     public static void weaponDrop(Survivor survivor, Zombie zombie) {
         Random rand = new Random();
 
