@@ -230,6 +230,11 @@ public class GameLogic {
         }
     }
 
+    public static void dropGun(Survivor survivor) {
+        survivor.addGunToInventory(Gun.HANDGUN);
+        System.out.println("'The Zed-Head had a gun! That's mine now.'");
+    }
+
     public static void weaponDrop(Survivor survivor, Zombie zombie) {
         Random rand = new Random();
 
@@ -241,8 +246,7 @@ public class GameLogic {
         int bulletDropChance3 = 40;
 
         if (rand.nextInt(100) < gunDropChance && survivor.getGunInventory().size() == 0) {
-            survivor.addGunToInventory(Gun.HANDGUN);
-            System.out.println("'The Zed-Head had a gun! That's mine now.'");
+            dropGun(survivor);
         } else if (rand.nextInt(100) < knifeDropChance && survivor.getMeleeInventory().size() == 0) {
             survivor.addMeleeToInventory(Melee.KNIFE);
             System.out.println("'That's one sweet looking knife there, don't mind if I do!'");
