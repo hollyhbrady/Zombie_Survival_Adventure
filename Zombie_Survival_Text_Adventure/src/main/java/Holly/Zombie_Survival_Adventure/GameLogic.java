@@ -486,7 +486,41 @@ public class GameLogic {
     }
 
     public static void healthCheck (Survivor survivor) {
-        if (survivor.getSurvivorHealth() < survivor.)
+        if (survivor.getSurvivorHealth() < survivor.getSurvivorHealthMax()) {
+            System.out.println("Your HP is: " + survivor.getSurvivorHealth() + ",\n" +
+                    "Do you want to eat some food? \n" +
+                    "1. Yes \n" +
+                    "2. No");
+
+            Scanner in = new Scanner(System.in);
+            String input = in.nextLine();
+
+            while(!input.equals("1") && !input.equals("2")) {
+                System.out.println("Invalid command");
+                input = in.nextLine();
+            }
+            if (input.equals("1")) {
+                System.out.println("What are you going to have?");
+                System.out.println("1. Baked Beans (20 HP value)");
+                System.out.println("2. Dried fruit (10 HP value)");
+                System.out.println("3. Can of Irn-Bru (5 HP value)");
+
+                String foodInput = in.nextLine();
+
+                if (foodInput.equals("1")) {
+                    eatBeans(survivor);
+                } else if (foodInput.equals("2")) {
+                    eatFruit(survivor);
+                } else if (foodInput.equals("3")) {
+                    drinkIrnBru(survivor);
+                } else {
+                    System.out.println("Invalid command.");
+                }
+            } else if (input.equals("2")) {
+
+            }
+            System.out.println("------------------------------");
+        }
     }
 
     // Standard fight zombie sequence. Can fight, eat, or try to run
