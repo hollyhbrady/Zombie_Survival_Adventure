@@ -181,27 +181,6 @@ public class GameLogic {
         return survivor.getSurvivorHealth();
     }
 
-    public static void foodDrop(Survivor survivor) {
-        Random rand = new Random();
-        int foodDropChance = 30;
-        if (rand.nextInt(100) < foodDropChance) {
-            dropBeans(survivor);
-            reportFoodCount(survivor);
-        } else if (rand.nextInt(100) < foodDropChance) {
-            dropFruit(survivor);
-            reportFoodCount(survivor);
-        } else if (rand.nextInt(100) < foodDropChance) {
-            survivor.addFoodToInventory(Food.IRNBRU);
-            System.out.println("It dropped a can of ... Irn-Bru. Again!?");
-            if (survivor.getFoodInventory().size() > 4){
-                System.out.println("'I'll take what I can get! What I wouldn't give for a coke though...'");
-            } else {
-                System.out.println("'Oh well, beggars can't be choosers.'");
-            }
-            reportFoodCount(survivor);
-        }
-    }
-
     public static void dropBeans(Survivor survivor) {
         survivor.addFoodToInventory(Food.BAKEDBEANS);
         System.out.println("It dropped a can of baked beans!");
@@ -222,8 +201,33 @@ public class GameLogic {
         }
     }
 
+    public static void dropIrnBru(Survivor survivor) {
+        survivor.addFoodToInventory(Food.IRNBRU);
+        System.out.println("It dropped a can of ... Irn-Bru. Again!?");
+        if (survivor.getFoodInventory().size() > 4){
+            System.out.println("'I'll take what I can get! What I wouldn't give for a coke though...'");
+        } else {
+            System.out.println("'Oh well, beggars can't be choosers.'");
+        }
+    }
+
     public static void reportFoodCount(Survivor survivor) {
         System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+    }
+
+    public static void foodDrop(Survivor survivor) {
+        Random rand = new Random();
+        int foodDropChance = 30;
+        if (rand.nextInt(100) < foodDropChance) {
+            dropBeans(survivor);
+            reportFoodCount(survivor);
+        } else if (rand.nextInt(100) < foodDropChance) {
+            dropFruit(survivor);
+            reportFoodCount(survivor);
+        } else if (rand.nextInt(100) < foodDropChance) {
+            dropIrnBru(survivor);
+            reportFoodCount(survivor);
+        }
     }
 
     public static void weaponDrop(Survivor survivor, Zombie zombie) {
