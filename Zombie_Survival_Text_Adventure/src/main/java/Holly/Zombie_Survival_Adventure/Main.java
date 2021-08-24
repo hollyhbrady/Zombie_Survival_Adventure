@@ -31,6 +31,7 @@ public class Main {
         System.out.println("These zombies aren't so smart, or fast. \n" +
                 "I've heard stories of much worse. Were they exaggerated? \n" +
                 "All these can do is bite, damn Biters!");
+        System.out.println("------------------------------");
 
         GameLogic.sceneOne(survivor, zombie);
 
@@ -39,6 +40,7 @@ public class Main {
         System.out.println("Are these zombies getting faster? \n" +
                 "Maybe they have been recently turned... or are they better fed closer to the city? \n" +
                 "Hmmm, I'm going to call these ones Walkers");
+        System.out.println("------------------------------");
 
         GameLogic.sceneEleven(survivor, zombie);
 
@@ -48,6 +50,7 @@ public class Main {
                 "They can run as fast as I can! \n" +
                 "How can I outrun these Runners!? \n" +
                 "I'm going to need to be a lot smarter about my choices going forward...");
+        System.out.println("------------------------------");
 
         System.out.println("You survived " + survivor.getZombiesEncountered() + " Zombies, and used " + survivor.getHPRestoresUsed() + " HP restores.");
         System.out.println("To be continued...");
