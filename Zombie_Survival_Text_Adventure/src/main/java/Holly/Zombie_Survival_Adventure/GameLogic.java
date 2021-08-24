@@ -240,6 +240,16 @@ public class GameLogic {
         System.out.println("'That's one sweet looking knife there, don't mind if I do!'");
     }
 
+    public static void drop6Bullets(Survivor survivor, Zombie zombie) {
+        survivor.addToAmmoInventory(6);
+        System.out.println("A full magazine! That means 6 bullets.");
+        if (survivor.getAmmoInventory() == 0) {
+            System.out.println("'Phew I was all out, this will last me a while'");
+        } else {
+            System.out.println("'These Zed Heads better watch out!'");
+        }
+    }
+
     public static void drop4Bullets(Survivor survivor, Zombie zombie) {
         survivor.addToAmmoInventory(4);
         System.out.println("A magazine with 4 bullets fell from the " + zombie.getName() + "'s belt during the fight!");
