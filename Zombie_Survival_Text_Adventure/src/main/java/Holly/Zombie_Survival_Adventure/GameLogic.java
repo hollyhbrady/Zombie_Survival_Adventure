@@ -185,13 +185,7 @@ public class GameLogic {
         Random rand = new Random();
         int foodDropChance = 30;
         if (rand.nextInt(100) < foodDropChance) {
-            survivor.addFoodToInventory(Food.BAKEDBEANS);
-            System.out.println("It dropped a can of baked beans!");
-            if (survivor.getFoodInventory().size() > 4){
-                System.out.println("'Some variety would be nice, but you can't be fussy at times like these.'");
-            } else {
-                System.out.println("'Protein! This should help me get through til tomorrow at least....'");
-            }
+            dropBeans(survivor);
             reportFoodCount(survivor);
         } else if (rand.nextInt(100) < foodDropChance) {
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
@@ -211,6 +205,16 @@ public class GameLogic {
                 System.out.println("'Oh well, beggars can't be choosers.'");
             }
             reportFoodCount(survivor);
+        }
+    }
+
+    public static void dropBeans(Survivor survivor) {
+        survivor.addFoodToInventory(Food.BAKEDBEANS);
+        System.out.println("It dropped a can of baked beans!");
+        if (survivor.getFoodInventory().size() > 4){
+            System.out.println("'Some variety would be nice, but you can't be fussy at times like these.'");
+        } else {
+            System.out.println("'Protein! This should help me get through til tomorrow at least....'");
         }
     }
 
