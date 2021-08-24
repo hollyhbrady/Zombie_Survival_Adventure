@@ -242,9 +242,19 @@ public class GameLogic {
 
     public static void drop6Bullets(Survivor survivor, Zombie zombie) {
         survivor.addToAmmoInventory(6);
-        System.out.println("A full magazine! That means 6 bullets.");
+        System.out.println("A full magazine fell from the " + zombie.getName() + "'s belt during the fight! That means 6 bullets!");
         if (survivor.getAmmoInventory() == 0) {
-            System.out.println("'Phew I was all out, this will last me a while'");
+            System.out.println("'Phew I was all out, this will last me a while.'");
+        } else {
+            System.out.println("'It's raining bullets! But in a good way...'");
+        }
+    }
+
+    public static void drop5Bullets(Survivor survivor, Zombie zombie) {
+        survivor.addToAmmoInventory(5);
+        System.out.println("A magazine with 5 bullets fell from the " + zombie.getName() + "'s belt during the fight!");
+        if (survivor.getAmmoInventory() == 0) {
+            System.out.println("'Phew I was all out, this will last me a while.'");
         } else {
             System.out.println("'These Zed Heads better watch out!'");
         }
@@ -252,9 +262,9 @@ public class GameLogic {
 
     public static void drop4Bullets(Survivor survivor, Zombie zombie) {
         survivor.addToAmmoInventory(4);
-        System.out.println("A magazine with 4 bullets fell from the " + zombie.getName() + "'s belt during the fight!");
+        System.out.println("A magazine with 4 bullets fell from the " + zombie.getName() + " as it hit the ground.");
         if (survivor.getAmmoInventory() == 0) {
-            System.out.println("'Phew I was all out, this will last me a while'");
+            System.out.println("'Phew I was all out, this will last me a while.'");
         } else {
             System.out.println("'Is my luck turning?'");
         }
@@ -262,7 +272,7 @@ public class GameLogic {
 
     public static void drop3Bullets(Survivor survivor, Zombie zombie) {
         survivor.addToAmmoInventory(3);
-        System.out.println("A magazine with 3 bullets fell from the " + zombie.getName() + " as it hit the ground");
+        System.out.println("A magazine with 3 bullets fell from the " + zombie.getName() + " as it hit the ground.");
         if (survivor.getAmmoInventory() == 0) {
             System.out.println("'Phew I was all out, thank you bullet fairy!'");
         } else {
@@ -272,7 +282,7 @@ public class GameLogic {
 
     public static void drop2Bullets(Survivor survivor, Zombie zombie) {
         survivor.addToAmmoInventory(2);
-        System.out.println("2 bullets rolled out of the " + zombie.getName() + "'s pocket");
+        System.out.println("2 bullets rolled out of the " + zombie.getName() + "'s pocket.");
         if (survivor.getAmmoInventory() == 0){
             System.out.println("'Score, I know where I'm going to put these...'");
         } else {
@@ -281,7 +291,7 @@ public class GameLogic {
     }
     public static void drop1Bullet(Survivor survivor, Zombie zombie) {
         survivor.addToAmmoInventory(1);
-        System.out.println("1 bullet rolled out of the " + zombie.getName() + "'s pocket");
+        System.out.println("1 bullet rolled out of the " + zombie.getName() + "'s pocket.");
         if (survivor.getAmmoInventory() == 0){
             System.out.println("'This will buy me one more chance...'");
         } else {
@@ -293,7 +303,7 @@ public class GameLogic {
         if (survivor.getAmmoInventory() == 1) {
             System.out.println("You now have 1 bullet");
         } else {
-            System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
+            System.out.println("You now have " + survivor.getAmmoInventory() + " bullets.");
         }
     }
 
