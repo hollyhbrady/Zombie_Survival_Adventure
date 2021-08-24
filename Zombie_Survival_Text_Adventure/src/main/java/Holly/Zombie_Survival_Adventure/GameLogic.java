@@ -486,7 +486,7 @@ public class GameLogic {
     }
 
     // Standard fight zombie sequence. Can fight, eat, or try to run
-    public static int fightZombie (Survivor survivor, Zombie zombie){
+    public static void fightZombie (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
         Scanner in = new Scanner(System.in);
@@ -612,11 +612,11 @@ public class GameLogic {
             System.out.println("------------------------------");
             break;
         }
-        return survivor.getSurvivorHealth();
+        survivor.getSurvivorHealth();
     }
 
     // Running is not an option here
-    public static int fightZombieTrapped (Survivor survivor, Zombie zombie){
+    public static void fightZombieTrapped (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
         Scanner in = new Scanner(System.in);
@@ -733,11 +733,11 @@ public class GameLogic {
             System.out.println("------------------------------");
             break;
         }
-        return survivor.getSurvivorHealth();
+        survivor.getSurvivorHealth();
     }
 
     // eating (used to regain health) is not an option here
-    public static int fightZombieRushed (Survivor survivor, Zombie zombie){
+    public static void fightZombieRushed (Survivor survivor, Zombie zombie){
         boolean running = true;
         Random rand = new Random();
         Scanner in = new Scanner(System.in);
@@ -845,7 +845,7 @@ public class GameLogic {
             System.out.println("------------------------------");
             break;
         }
-        return survivor.getSurvivorHealth();
+        survivor.getSurvivorHealth();
     }
 
     public static void returnToHut(Survivor survivor, Zombie zombie) {
