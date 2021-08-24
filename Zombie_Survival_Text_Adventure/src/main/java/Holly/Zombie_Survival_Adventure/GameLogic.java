@@ -406,6 +406,21 @@ public class GameLogic {
         } else if (rand.nextInt(100) < bulletDropChance20 && survivor.getAmmoInventory() < 6) {
             drop6Bullets(survivor, zombie);
         }
+
+        // If 6 or more bullets
+        else if (rand.nextInt(100) < bulletDropChance90) {
+            drop1Bullet(survivor, zombie);
+        } else if (rand.nextInt(100) < bulletDropChance80) {
+            drop2Bullets(survivor, zombie);
+        } else if (rand.nextInt(100) < bulletDropChance60) {
+            drop3Bullets(survivor, zombie);
+        } else if (rand.nextInt(100) < bulletDropChance40) {
+            drop4Bullets(survivor, zombie);
+        } else if (rand.nextInt(100) < bulletDropChance20) {
+            drop5Bullets(survivor, zombie);
+        } else if (rand.nextInt(100) < bulletDropChance10) {
+            drop6Bullets(survivor, zombie);
+        }
     }
 
     public static void gunDegradation(Survivor survivor) {
