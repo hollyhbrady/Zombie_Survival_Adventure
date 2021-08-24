@@ -186,7 +186,7 @@ public class Survivor {
     }
 
     public void setSurvivorHealthMax() {
-        this.survivorHealth = survivorLevel.getHP();
+        this.survivorHealth = survivorLevel.getMaxHP();
     }
 
     public void addFoodToInventory(Food food) {

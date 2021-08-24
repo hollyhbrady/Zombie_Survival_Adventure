@@ -408,7 +408,7 @@ public class GameLogic {
     }
 
     public static void checkHealthDoesNotExceedMax(Survivor survivor) {
-        if (survivor.getSurvivorHealth() > survivor.getSurvivorLevel().getHP()) {
+        if (survivor.getSurvivorHealth() > survivor.getSurvivorLevel().getMaxHP()) {
             survivor.setSurvivorHealthMax();
         }
     }
@@ -483,6 +483,10 @@ public class GameLogic {
         } else {
             System.out.println("... Awkward. You don't have any.");
         }
+    }
+
+    public static void healthCheck (Survivor survivor) {
+        if (survivor.getSurvivorHealth() < survivor.)
     }
 
     // Standard fight zombie sequence. Can fight, eat, or try to run

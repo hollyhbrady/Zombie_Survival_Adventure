@@ -62,7 +62,7 @@ public enum SurvivorLevel {
         this.id = id;
     }
 
-    public int getHP() {
+    public int getMaxHP() {
         return maxHP;
     }
 
