@@ -248,6 +248,7 @@ public class GameLogic {
         } else {
             System.out.println("'It's raining bullets! But in a good way...'");
         }
+        reportBulletCount(survivor);
     }
 
     public static void drop5Bullets(Survivor survivor, Zombie zombie) {
@@ -258,6 +259,7 @@ public class GameLogic {
         } else {
             System.out.println("'These Zed Heads better watch out!'");
         }
+        reportBulletCount(survivor);
     }
 
     public static void drop4Bullets(Survivor survivor, Zombie zombie) {
@@ -268,6 +270,7 @@ public class GameLogic {
         } else {
             System.out.println("'Is my luck turning?'");
         }
+        reportBulletCount(survivor);
     }
 
     public static void drop3Bullets(Survivor survivor, Zombie zombie) {
@@ -278,6 +281,7 @@ public class GameLogic {
         } else {
             System.out.println("'Now that's what I call luck!'");
         }
+        reportBulletCount(survivor);
     }
 
     public static void drop2Bullets(Survivor survivor, Zombie zombie) {
@@ -288,6 +292,7 @@ public class GameLogic {
         } else {
             System.out.println("'Thanks buddy!'");
         }
+        reportBulletCount(survivor);
     }
     public static void drop1Bullet(Survivor survivor, Zombie zombie) {
         survivor.addToAmmoInventory(1);
@@ -297,6 +302,7 @@ public class GameLogic {
         } else {
             System.out.println("'Every bullet counts out here now.'");
         }
+        reportBulletCount(survivor);
     }
 
     public static void reportBulletCount(Survivor survivor) {
@@ -322,6 +328,7 @@ public class GameLogic {
         int bulletDropChance20 = 20;
         int bulletDropChance30 = 30;
         int bulletDropChance40 = 40;
+        int bulletDropChance50 = 50;
 
         if (rand.nextInt(100) < bulletDropChance20 && survivor.getAmmoInventory() > 3  ) {
             drop3Bullets(survivor, zombie);
