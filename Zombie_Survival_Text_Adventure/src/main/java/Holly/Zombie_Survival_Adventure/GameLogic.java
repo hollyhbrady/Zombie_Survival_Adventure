@@ -325,20 +325,24 @@ public class GameLogic {
             dropKnife(survivor);
         }
 
+        int bulletDropChance10 = 10;
         int bulletDropChance20 = 20;
         int bulletDropChance30 = 30;
         int bulletDropChance40 = 40;
         int bulletDropChance50 = 50;
 
-        if (rand.nextInt(100) < bulletDropChance20 && survivor.getAmmoInventory() > 3  ) {
-            drop3Bullets(survivor, zombie);
-            reportBulletCount(survivor);
-        } else if (rand.nextInt(100) < bulletDropChance30 && survivor.getAmmoInventory() > 4  ) {
-            drop2Bullets(survivor, zombie);
-            reportBulletCount(survivor);
-        } else if (rand.nextInt(100) < bulletDropChance40 && survivor.getAmmoInventory() > 5  ) {
+        if (rand.nextInt(100) < bulletDropChance10 && survivor.getAmmoInventory() > 2) {
             drop1Bullet(survivor, zombie);
-            reportBulletCount(survivor);
+        } else if (rand.nextInt(100) < bulletDropChance20 && survivor.getAmmoInventory() > 2) {
+            drop2Bullets(survivor, zombie);
+        } else if (rand.nextInt(100) < bulletDropChance30 && survivor.getAmmoInventory() > 2) {
+            drop3Bullets(survivor, zombie);
+        } else if (rand.nextInt(100) < bulletDropChance40 && survivor.getAmmoInventory() > 2) {
+            drop4Bullets(survivor, zombie);
+        } else if (rand.nextInt(100) < bulletDropChance50 && survivor.getAmmoInventory() > 2) {
+            drop5Bullets(survivor, zombie);
+        } else if (rand.nextInt(100) < bulletDropChance50 && survivor.getAmmoInventory() > 2) {
+            drop6Bullets(survivor, zombie);
         }
     }
 
