@@ -250,6 +250,16 @@ public class GameLogic {
         }
     }
 
+    public static void drop2Bullets(Survivor survivor, Zombie zombie) {
+        survivor.addToAmmoInventory(3);
+        System.out.println("A magazine with 3 bullets fell from the " + zombie.getName() + " as it hit the ground");
+        if (survivor.getAmmoInventory() == 0) {
+            System.out.println("'Phew I was all out, thank you bullet fairy!'");
+        } else {
+            System.out.println("'Now that's what I call luck!'");
+        }
+    }
+
     public static void weaponDrop(Survivor survivor, Zombie zombie) {
         Random rand = new Random();
 
@@ -268,7 +278,7 @@ public class GameLogic {
             drop3Bullets(survivor, zombie);
             System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
         } else if (rand.nextInt(100) < bulletDropChance2 && survivor.getAmmoInventory() > 4  ) {
-
+            drop2Bullets(survivor, zombie);
             System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
         } else if (rand.nextInt(100) < bulletDropChance3 && survivor.getAmmoInventory() > 5  ) {
             survivor.addToAmmoInventory(1);
