@@ -270,7 +270,11 @@ public class GameLogic {
     }
 
     public static void reportBulletCount(Survivor survivor) {
-        System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
+        if (survivor.getAmmoInventory() == 1) {
+            System.out.println("You now have 1 bullet");
+        } else {
+            System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
+        }
     }
 
     public static void weaponDrop(Survivor survivor, Zombie zombie) {
