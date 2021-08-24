@@ -269,6 +269,10 @@ public class GameLogic {
         }
     }
 
+    public static void reportBulletCount(Survivor survivor) {
+        System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
+    }
+
     public static void weaponDrop(Survivor survivor, Zombie zombie) {
         Random rand = new Random();
 
@@ -285,13 +289,13 @@ public class GameLogic {
             dropKnife(survivor);
         } else if (rand.nextInt(100) < bulletDropChance1 && survivor.getAmmoInventory() > 3  ) {
             drop3Bullets(survivor, zombie);
-            System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
+            reportBulletCount(survivor);
         } else if (rand.nextInt(100) < bulletDropChance2 && survivor.getAmmoInventory() > 4  ) {
             drop2Bullets(survivor, zombie);
-            System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
+            reportBulletCount(survivor);
         } else if (rand.nextInt(100) < bulletDropChance3 && survivor.getAmmoInventory() > 5  ) {
             drop1Bullet(survivor, zombie);
-            System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
+            reportBulletCount(survivor);
         }
     }
 
