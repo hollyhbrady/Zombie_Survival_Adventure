@@ -192,7 +192,7 @@ public class GameLogic {
             } else {
                 System.out.println("'Protein! This should help me get through til tomorrow at least....'");
             }
-            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+            reportFoodCount(survivor);
         } else if (rand.nextInt(100) < foodDropChance) {
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             System.out.println("It dropped a pack of dried fruit!");
@@ -201,7 +201,7 @@ public class GameLogic {
             } else {
                 System.out.println("'I better make these last, I don't want a repeat of last time I ate the whole bag all at once.'");
             }
-            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+            reportFoodCount(survivor);
         } else if (rand.nextInt(100) < foodDropChance) {
             survivor.addFoodToInventory(Food.IRNBRU);
             System.out.println("It dropped a can of ... Irn-Bru. Again!?");
@@ -210,11 +210,11 @@ public class GameLogic {
             } else {
                 System.out.println("'Oh well, beggars can't be choosers.'");
             }
-            System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
+            reportFoodCount(survivor);
         }
     }
 
-    public static void reportBeansCount(Survivor survivor) {
+    public static void reportFoodCount(Survivor survivor) {
         System.out.println("You now have " + survivor.getFoodInventory().size() + " food items");
     }
 
