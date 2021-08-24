@@ -251,12 +251,21 @@ public class GameLogic {
     }
 
     public static void drop2Bullets(Survivor survivor, Zombie zombie) {
-        survivor.addToAmmoInventory(3);
-        System.out.println("A magazine with 3 bullets fell from the " + zombie.getName() + " as it hit the ground");
-        if (survivor.getAmmoInventory() == 0) {
-            System.out.println("'Phew I was all out, thank you bullet fairy!'");
+        survivor.addToAmmoInventory(2);
+        System.out.println("2 bullets rolled out of the " + zombie.getName() + "'s pocket");
+        if (survivor.getAmmoInventory() == 0){
+            System.out.println("'Score, I know where I'm going to put these...'");
         } else {
-            System.out.println("'Now that's what I call luck!'");
+            System.out.println("'Thanks buddy!'");
+        }
+    }
+    public static void drop1Bullet(Survivor survivor, Zombie zombie) {
+        survivor.addToAmmoInventory(1);
+        System.out.println("1 bullet rolled out of the " + zombie.getName() + "'s pocket");
+        if (survivor.getAmmoInventory() == 0){
+            System.out.println("'This will buy me one more chance...'");
+        } else {
+            System.out.println("'Every bullet counts out here now.'");
         }
     }
 
@@ -281,13 +290,7 @@ public class GameLogic {
             drop2Bullets(survivor, zombie);
             System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
         } else if (rand.nextInt(100) < bulletDropChance3 && survivor.getAmmoInventory() > 5  ) {
-            survivor.addToAmmoInventory(1);
-            System.out.println("1 bullet rolled out of the " + zombie.getName() + "'s pocket");
-            if (survivor.getAmmoInventory() == 0){
-                System.out.println("'This will buy me one more chance...'");
-            } else {
-                System.out.println("'Every bullet counts out here now.'");
-            }
+            drop1Bullet(survivor, zombie);
             System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
         }
     }
