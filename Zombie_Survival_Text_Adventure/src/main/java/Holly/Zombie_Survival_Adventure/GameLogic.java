@@ -188,13 +188,7 @@ public class GameLogic {
             dropBeans(survivor);
             reportFoodCount(survivor);
         } else if (rand.nextInt(100) < foodDropChance) {
-            survivor.addFoodToInventory(Food.DRIEDFRUIT);
-            System.out.println("It dropped a pack of dried fruit!");
-            if (survivor.getFoodInventory().size() > 4){
-                System.out.println("'Great more apricots, I'm sure I can pick of the uh... undead bits.'");
-            } else {
-                System.out.println("'I better make these last, I don't want a repeat of last time I ate the whole bag all at once.'");
-            }
+            dropFruit(survivor);
             reportFoodCount(survivor);
         } else if (rand.nextInt(100) < foodDropChance) {
             survivor.addFoodToInventory(Food.IRNBRU);
@@ -215,6 +209,16 @@ public class GameLogic {
             System.out.println("'Some variety would be nice, but you can't be fussy at times like these.'");
         } else {
             System.out.println("'Protein! This should help me get through til tomorrow at least....'");
+        }
+    }
+
+    public static void dropFruit(Survivor survivor) {
+        survivor.addFoodToInventory(Food.DRIEDFRUIT);
+        System.out.println("It dropped a pack of dried fruit!");
+        if (survivor.getFoodInventory().size() > 4){
+            System.out.println("'Great more apricots, I'm sure I can pick of the uh... undead bits.'");
+        } else {
+            System.out.println("'I better make these last, I don't want a repeat of last time I ate the whole bag all at once.'");
         }
     }
 
