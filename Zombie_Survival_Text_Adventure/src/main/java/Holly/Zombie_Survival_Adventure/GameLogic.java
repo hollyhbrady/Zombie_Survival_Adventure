@@ -240,6 +240,16 @@ public class GameLogic {
         System.out.println("'That's one sweet looking knife there, don't mind if I do!'");
     }
 
+    public static void drop3Bullets(Survivor survivor, Zombie zombie) {
+        survivor.addToAmmoInventory(3);
+        System.out.println("A magazine with 3 bullets fell from the " + zombie.getName() + " as it hit the ground");
+        if (survivor.getAmmoInventory() == 0) {
+            System.out.println("'Phew I was all out, thank you bullet fairy!'");
+        } else {
+            System.out.println("'Now that's what I call luck!'");
+        }
+    }
+
     public static void weaponDrop(Survivor survivor, Zombie zombie) {
         Random rand = new Random();
 
@@ -255,22 +265,10 @@ public class GameLogic {
         } else if (rand.nextInt(100) < knifeDropChance && survivor.getMeleeInventory().size() == 0) {
             dropKnife(survivor);
         } else if (rand.nextInt(100) < bulletDropChance1 && survivor.getAmmoInventory() > 3  ) {
-            survivor.addToAmmoInventory(3);
-            System.out.println("A magazine with 3 bullets fell from the " + zombie.getName() + " as it hit the ground");
-            if (survivor.getAmmoInventory() == 0) {
-                System.out.println("'Phew I was all out, thank you bullet fairy!'");
-            } else {
-                System.out.println("'Now that's what I call luck!'");
-            }
+            drop3Bullets(survivor, zombie);
             System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
         } else if (rand.nextInt(100) < bulletDropChance2 && survivor.getAmmoInventory() > 4  ) {
-            survivor.addToAmmoInventory(2);
-            System.out.println("2 bullets rolled out of the " + zombie.getName() + "'s pocket");
-            if (survivor.getAmmoInventory() == 0){
-                System.out.println("'Score, I know where I'm going to put these...'");
-            } else {
-                System.out.println("'Thanks buddy!'");
-            }
+
             System.out.println("You now have " + survivor.getAmmoInventory() + " bullets");
         } else if (rand.nextInt(100) < bulletDropChance3 && survivor.getAmmoInventory() > 5  ) {
             survivor.addToAmmoInventory(1);
