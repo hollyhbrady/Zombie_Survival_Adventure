@@ -33,7 +33,7 @@ public class Main {
                 "All these can do is bite, damn Biters!");
         System.out.println("------------------------------");
 
-        GameLogic.sceneOne(survivor, zombie);
+        Scenes.sceneOne(survivor, zombie);
 
         // LEVEL TWO
         zombie = new Zombie("Walker", ZombieLevel.TWO);
@@ -42,7 +42,7 @@ public class Main {
                 "Hmmm, I'm going to call these ones Walkers");
         System.out.println("------------------------------");
 
-        GameLogic.sceneEleven(survivor, zombie);
+        Scenes.sceneEleven(survivor, zombie);
 
         // LEVEL THREE
         zombie = new Zombie("Runner", ZombieLevel.THREE);
