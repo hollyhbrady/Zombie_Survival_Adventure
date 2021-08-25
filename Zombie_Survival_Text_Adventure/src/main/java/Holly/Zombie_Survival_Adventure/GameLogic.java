@@ -674,7 +674,7 @@ public class GameLogic {
         if (survivor.getSurvivorHealth() < survivor.getSurvivorHealthMax()) {
             System.out.println("Your HP is: " + survivor.getSurvivorHealth() + ",\n" +
                     "Do you want to eat some food? \n" +
-                    "1. Yes \n" +
+                    "1. Yes, or \n" +
                     "2. No");
 
             Scanner in = new Scanner(System.in);
@@ -835,7 +835,7 @@ public class GameLogic {
             System.out.println("------------------------------");
             break;
         }
-        survivor.getSurvivorHealth();
+        readyToMoveOn(survivor);
     }
 
     // Running is not an option here
@@ -956,7 +956,7 @@ public class GameLogic {
             System.out.println("------------------------------");
             break;
         }
-        survivor.getSurvivorHealth();
+        readyToMoveOn(survivor);
     }
 
     // eating (used to regain health) is not an option here
@@ -1068,7 +1068,7 @@ public class GameLogic {
             System.out.println("------------------------------");
             break;
         }
-        survivor.getSurvivorHealth();
+        readyToMoveOn(survivor);
     }
 
     public static void returnToHut(Survivor survivor, Zombie zombie) {
