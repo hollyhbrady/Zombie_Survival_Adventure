@@ -131,6 +131,10 @@ public class GameLogic {
         inventoryAnnouncement(survivor);
     }
 
+    public static void whatIsYourName (Survivor survivor, String name) {
+        survivor.setName(name);
+    }
+
     public static void chooseCharacter() {
         System.out.println("Who are you?");
         System.out.println("1. A Soldier");
