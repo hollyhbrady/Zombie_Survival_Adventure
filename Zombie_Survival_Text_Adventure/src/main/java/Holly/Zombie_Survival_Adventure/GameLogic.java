@@ -138,6 +138,26 @@ public class GameLogic {
         Scanner in = new Scanner(System.in);
         String name = in.nextLine();
         survivor.setName(name);
+
+        confirmName(survivor);
+    }
+
+    public static void confirmName(Survivor survivor) {
+        System.out.println("Your name is " + survivor.getName() + "? \n" +
+                "1. Yes, or \n" +
+                "2. No");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
+        if (input.equals("2")) {
+            whatIsYourName(survivor);
+        }
+
     }
 
     public static void chooseCharacterType() {
