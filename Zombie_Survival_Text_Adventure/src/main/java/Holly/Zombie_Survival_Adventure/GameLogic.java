@@ -124,6 +124,7 @@ public class GameLogic {
         survivor.setHPRestoresUsed(0);
         survivor.setGunUsed(0);
         survivor.setMeleeUsed(0);
+        survivor.setDayCount(0);
         gameStartWanderer(survivor);
         gameStartOutcast(survivor);
         gameStartSoldier(survivor);
