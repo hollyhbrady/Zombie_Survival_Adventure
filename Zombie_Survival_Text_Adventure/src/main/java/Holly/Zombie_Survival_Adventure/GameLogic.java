@@ -69,6 +69,16 @@ public class GameLogic {
         }
     }
 
+    public static void gameStartStatsAnnouncementFood(Survivor survivor) {
+        if (survivor.getFoodInventory().size() == 1) {
+            System.out.println("1 food item to restore health,");
+        }
+        else if (survivor.getFoodInventory().size() == 0) {
+            System.out.println("No food items to restore health,");
+        }
+        else System.out.println(survivor.getFoodInventory().size() + " food items to restore health,");
+    }
+
     public static void gameStartStatsAnnouncementKnife(Survivor survivor) {
         if (survivor.getMeleeInventory().size() == 1) {
             System.out.println("1 knife, ");
@@ -97,16 +107,6 @@ public class GameLogic {
             System.out.println("and no bullets.");
         }
         else System.out.println("and " + survivor.getAmmoInventory() + " bullets.");
-    }
-
-    public static void gameStartStatsAnnouncementFood(Survivor survivor) {
-        if (survivor.getFoodInventory().size() == 1) {
-            System.out.println("1 food item to restore health,");
-        }
-        else if (survivor.getFoodInventory().size() == 0) {
-            System.out.println("No food items to restore health,");
-        }
-        else System.out.println(survivor.getFoodInventory().size() + " food items to restore health,");
     }
 
     public static void inventoryAnnouncement(Survivor survivor) {
@@ -662,9 +662,9 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
-
+            inventoryAnnouncement(survivor);
         } else if (input.equals("2")) {
-
+            healthCheck(survivor);
         } else {
 
         }
