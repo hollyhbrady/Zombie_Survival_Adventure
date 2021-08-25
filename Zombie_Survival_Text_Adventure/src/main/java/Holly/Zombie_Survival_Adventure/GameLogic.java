@@ -160,7 +160,7 @@ public class GameLogic {
 
     }
 
-    public static void chooseCharacterType() {
+    public static void chooseCharacterType(Survivor survivor) {
         System.out.println("Who are you?");
         System.out.println("1. A Soldier");
         System.out.println("2. A Wanderer");
@@ -174,20 +174,20 @@ public class GameLogic {
             input = in.nextLine();
         }
         if (input.equals("1")) {
-            Survivor survivor = new Survivor("Abby", 0, SurvivorLevel.SOLDIER, 50, 0, 0, 0, 0, 0, 0);
+            survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
             survivor.addGunToInventory(Gun.HANDGUN);
             survivor.setAmmoInventory(5);
         } else if (input.equals("2")) {
-            Survivor survivor = new Survivor("Joel", 0, SurvivorLevel.WANDERER, 50, 0, 0, 0, 0, 0, 0);
+            survivor.setSurvivorLevel(SurvivorLevel.WANDERER);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
             survivor.addMeleeToInventory(Melee.KNIFE);
         } else if (input.equals("3")) {
-            Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0, 0, 0, 0, 0);
+            survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
             survivor.addFoodToInventory(Food.IRNBRU);
@@ -197,7 +197,7 @@ public class GameLogic {
     }
 
     public static void setCharacter(Survivor survivor) {
-        chooseCharacterType();
+        chooseCharacterType(survivor);
         whatIsYourName(survivor);
     }
 
