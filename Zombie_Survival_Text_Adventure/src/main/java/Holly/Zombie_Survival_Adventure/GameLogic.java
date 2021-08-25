@@ -35,7 +35,7 @@ public class GameLogic {
 
     public static void gameStartOutcast(Survivor survivor) {
         if (survivor.getSurvivorLevel() == SurvivorLevel.OUTCAST) {
-            survivor.setAmmoInventory(5);
+            survivor.setAmmoInventory(8);
             survivor.emptyFoodInventory();
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.DRIEDFRUIT);
@@ -157,7 +157,6 @@ public class GameLogic {
         if (input.equals("2")) {
             whatIsYourName(survivor);
         }
-
     }
 
     public static void chooseCharacterType(Survivor survivor) {
@@ -175,24 +174,10 @@ public class GameLogic {
         }
         if (input.equals("1")) {
             survivor.setSurvivorLevel(SurvivorLevel.SOLDIER);
-            survivor.addFoodToInventory(Food.BAKEDBEANS);
-            survivor.addFoodToInventory(Food.DRIEDFRUIT);
-            survivor.addFoodToInventory(Food.IRNBRU);
-            survivor.addGunToInventory(Gun.HANDGUN);
-            survivor.setAmmoInventory(5);
         } else if (input.equals("2")) {
             survivor.setSurvivorLevel(SurvivorLevel.WANDERER);
-            survivor.addFoodToInventory(Food.BAKEDBEANS);
-            survivor.addFoodToInventory(Food.DRIEDFRUIT);
-            survivor.addFoodToInventory(Food.IRNBRU);
-            survivor.addMeleeToInventory(Melee.KNIFE);
         } else if (input.equals("3")) {
             survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
-            survivor.addFoodToInventory(Food.BAKEDBEANS);
-            survivor.addFoodToInventory(Food.DRIEDFRUIT);
-            survivor.addFoodToInventory(Food.IRNBRU);
-            survivor.addMeleeToInventory(Melee.KNIFE);
-            survivor.setAmmoInventory(8);
         }
     }
 

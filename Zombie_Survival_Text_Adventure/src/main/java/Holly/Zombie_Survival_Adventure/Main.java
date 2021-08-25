@@ -12,11 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0, 0, 0, 0, 0);
-        survivor.addFoodToInventory(Food.BAKEDBEANS);
-        survivor.addFoodToInventory(Food.DRIEDFRUIT);
-        survivor.addFoodToInventory(Food.IRNBRU);
-        survivor.addMeleeToInventory(Melee.KNIFE);
-        survivor.setAmmoInventory(5);
+
 
         // CHOOSE CHARACTER
 
