@@ -81,32 +81,32 @@ public class GameLogic {
 
     public static void gameStartStatsAnnouncementKnife(Survivor survivor) {
         if (survivor.getMeleeInventory().size() == 1) {
-            System.out.println("1 knife, ");
+            System.out.println("1 knife,");
         }
         else if (survivor.getMeleeInventory().size() == 0) {
-            System.out.println("no knives, ");
+            System.out.println("No knives,");
         }
-        else System.out.println(survivor.getMeleeInventory().size() + " knives, ");
+        else System.out.println(survivor.getMeleeInventory().size() + " knives,");
     }
 
     public static void gameStartStatsAnnouncementGun(Survivor survivor) {
         if (survivor.getGunInventory().size() == 1) {
-            System.out.println("1 gun, ");
+            System.out.println("1 gun,");
         }
         else if (survivor.getGunInventory().size() == 0) {
-            System.out.println("no gun, ");
+            System.out.println("no gun,");
         }
-        else System.out.println(survivor.getGunInventory().size() + " guns, ");
+        else System.out.println(survivor.getGunInventory().size() + " guns,");
     }
 
     public static void gameStartStatsAnnouncementBullets(Survivor survivor) {
         if (survivor.getAmmoInventory() == 1) {
-            System.out.println("and 1 bullet.");
+            System.out.println("And 1 bullet.");
         }
         else if (survivor.getAmmoInventory() == 0) {
-            System.out.println("and no bullets.");
+            System.out.println("And no bullets.");
         }
-        else System.out.println("and " + survivor.getAmmoInventory() + " bullets.");
+        else System.out.println("And " + survivor.getAmmoInventory() + " bullets.");
     }
 
     public static void inventoryAnnouncement(Survivor survivor) {
