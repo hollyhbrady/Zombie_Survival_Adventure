@@ -46,8 +46,9 @@ public class Survivor {
 
     public int gunUsed;
     public int meleeUsed;
+    public int dayCount;
 
-    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth, int zombiesEncountered, int expGained, int HPRestoresUsed, int gunUsed, int meleeUsed) {
+    public Survivor(String name, int ammoInventory, SurvivorLevel survivorLevel, int survivorHealth, int zombiesEncountered, int expGained, int HPRestoresUsed, int gunUsed, int meleeUsed, int dayCount) {
         this.name = name;
         this.survivorLevel = survivorLevel;
         this.ammoInventory = ammoInventory;
@@ -60,6 +61,7 @@ public class Survivor {
         this.HPRestoresUsed = HPRestoresUsed;
         this.gunUsed = gunUsed;
         this.meleeUsed = meleeUsed;
+        this.dayCount = dayCount;
     }
 
     public Survivor() {
@@ -185,6 +187,14 @@ public class Survivor {
         this.meleeUsed = meleeUsed;
     }
 
+    public int getDayCount() {
+        return dayCount;
+    }
+
+    public void setDayCount(int dayCount) {
+        this.dayCount = dayCount;
+    }
+
     public void setSurvivorHealthMax() {
         this.survivorHealth = survivorLevel.getMaxHP();
     }
@@ -216,5 +226,6 @@ public class Survivor {
     public void addToAmmoInventory(int bullets) {
         this.ammoInventory = getAmmoInventory() + bullets;
     }
+
 
 }
