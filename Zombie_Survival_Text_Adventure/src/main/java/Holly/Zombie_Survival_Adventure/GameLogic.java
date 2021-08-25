@@ -648,6 +648,28 @@ public class GameLogic {
         }
     }
 
+    public static void readyToMoveOn (Survivor survivor) {
+        System.out.println("What do you want to do? \n" +
+                "1. Check weapons, \n" +
+                "2. Check health or \n" +
+                "3. Carry on");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2") && !input.equals("3")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
+        if (input.equals("1")) {
+
+        } else if (input.equals("2")) {
+
+        } else {
+
+        }
+    }
+
     public static void healthCheck (Survivor survivor) {
         if (survivor.getSurvivorHealth() < survivor.getSurvivorHealthMax()) {
             System.out.println("Your HP is: " + survivor.getSurvivorHealth() + ",\n" +
