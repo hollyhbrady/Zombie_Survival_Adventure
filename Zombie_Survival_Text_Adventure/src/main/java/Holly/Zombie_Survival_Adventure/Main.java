@@ -18,7 +18,10 @@ public class Main {
         survivor.addMeleeToInventory(Melee.KNIFE);
         survivor.setAmmoInventory(5);
 
-        //CHOOSE CHARACTER
+        // CHOOSE CHARACTER
+
+        String name = null;
+        GameLogic.setCharacter(survivor, name);
 
 //        GameLogic.chooseCharacter();
 //        System.out.println(survivor.getName());
