@@ -125,13 +125,18 @@ public class GameLogic {
         survivor.setGunUsed(0);
         survivor.setMeleeUsed(0);
         survivor.setDayCount(0);
+        setCharacter(survivor);
         gameStartWanderer(survivor);
         gameStartOutcast(survivor);
         gameStartSoldier(survivor);
         inventoryAnnouncement(survivor);
     }
 
-    public static void whatIsYourName(Survivor survivor, String name) {
+    public static void whatIsYourName(Survivor survivor) {
+        System.out.println("What is your name?");
+
+        Scanner in = new Scanner(System.in);
+        String name = in.nextLine();
         survivor.setName(name);
     }
 
@@ -171,9 +176,9 @@ public class GameLogic {
         }
     }
 
-    public static void setCharacter(Survivor survivor, String name) {
-        setCharacter(survivor, name);
+    public static void setCharacter(Survivor survivor) {
         chooseCharacterType();
+        whatIsYourName(survivor);
     }
 
     public static int zombieAttack(Survivor survivor, Zombie zombie) {

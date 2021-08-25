@@ -20,8 +20,8 @@ public class Main {
 
         // CHOOSE CHARACTER
 
-        String name = null;
-        GameLogic.setCharacter(survivor, name);
+//        String name = null;
+//        GameLogic.setCharacter(survivor, name);
 
 //        GameLogic.chooseCharacter();
 //        System.out.println(survivor.getName());
