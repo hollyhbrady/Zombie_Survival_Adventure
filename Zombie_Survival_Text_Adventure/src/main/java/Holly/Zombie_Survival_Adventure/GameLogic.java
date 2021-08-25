@@ -131,11 +131,11 @@ public class GameLogic {
         inventoryAnnouncement(survivor);
     }
 
-    public static void whatIsYourName (Survivor survivor, String name) {
+    public static void whatIsYourName(Survivor survivor, String name) {
         survivor.setName(name);
     }
 
-    public static void chooseCharacter() {
+    public static void chooseCharacterType() {
         System.out.println("Who are you?");
         System.out.println("1. A Soldier");
         System.out.println("2. A Wanderer");
@@ -169,7 +169,11 @@ public class GameLogic {
             survivor.addMeleeToInventory(Melee.KNIFE);
             survivor.setAmmoInventory(8);
         }
-//        return survivor;
+    }
+
+    public static void setCharacter(Survivor survivor, String name) {
+        setCharacter(survivor, name);
+        chooseCharacterType();
     }
 
     public static int zombieAttack(Survivor survivor, Zombie zombie) {
