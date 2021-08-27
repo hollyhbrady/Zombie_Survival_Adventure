@@ -144,7 +144,7 @@ public class GameLogic {
 
     public static void confirmName(Survivor survivor) {
         System.out.println("Your name is " + survivor.getName() + "? \n" +
-                "1. Yes, or \n" +
+                "1. Yes \n" +
                 "2. No");
 
         Scanner in = new Scanner(System.in);
@@ -161,9 +161,12 @@ public class GameLogic {
 
     public static void chooseCharacterType(Survivor survivor) {
         System.out.println("Who are you?");
-        System.out.println("1. A Soldier");
-        System.out.println("2. A Wanderer");
-        System.out.println("3. An Outcast");
+        System.out.println("1. A Soldier \n" +
+                "\t Higher accuracy with a gun");
+        System.out.println("2. A Wanderer \n" +
+                "\t Higher strength and speed");
+        System.out.println("3. An Outcast \n" +
+                "\t Higher melee accuracy");
 
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
