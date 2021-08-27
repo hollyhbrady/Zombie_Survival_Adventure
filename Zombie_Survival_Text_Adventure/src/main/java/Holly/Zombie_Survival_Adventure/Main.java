@@ -13,14 +13,8 @@ public class Main {
 
         Survivor survivor = new Survivor("Allie", 0, SurvivorLevel.OUTCAST, 50, 0, 0, 0, 0, 0, 0);
 
+        // ADD ZOMBIE MESSAGES/SET UP
 
-        // CHOOSE CHARACTER
-
-//        String name = null;
-//        GameLogic.setCharacter(survivor, name);
-
-//        GameLogic.chooseCharacter();
-//        System.out.println(survivor.getName());
         // START OF GAME
 
         GameLogic.gameStart(survivor);
