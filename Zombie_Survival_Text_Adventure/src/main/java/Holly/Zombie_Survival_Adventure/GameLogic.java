@@ -714,6 +714,7 @@ public class GameLogic {
         }
         if (input.equals("1")) {
             inventoryAnnouncement(survivor);
+            readyToMoveOn(survivor);
         } else if (input.equals("2")) {
             healthCheck(survivor);
         }
