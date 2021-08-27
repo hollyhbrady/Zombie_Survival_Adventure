@@ -120,7 +120,7 @@ public class GameLogic {
     public static void gameStart(Survivor survivor) {
         resetToLevel1(survivor);
         survivor.setSurvivorHealthMax();
-        survivor.setZombiesEncountered(0);
+//        survivor.setZombiesEncountered(0);
         survivor.setHPRestoresUsed(0);
         survivor.setGunUsed(0);
         survivor.setMeleeUsed(0);
@@ -129,7 +129,7 @@ public class GameLogic {
         gameStartWanderer(survivor);
         gameStartOutcast(survivor);
         gameStartSoldier(survivor);
-        inventoryAnnouncement(survivor);
+//        inventoryAnnouncement(survivor);
     }
 
     public static void whatIsYourName(Survivor survivor) {
