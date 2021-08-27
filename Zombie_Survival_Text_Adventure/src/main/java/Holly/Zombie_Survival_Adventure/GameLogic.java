@@ -701,8 +701,8 @@ public class GameLogic {
 
     public static void readyToMoveOn (Survivor survivor) {
         System.out.println("What do you want to do? \n" +
-                "1. Check weapons, \n" +
-                "2. Check health or \n" +
+                "1. Check inventory, \n" +
+                "2. Assess health or \n" +
                 "3. Carry on");
 
         Scanner in = new Scanner(System.in);
@@ -716,8 +716,6 @@ public class GameLogic {
             inventoryAnnouncement(survivor);
         } else if (input.equals("2")) {
             healthCheck(survivor);
-        } else {
-
         }
     }
 
