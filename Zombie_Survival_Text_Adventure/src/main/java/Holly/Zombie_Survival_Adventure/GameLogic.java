@@ -750,9 +750,8 @@ public class GameLogic {
                 } else {
                     System.out.println("Invalid command.");
                 }
-            } else if (input.equals("2")) {
-
             }
+            readyToMoveOn(survivor);
             System.out.println("------------------------------");
         }
     }
