@@ -182,6 +182,35 @@ public class GameLogic {
         } else if (input.equals("3")) {
             survivor.setSurvivorLevel(SurvivorLevel.OUTCAST);
         }
+
+        confirmCharacterType(survivor);
+    }
+
+    public static void confirmCharacterType (Survivor survivor) {
+        if (survivor.survivorLevel == SurvivorLevel.SOLDIER) {
+            System.out.println("So you are a Soldier?\n" +
+                    "1. Yes \n" +
+                    "2. No");
+        } else if (survivor.survivorLevel == SurvivorLevel.WANDERER) {
+            System.out.println("So you are a Wanderer?\n" +
+                    "1. Yes \n" +
+                    "2. No");
+        } else {
+            System.out.println("So you are an Outcast?\n" +
+                    "1. Yes \n" +
+                    "2. No");
+        }
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Invalid command");
+            input = in.nextLine();
+        }
+        if (input.equals("2")) {
+            chooseCharacterType(survivor);
+        }
     }
 
     public static void setCharacter(Survivor survivor) {
