@@ -164,11 +164,11 @@ public class GameLogic {
                 "Welcome to your adventure. \n" +
                 "Who are you?");
         System.out.println("1. A Soldier \n" +
-                "\t Higher accuracy with a gun");
+                "\t *Higher accuracy with a gun");
         System.out.println("2. A Wanderer \n" +
-                "\t Higher strength and speed");
+                "\t *Higher strength and speed");
         System.out.println("3. An Outcast \n" +
-                "\t Higher melee accuracy");
+                "\t *Higher accuracy with a knife");
 
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
