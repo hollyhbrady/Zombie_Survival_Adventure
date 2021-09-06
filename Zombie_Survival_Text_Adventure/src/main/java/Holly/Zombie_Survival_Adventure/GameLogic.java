@@ -30,6 +30,8 @@ public class GameLogic {
                     "You're well stocked in food from your last raid, \n" +
                     "but you have been on the move without a chance to sleep in a long time...\n" +
                     "Was that a moan? And the shuffle drag of zombie feet?");
+
+            areYouReady(survivor);
         }
     }
 
@@ -47,6 +49,8 @@ public class GameLogic {
             System.out.println("You're stumbling through the woods. \n" +
                     "You hear a moan - the shuffle drag of zombie feet. \n" +
                     "You can't go much longer without sleep...");
+
+            areYouReady(survivor);
         }
     }
 
@@ -66,6 +70,8 @@ public class GameLogic {
                     "You're out of bullets and getting desperate. \n" +
                     "You hear a moan - the shuffle drag of zombie feet. \n" +
                     "Are you still being pursued by the zombies that finished off your unit?");
+
+            areYouReady(survivor);
         }
     }
 
