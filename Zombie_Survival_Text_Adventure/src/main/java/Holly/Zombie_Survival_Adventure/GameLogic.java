@@ -190,15 +190,15 @@ public class GameLogic {
 
     public static void confirmCharacterType (Survivor survivor) {
         if (survivor.survivorLevel == SurvivorLevel.SOLDIER) {
-            System.out.println("So you are a Soldier?\n" +
+            System.out.println("Are you sure you are a Soldier?\n" +
                     "1. Yes \n" +
                     "2. No");
         } else if (survivor.survivorLevel == SurvivorLevel.WANDERER) {
-            System.out.println("So you are a Wanderer?\n" +
+            System.out.println("Are you sure you are a Wanderer?\n" +
                     "1. Yes \n" +
                     "2. No");
         } else {
-            System.out.println("So you are an Outcast?\n" +
+            System.out.println("Are you sure you are an Outcast?\n" +
                     "1. Yes \n" +
                     "2. No");
         }
