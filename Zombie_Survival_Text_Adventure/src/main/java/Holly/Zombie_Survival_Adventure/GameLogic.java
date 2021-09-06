@@ -85,16 +85,19 @@ public class GameLogic {
 
         while(!input.equals("1") && !input.equals("2")) {
             System.out.println("Choosing an invalid option isn't going to get you out of this...");
+            System.out.println("------------------------------");
         }
         if (input.equals("1")) {
             System.out.println("That's the spirit!\n" +
                     "You can have some extra bullets to take more down.");
+            System.out.println("------------------------------");
             survivor.setAmmoInventory(survivor.getAmmoInventory() + 3);
         }
         if (input.equals("2")) {
             System.out.println("Actually you don't, but you can have some extra food to make it up to you...\n" +
                     "Do your best so you can survive to eat it!\n" +
                     "I hope you like beans and IrnBru...");
+            System.out.println("------------------------------");
             survivor.addFoodToInventory(Food.BAKEDBEANS);
             survivor.addFoodToInventory(Food.IRNBRU);
         }
