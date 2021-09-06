@@ -160,7 +160,9 @@ public class GameLogic {
     }
 
     public static void chooseCharacterType(Survivor survivor) {
-        System.out.println("Who are you?");
+        System.out.println("Hello Survivor. \n" +
+                "Welcome to your adventure. \n" +
+                "Who are you?");
         System.out.println("1. A Soldier \n" +
                 "\t Higher accuracy with a gun");
         System.out.println("2. A Wanderer \n" +
