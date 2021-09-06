@@ -69,6 +69,32 @@ public class GameLogic {
         }
     }
 
+    public static void areYouReady(Survivor survivor) {
+        System.out.println("Are you ready to fight for your life " + survivor.getName() + "? \n" +
+                "1. Let me at 'em! \n" +
+                "2. Do I have a choice here?");
+
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+
+        while(!input.equals("1") && !input.equals("2")) {
+            System.out.println("Choosing an invalid option isn't going to get you out of this...");
+        }
+        if (input.equals("1")) {
+            System.out.println("That's the spirit!\n" +
+                    "You can have some extra bullets to take more down.");
+            survivor.setAmmoInventory(survivor.getAmmoInventory() + 3);
+        }
+        if (input.equals("2")) {
+            System.out.println("Actually you don't, but you can have some extra food to make it up to you...\n" +
+                    "Do your best so you can survive to eat it!\n" +
+                    "I hope you like beans and IrnBru...");
+            survivor.addFoodToInventory(Food.BAKEDBEANS);
+            survivor.addFoodToInventory(Food.IRNBRU);
+        }
+
+    }
+
     public static void gameStartStatsAnnouncementFood(Survivor survivor) {
         if (survivor.getFoodInventory().size() == 1) {
             System.out.println("1 food item to restore health,");
