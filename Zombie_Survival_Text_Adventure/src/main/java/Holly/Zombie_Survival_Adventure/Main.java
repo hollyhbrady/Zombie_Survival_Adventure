@@ -24,7 +24,8 @@ public class Main {
         System.out.println("You know what? These zombies aren't so smart, or fast. \n" +
                 "I've heard stories of much worse. Were they exaggerated? \n" +
                 "All these can do is bite, damn Biters!");
-        System.out.println("------------------------------");
+        System.out.println("------------------------------\n" +
+        ".... Oh no! Instant Karma!");
 
         Scenes.sceneOne(survivor, zombie);
 
